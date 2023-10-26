@@ -1,25 +1,20 @@
-html {
-  font-size: 16px;
-}
-
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
 }
 
 .header {
   display: flex;
   height: 144px;
-  min-width: 100% ;
+  min-width: 100%;
   background-color: #011827;
 }
-
 .header__logo {
   height: 82px;
   width: 128px;
   padding: 20px 10px 10px 20px;
 }
-
 .header__title {
   display: flex;
   flex-direction: column;
@@ -27,42 +22,94 @@ body {
   height: 84px;
   line-height: 1.3em;
   padding-top: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.2em;
   font-weight: 600;
   color: white;
 }
-
 .header__nav {
   display: none;
 }
-
 .header__image {
   max-width: 100%;
   height: auto;
 }
 
-.challenges {
+.challenges__btns {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding-top: 2em;
   row-gap: 1em;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-
-.challenges__btn {
+.challenges__btns__btn {
   background-color: #8ACFE5;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 40px;
   min-width: 10em;
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
-
-.challenges__link {
+.challenges__btns__link {
   color: #8ACFE5;
   font-weight: 700;
   padding: 1em;
+}
+
+.quotes__quoteImg {
+  max-width: 100vw;
+  margin: 20px 10px;
+}
+
+.popularTitle {
+  font-size: 1.5em;
+  font-weight: 500;
+  text-align: center;
+}
+
+.rooms {
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px 0 10px 20px;
+  gap: 20px;
+  overflow-x: scroll;
+}
+.rooms__box {
+  width: 290px;
+  height: 375px;
+  box-shadow: rgba(99, 99, 99, 0.5) 0px 5px 8px 0px;
+  border-radius: 10px;
+  margin: 30px auto;
+  flex: none;
+}
+.rooms img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  display: inline-block;
+}
+.rooms h1 {
+  margin: 5px 10px 0px 10px;
+  font-weight: 500;
+}
+.rooms small {
+  margin-left: 10px;
+  font-size: 0.7em;
+}
+.rooms p {
+  margin: 5px 10px;
+  font-size: 1em;
+}
+.rooms button {
+  float: right;
+  margin: 15px 10px;
+  width: 145px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #E3170A;
+  border: none;
+  color: white;
+  font-weight: 600;
 }
