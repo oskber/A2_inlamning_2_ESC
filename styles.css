@@ -1,0 +1,68 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  display: flex;
+  height: 144px;
+  min-width: 100% ;
+  background-color: #011827;
+}
+
+.header__logo {
+  height: 82px;
+  width: 128px;
+  padding: 20px 10px 10px 20px;
+}
+
+.header__title {
+  display: flex;
+  flex-direction: column;
+  width: 78px;
+  height: 84px;
+  line-height: 1.3em;
+  padding-top: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: white;
+}
+
+.header__nav {
+  display: none;
+}
+
+.header__image {
+  max-width: 100%;
+  height: auto;
+}
+
+.challenges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2em;
+  row-gap: 1em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.challenges__btn {
+  background-color: #8ACFE5;
+  border: none;
+  padding: 10px 20px;
+  min-width: 10em;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.challenges__link {
+  color: #8ACFE5;
+  font-weight: 700;
+  padding: 1em;
+}
