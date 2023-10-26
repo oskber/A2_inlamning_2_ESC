@@ -91,8 +91,8 @@ body {
   &__box {
     width: 290px;
     height: 375px;
-    box-shadow:rgba(99, 99, 99, 0.5) 0px 5px 8px 0px;
-    border-radius: 10px;
+    box-shadow:rgba(99, 99, 99, 0.2) 0px 5px 8px 0px;
+    border-radius: 8px;
     margin: 30px auto;
     flex: none;
   }
@@ -100,8 +100,7 @@ body {
   img {
     width: 100%;
     height: auto;
-    border-radius: 10px 10px 0 0;
-    display: inline-block;
+    border-radius: 8px 8px 0 0;
   }
 
   h1 {
@@ -112,6 +111,10 @@ body {
   small {
     margin-left: 10px;
     font-size: 0.7em;
+  }
+
+  span {
+    color: #E3170A;
   }
 
 
