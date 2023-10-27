@@ -187,10 +187,11 @@ body {
     background-color: #E3170A;
     color: white;
     border: none;
+    border-radius: 2px;
     padding: 10px 40px;
     min-width: 10em;
-    font-weight: 700;
-    font-size: 1.2em;
+    font-weight: 600;
+    font-size: 0.8em;
   }
 }
 
@@ -203,4 +204,50 @@ body {
    &__box {
     padding: 10px 10px 30px 10px;
    }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: #011827;
+  color: white;
+  max-height: 550px;
+  width: 100%;
+  padding: 20px 10px;
+
+  h3 {
+    font-size: 1em;
+    margin: 10px 0;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  &__title {
+    padding: 10px 0;
+  }
+
+  &__sitemap {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__follow {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__play {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+  }
 }
