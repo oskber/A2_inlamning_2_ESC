@@ -48,20 +48,41 @@ body {
 .challenges__btns__btn {
   background-color: #8ACFE5;
   border: none;
+  border-radius: 2px;
   padding: 10px 40px;
-  min-width: 10em;
+  min-width: 160px;
   font-weight: 700;
   font-size: 1.2em;
 }
 .challenges__btns__link {
-  color: #8ACFE5;
+  color: #36769D;
   font-weight: 700;
+  font-size: 0.8em;
   padding: 1em;
 }
 
-.quotes__quoteImg {
-  max-width: 100vw;
-  margin: 20px 10px;
+.quotes {
+  display: flex;
+  margin: 40px 10px;
+  margin-bottom: 60px;
+}
+.quotes img {
+  width: 75px;
+  height: 75px;
+}
+.quotes__box {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+.quotes__quote {
+  padding-left: 10px;
+  font-style: italic;
+  margin: 0;
+}
+.quotes__below {
+  margin: 10px 0 0 10px;
+  font-size: 0.8em;
 }
 
 .popularTitle {
@@ -73,7 +94,7 @@ body {
 .rooms {
   display: flex;
   justify-content: flex-start;
-  margin: 10px 0 10px 20px;
+  padding: 0 40px;
   gap: 20px;
   overflow-x: scroll;
 }
@@ -110,7 +131,7 @@ body {
   margin: 15px 10px;
   width: 145px;
   height: 35px;
-  border-radius: 5px;
+  border-radius: 2px;
   background-color: #E3170A;
   border: none;
   color: white;
@@ -124,23 +145,27 @@ body {
   flex-direction: column;
   padding: 2em;
   row-gap: 1em;
+  margin: 0;
 }
 
 .story {
   width: 100%;
   height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 0;
   padding-bottom: 30px;
   background-color: #011827;
 }
+.story__box {
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 .story p {
   color: white;
   text-align: center;
-  padding: 20px 10px;
+  padding-bottom: 20px;
 }
 .story__btn {
   width: 180px;
@@ -148,6 +173,7 @@ body {
   background-color: transparent;
   color: #8ACFE5;
   border: 2px solid #8ACFE5;
+  border-radius: 2px;
 }
 
 .book img {
@@ -155,7 +181,7 @@ body {
   height: auto;
 }
 .book__box {
-  padding: 10px 10px 30px 10px;
+  padding: 20px 20px;
 }
 .book__btn {
   background-color: #E3170A;
@@ -173,7 +199,7 @@ body {
   height: auto;
 }
 .allChallenges__box {
-  padding: 10px 10px 30px 10px;
+  padding: 20px 20px;
 }
 
 .footer {
@@ -183,7 +209,11 @@ body {
   color: white;
   max-height: 550px;
   width: 100%;
-  padding: 20px 10px;
+  padding: 20px 0px;
+  margin: auto;
+}
+.footer__box {
+  padding: 10px 20px;
 }
 .footer h3 {
   font-size: 1em;
