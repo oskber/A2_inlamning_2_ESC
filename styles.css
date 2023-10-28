@@ -11,7 +11,7 @@ body {
   min-width: 100%;
   background-color: #011827;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   .header {
     height: 200px;
   }
@@ -35,7 +35,7 @@ body {
   font-weight: 600;
   color: white;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   .header__title {
     display: flex;
     min-width: 250px;
@@ -47,15 +47,17 @@ body {
 }
 .header__nav, .header__list {
   display: none;
+  font-weight: 700;
+  padding: 0;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   .header__nav, .header__list {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    gap: 50px;
     color: white;
     list-style: none;
-    gap: 40px;
     min-width: 100%;
   }
 }
@@ -94,6 +96,16 @@ body {
   margin: 40px 10px;
   margin-bottom: 60px;
 }
+@media screen and (min-width: 600px) {
+  .quotes {
+    margin: 40px 50px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .quotes {
+    margin: 40px 100px;
+  }
+}
 .quotes__img {
   width: 75px;
   height: 75px;
@@ -106,7 +118,7 @@ body {
 .quotes__box2 {
   display: none;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   .quotes__box2 {
     display: flex;
     flex-direction: column;
@@ -116,7 +128,7 @@ body {
 .quotes__img2 {
   display: none;
 }
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
   .quotes__img2 {
     display: block;
     width: 75px;
@@ -125,6 +137,7 @@ body {
 }
 .quotes__quote {
   padding-left: 10px;
+  padding-right: 10px;
   font-style: italic;
   margin: 0;
 }

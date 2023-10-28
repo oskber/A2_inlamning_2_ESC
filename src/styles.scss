@@ -1,4 +1,4 @@
-$medium-screen-breakpoint: 700px;
+$medium-screen-breakpoint: 600px;
 $large-screen-breakpoint: 1000px;
 
 
@@ -52,15 +52,17 @@ body {
 
   &__nav, &__list {
     display: none;
+    font-weight: 700;
+    padding: 0;
     
 
     @media screen and (min-width: $medium-screen-breakpoint) {
       display: flex;
       justify-content: center;
       align-items: flex-end;
+      gap: 50px;
       color: white;
       list-style: none;
-      gap: 40px;
       min-width: 100%;
     }
   }
@@ -109,6 +111,14 @@ display: flex;
 margin: 40px 10px;
 margin-bottom: 60px;
 
+@media screen and (min-width: $medium-screen-breakpoint) {
+  margin: 40px 50px;
+}
+
+@media screen and (min-width: $large-screen-breakpoint){
+  margin: 40px 100px;
+}
+
   &__img {
     width: 75px;
     height: 75px;
@@ -143,6 +153,7 @@ margin-bottom: 60px;
 
   &__quote {
     padding-left: 10px;
+    padding-right: 10px;
     font-style: italic;
     margin: 0;
   }
