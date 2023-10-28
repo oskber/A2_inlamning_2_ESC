@@ -55,10 +55,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: 50px;
+    gap: 70px;
     color: white;
     list-style: none;
     min-width: 100%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .header__nav, .header__list {
+    gap: 100px;
   }
 }
 .header__image {
@@ -215,6 +220,9 @@ body {
   margin: 0;
   padding-bottom: 30px;
   background-color: #011827;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .story__box {
   padding: 20px 20px;
@@ -222,6 +230,16 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+@media screen and (min-width: 600px) {
+  .story__box {
+    padding: 20px 200px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .story__box {
+    padding: 50px 350px;
+  }
 }
 .story p {
   color: white;
@@ -237,6 +255,20 @@ body {
   border-radius: 2px;
 }
 
+@media screen and (min-width: 1000px) {
+  .book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .book img {
+    max-width: 50vw;
+    height: auto;
+  }
+  .book .book__box {
+    padding: 0 100px;
+  }
+}
 .book img {
   width: 100%;
   height: auto;
@@ -255,6 +287,21 @@ body {
   font-size: 0.8em;
 }
 
+@media screen and (min-width: 1000px) {
+  .allChallenges {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .allChallenges img {
+    max-width: 50vw;
+    height: auto;
+  }
+  .allChallenges .allChallenges__box {
+    padding: 0 100px;
+  }
+}
 .allChallenges img {
   width: 100%;
   height: auto;

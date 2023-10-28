@@ -60,10 +60,14 @@ body {
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      gap: 50px;
+      gap: 70px;
       color: white;
       list-style: none;
       min-width: 100%;
+    }
+
+    @media screen and (min-width: $large-screen-breakpoint) {
+      gap: 100px;
     }
   }
 
@@ -242,6 +246,9 @@ margin-bottom: 60px;
   margin: 0;
   padding-bottom: 30px;
   background-color: #011827;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &__box {
     padding: 20px 20px;
@@ -249,6 +256,14 @@ margin-bottom: 60px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+
+    @media screen and (min-width: $medium-screen-breakpoint) {
+      padding: 20px 200px;
+    }
+
+    @media screen and (min-width: $large-screen-breakpoint) {
+      padding: 50px 350px;
+    }
   }
 
   p {
@@ -268,6 +283,21 @@ margin-bottom: 60px;
 }
 
 .book {
+
+  @media screen and (min-width: $large-screen-breakpoint) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 50vw;
+      height: auto;
+    }
+
+    .book__box {
+      padding: 0 100px;
+    }
+  }
 
   img {
     width: 100%;
@@ -291,6 +321,23 @@ margin-bottom: 60px;
 }
 
 .allChallenges {
+
+  @media screen and (min-width: $large-screen-breakpoint) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 50vw;
+      height: auto;
+    }
+
+    .allChallenges__box {
+      padding: 0 100px;
+    }
+  }
+
    img {
     width: 100%;
     height: auto;
