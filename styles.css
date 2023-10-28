@@ -11,14 +11,21 @@ body {
   min-width: 100%;
   background-color: #011827;
 }
+@media screen and (min-width: 700px) {
+  .header {
+    height: 200px;
+  }
+}
+.header__logo__title {
+  display: flex;
+  position: absolute;
+}
 .header__logo {
   height: 82px;
   width: 128px;
-  padding: 20px 10px 10px 20px;
+  margin: 20px 10px 10px 20px;
 }
 .header__title {
-  display: flex;
-  flex-direction: column;
   width: 78px;
   height: 84px;
   line-height: 1.3em;
@@ -28,8 +35,29 @@ body {
   font-weight: 600;
   color: white;
 }
-.header__nav {
+@media screen and (min-width: 700px) {
+  .header__title {
+    display: flex;
+    min-width: 250px;
+    height: auto;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 1.5em;
+  }
+}
+.header__nav, .header__list {
   display: none;
+}
+@media screen and (min-width: 700px) {
+  .header__nav, .header__list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+    list-style: none;
+    gap: 40px;
+    min-width: 100%;
+  }
 }
 .header__image {
   max-width: 100%;
@@ -66,7 +94,7 @@ body {
   margin: 40px 10px;
   margin-bottom: 60px;
 }
-.quotes img {
+.quotes__img {
   width: 75px;
   height: 75px;
 }
@@ -74,6 +102,26 @@ body {
   display: flex;
   flex-direction: column;
   padding: 0 10px;
+}
+.quotes__box2 {
+  display: none;
+}
+@media screen and (min-width: 700px) {
+  .quotes__box2 {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+  }
+}
+.quotes__img2 {
+  display: none;
+}
+@media screen and (min-width: 700px) {
+  .quotes__img2 {
+    display: block;
+    width: 75px;
+    height: 75px;
+  }
 }
 .quotes__quote {
   padding-left: 10px;

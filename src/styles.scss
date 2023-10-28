@@ -1,3 +1,6 @@
+$medium-screen-breakpoint: 700px;
+$large-screen-breakpoint: 1000px;
+
 
 body {
   margin: 0;
@@ -12,15 +15,22 @@ body {
   min-width: 100% ;
   background-color: #011827;
 
+  @media screen and (min-width: $medium-screen-breakpoint) {
+    height: 200px;
+  }
+
+  &__logo__title {
+    display: flex;
+    position: absolute;
+  }
+
   &__logo {
     height: 82px;
     width: 128px;
-    padding: 20px 10px 10px 20px;
+    margin: 20px 10px 10px 20px;
   }
 
   &__title {
-    display: flex;
-    flex-direction: column;
     width: 78px;
     height: 84px;
     line-height: 1.3em;
@@ -29,10 +39,30 @@ body {
     font-size: 1.2em;
     font-weight: 600;
     color: white;
+
+    @media screen and (min-width: $medium-screen-breakpoint) {
+      display: flex;
+      min-width: 250px;
+      height: auto;
+      align-items: flex-end;
+      justify-content: flex-end;
+      font-size: 1.5em;
+    }
   }
 
-  &__nav {
+  &__nav, &__list {
     display: none;
+    
+
+    @media screen and (min-width: $medium-screen-breakpoint) {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      color: white;
+      list-style: none;
+      gap: 40px;
+      min-width: 100%;
+    }
   }
 
   &__image {
@@ -49,7 +79,11 @@ body {
   flex-direction: column;
   padding-top: 2em;
   row-gap: 1em;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif; 
+
+  @media  screen and (min-width: $medium-screen-breakpoint) {
+    
+  }
 
   &__btn {
     background-color: #8ACFE5;
@@ -75,7 +109,7 @@ display: flex;
 margin: 40px 10px;
 margin-bottom: 60px;
 
-  img {
+  &__img {
     width: 75px;
     height: 75px;
   }
@@ -84,6 +118,27 @@ margin-bottom: 60px;
     display: flex;
     flex-direction: column;
     padding: 0 10px;
+  }
+
+  &__box2 {
+    display: none;
+
+    @media screen and (min-width: $medium-screen-breakpoint) {
+      display: flex;
+      flex-direction: column;
+      padding: 0 10px;
+    }
+  }
+
+  &__img2 {
+    display: none;
+
+    @media screen and (min-width: $medium-screen-breakpoint) {
+      display: block;
+      width: 75px;
+      height: 75px;
+      
+    }
   }
 
   &__quote {
