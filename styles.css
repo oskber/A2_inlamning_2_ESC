@@ -83,7 +83,7 @@ body {
   align-items: center;
   flex-direction: column;
   padding-top: 2em;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   row-gap: 1em;
   font-family: "Roboto", sans-serif;
 }
@@ -137,6 +137,11 @@ body {
 @media screen and (min-width: 600px) {
   .quotes {
     margin: 40px 50px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .quotes {
+    margin: 40px 80px;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -201,7 +206,7 @@ body {
   justify-content: flex-start;
   padding: 0 40px;
   gap: 20px;
-  overflow-x: scroll;
+  overflow: auto;
 }
 .rooms__box {
   width: 290px;
@@ -248,8 +253,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 2em;
-  margin: 40px auto;
+  margin-top: 50px;
+  margin-bottom: 70px;
   row-gap: 1em;
   font-family: "Roboto", sans-serif;
 }
@@ -327,9 +332,12 @@ body {
   padding-bottom: 20px;
 }
 .story__btn {
-  width: 180px;
-  height: 40px;
+  min-width: 160px;
+  min-height: 40px;
+  padding: 10px 40px;
   background-color: transparent;
+  font-weight: 700;
+  font-size: 1.1em;
   color: #8ACFE5;
   border: 2px solid #8ACFE5;
   border-radius: 2px;
@@ -352,6 +360,21 @@ body {
   }
   .book .book__box {
     padding: 0 100px;
+    max-width: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .book img {
+    max-width: 50%;
+    height: auto;
+  }
+  .book .book__box {
+    padding: 0 30px;
     max-width: 50%;
   }
 }
@@ -391,6 +414,22 @@ body {
   }
   .allChallenges .allChallenges__box {
     padding: 0 100px;
+    max-width: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .allChallenges {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .allChallenges img {
+    max-width: 50%;
+    height: auto;
+  }
+  .allChallenges .allChallenges__box {
+    padding: 0 30px;
     max-width: 50%;
   }
 }
