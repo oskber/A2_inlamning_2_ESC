@@ -1,11 +1,14 @@
 $medium-screen-breakpoint: 600px;
+$mediumLarge-screen-breakpoint: 768px;
 $large-screen-breakpoint: 1000px;
+$max-screen-breakpoint: 1280px;
 
 @mixin breakpoint($min-size) {
   @media screen and (min-width: $min-size){
     @content;
   }
 }
+
 
 @mixin buttonBlue {
   background-color: #8ACFE5;
@@ -27,10 +30,10 @@ $large-screen-breakpoint: 1000px;
   border: none;
   padding: 10px 40px;
   min-width: 160px;
+  min-height: 40px;
   font-weight: 700;
   font-size: 1.1em;
   text-decoration: none;
-  margin-bottom: 30px;
 }
 
 @mixin linkBlue {
@@ -45,20 +48,21 @@ $large-screen-breakpoint: 1000px;
 
 
 body {
-  margin: 0;
+  margin: 0px auto;
   padding: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  max-width: 1440px;
 }
 
 .header {
   display: flex;
   height: 144px;
-  min-width: 100% ;
+  min-width: 100%;
   background-color: #011827;
 
   @include breakpoint($medium-screen-breakpoint) {
-    height: 200px;
+    height: 216px;
   }
 
   &__logo__container {
@@ -169,6 +173,10 @@ margin-bottom: 60px;
   margin: 40px 100px;
 }
 
+@include breakpoint($max-screen-breakpoint) {
+  margin: 40px 200px;
+}
+
   &__img {
     width: 75px;
     height: 75px;
@@ -218,6 +226,7 @@ margin-bottom: 60px;
   font-size: 1.5em;
   font-weight: 500;
   text-align: center;
+  margin: 40px 40px;
 }
 
 .rooms {
@@ -282,7 +291,7 @@ margin-bottom: 60px;
   align-items: center;
   flex-direction: column;
   padding-top: 2em;
-  margin-bottom: 20px;
+  margin: 40px auto;
   row-gap: 1em;
   font-family: 'Roboto', sans-serif; 
 
@@ -351,6 +360,12 @@ margin-bottom: 60px;
 
 .book {
 
+  @include breakpoint($medium-screen-breakpoint) {
+    .book__box {
+      padding: 20px 50px;
+    }
+  }
+
   @include breakpoint($large-screen-breakpoint) {
     display: flex;
     justify-content: center;
@@ -364,8 +379,8 @@ margin-bottom: 60px;
     .book__box {
       padding: 0 100px;
       max-width: 50%;
-    }
   }
+}
 
   img {
     width: 100%;
