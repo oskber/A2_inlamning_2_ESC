@@ -1,6 +1,48 @@
 $medium-screen-breakpoint: 600px;
 $large-screen-breakpoint: 1000px;
 
+@mixin breakpoint($min-size) {
+  @media screen and (min-width: $min-size){
+    @content;
+  }
+}
+
+@mixin buttonBlue {
+  background-color: #8ACFE5;
+  color: #011827;
+  border: none;
+  border-radius: 2px;
+  padding: 10px 40px;
+  min-width: 160px;
+  min-height: 40px;
+  font-weight: 700;
+  font-size: 1.1em;
+  
+}
+
+@mixin buttonRed {
+  background-color: #E3170A;
+  color: white;
+  border-radius: 2px;
+  border: none;
+  padding: 10px 40px;
+  min-width: 160px;
+  font-weight: 700;
+  font-size: 1.1em;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
+@mixin linkBlue {
+  color: #36769D;
+  font-weight: 700;
+  font-size: 0.8em;
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+
+
 
 body {
   margin: 0;
@@ -15,11 +57,11 @@ body {
   min-width: 100% ;
   background-color: #011827;
 
-  @media screen and (min-width: $medium-screen-breakpoint) {
+  @include breakpoint($medium-screen-breakpoint) {
     height: 200px;
   }
 
-  &__logo__title {
+  &__logo__container {
     display: flex;
     position: absolute;
   }
@@ -40,7 +82,7 @@ body {
     font-weight: 600;
     color: white;
 
-    @media screen and (min-width: $medium-screen-breakpoint) {
+    @include breakpoint($medium-screen-breakpoint) {
       display: flex;
       min-width: 250px;
       height: auto;
@@ -56,7 +98,7 @@ body {
     padding: 0;
     
 
-    @media screen and (min-width: $medium-screen-breakpoint) {
+    @include breakpoint($medium-screen-breakpoint) {
       display: flex;
       justify-content: center;
       align-items: flex-end;
@@ -65,8 +107,8 @@ body {
       list-style: none;
       min-width: 100%;
     }
-
-    @media screen and (min-width: $large-screen-breakpoint) {
+ 
+    @include breakpoint($large-screen-breakpoint) {
       gap: 100px;
     }
   }
@@ -77,35 +119,39 @@ body {
   }
 }
 
+.header__nav li:hover {
+  color: #8ACFE5;
+  cursor: pointer;
+} 
 
-.challenges__btns {
+
+.buttons__top {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding-top: 2em;
+  margin-bottom: 30px;
   row-gap: 1em;
   font-family: 'Roboto', sans-serif; 
 
-  @media  screen and (min-width: $medium-screen-breakpoint) {
-    
+  @include breakpoint($medium-screen-breakpoint) {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 15px;
+    transform: translateY(-55px);
   }
 
   &__btn {
-    background-color: #8ACFE5;
-  border: none;
-  border-radius: 2px;
-  padding: 10px 40px;
-  min-width: 160px;
-  font-weight: 700;
-  font-size: 1.2em;
+    @include buttonBlue();
   }
 
   &__link {
-    color: #36769D;
-    font-weight: 700;
-    font-size: 0.8em;
-    padding: 1em;
+    @include linkBlue();
+
+    @include breakpoint($medium-screen-breakpoint) {
+      @include buttonRed();
+    }
   }
 }
 
@@ -115,11 +161,11 @@ display: flex;
 margin: 40px 10px;
 margin-bottom: 60px;
 
-@media screen and (min-width: $medium-screen-breakpoint) {
+@include breakpoint($medium-screen-breakpoint)  {
   margin: 40px 50px;
 }
 
-@media screen and (min-width: $large-screen-breakpoint){
+@include breakpoint($large-screen-breakpoint) {
   margin: 40px 100px;
 }
 
@@ -137,17 +183,17 @@ margin-bottom: 60px;
   &__box2 {
     display: none;
 
-    @media screen and (min-width: $medium-screen-breakpoint) {
+    @include breakpoint($medium-screen-breakpoint)  {
       display: flex;
       flex-direction: column;
-      padding: 0 10px;
+      padding: 0 20px;
     }
   }
 
   &__img2 {
     display: none;
 
-    @media screen and (min-width: $medium-screen-breakpoint) {
+    @include breakpoint($medium-screen-breakpoint)  {
       display: block;
       width: 75px;
       height: 75px;
@@ -230,15 +276,36 @@ margin-bottom: 60px;
   }
 }
 
-.challenges__btns2 {
+.buttons__bottom {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 2em;
+  padding-top: 2em;
+  margin-bottom: 20px;
   row-gap: 1em;
-  margin: 0;
+  font-family: 'Roboto', sans-serif; 
+
+  @include breakpoint($medium-screen-breakpoint) {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 15px;
+  }
+
+  &__btn {
+    @include buttonBlue();
+  }
+
+  &__link {
+    @include linkBlue();
+
+    @include breakpoint($medium-screen-breakpoint) {
+      
+      @include buttonRed();
+    }
+  }
 }
+
 
 .story {
   width: 100%;
@@ -257,11 +324,11 @@ margin-bottom: 60px;
     flex-direction: column;
     align-items: center;
 
-    @media screen and (min-width: $medium-screen-breakpoint) {
+    @include breakpoint($medium-screen-breakpoint)  {
       padding: 20px 200px;
     }
 
-    @media screen and (min-width: $large-screen-breakpoint) {
+    @include breakpoint($large-screen-breakpoint) {
       padding: 50px 350px;
     }
   }
@@ -284,18 +351,19 @@ margin-bottom: 60px;
 
 .book {
 
-  @media screen and (min-width: $large-screen-breakpoint) {
+  @include breakpoint($large-screen-breakpoint) {
     display: flex;
     justify-content: center;
     align-items: center;
 
     img {
-      max-width: 50vw;
+      max-width: 50%;
       height: auto;
     }
 
     .book__box {
       padding: 0 100px;
+      max-width: 50%;
     }
   }
 
@@ -309,32 +377,28 @@ margin-bottom: 60px;
   }
 
   &__btn {
-    background-color: #E3170A;
-    color: white;
-    border: none;
-    border-radius: 2px;
-    padding: 10px 40px;
-    min-width: 10em;
-    font-weight: 600;
-    font-size: 0.8em;
+    @include buttonRed();
   }
 }
 
 .allChallenges {
 
-  @media screen and (min-width: $large-screen-breakpoint) {
+  margin-bottom: 100px;
+
+  @include breakpoint($large-screen-breakpoint) {
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
 
     img {
-      max-width: 50vw;
+      max-width: 50%;
       height: auto;
     }
 
     .allChallenges__box {
       padding: 0 100px;
+      max-width: 50%;
     }
   }
 
@@ -357,9 +421,18 @@ margin-bottom: 60px;
   width: 100%;
   padding: 20px 0px;
   margin: auto;
+ 
+  
 
   &__box {
     padding: 10px 20px;
+
+    @include breakpoint($medium-screen-breakpoint)  {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      padding: 50px;
+      
+    }
   }
 
   h3 {
@@ -378,23 +451,39 @@ margin-bottom: 60px;
 
   &__title {
     padding: 10px 0;
+    
+    @include breakpoint($medium-screen-breakpoint)  {
+      grid-column: 1 / 3;
+    }
   }
 
   &__sitemap {
     padding: 10px 0;
     display: flex;
     flex-direction: column;
+
+    @include breakpoint($medium-screen-breakpoint)  {
+      grid-column: 4 / 5;
+    }
   }
 
   &__follow {
     padding: 10px 0;
     display: flex;
     flex-direction: column;
+
+    @include breakpoint($medium-screen-breakpoint)  {
+      grid-column: 5 / 6;
+    }
   }
 
   &__play {
     display: flex;
     flex-direction: column;
     padding: 10px 0;
+
+    @include breakpoint($medium-screen-breakpoint)  {
+      column-span: 1 / 3;
+    }
   }
 }
