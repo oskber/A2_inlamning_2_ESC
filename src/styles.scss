@@ -4,14 +4,13 @@ $large-screen-breakpoint: 1000px;
 $max-screen-breakpoint: 1280px;
 
 @mixin breakpoint($min-size) {
-  @media screen and (min-width: $min-size){
+  @media screen and (min-width: $min-size) {
     @content;
   }
 }
 
-
 @mixin buttonBlue {
-  background-color: #8ACFE5;
+  background-color: #8acfe5;
   color: #011827;
   border: none;
   border-radius: 2px;
@@ -20,11 +19,10 @@ $max-screen-breakpoint: 1280px;
   min-height: 40px;
   font-weight: 700;
   font-size: 1.1em;
-  
 }
 
 @mixin buttonRed {
-  background-color: #E3170A;
+  background-color: #e3170a;
   color: white;
   border-radius: 2px;
   border: none;
@@ -37,7 +35,7 @@ $max-screen-breakpoint: 1280px;
 }
 
 @mixin linkBlue {
-  color: #36769D;
+  color: #36769d;
   font-weight: 700;
   font-size: 0.8em;
   background: none;
@@ -45,12 +43,10 @@ $max-screen-breakpoint: 1280px;
   text-decoration: underline;
 }
 
-
-
 body {
   margin: 0px auto;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   min-width: 100%;
 }
@@ -81,7 +77,7 @@ body {
     height: 84px;
     line-height: 1.3em;
     padding-top: 10px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1.2em;
     font-weight: 600;
     color: white;
@@ -96,11 +92,11 @@ body {
     }
   }
 
-  &__nav, &__list {
+  &__nav,
+  &__list {
     display: none;
     font-weight: 700;
     padding: 0;
-    
 
     @include breakpoint($small-screen-breakpoint) {
       display: flex;
@@ -111,7 +107,7 @@ body {
       list-style: none;
       min-width: 100%;
     }
- 
+
     @include breakpoint($large-screen-breakpoint) {
       gap: 100px;
     }
@@ -119,15 +115,14 @@ body {
 }
 
 .banner {
-  max-width: 100%;    
+  max-width: 100%;
   height: auto;
 }
 
 .header__nav li:hover {
-  color: #8ACFE5;
+  color: #8acfe5;
   cursor: pointer;
-} 
-
+}
 
 .buttons__top {
   display: flex;
@@ -137,7 +132,7 @@ body {
   padding-top: 2em;
   margin-bottom: 50px;
   row-gap: 1em;
-  font-family: 'Roboto', sans-serif; 
+  font-family: "Roboto", sans-serif;
 
   @include breakpoint($small-screen-breakpoint) {
     display: flex;
@@ -160,26 +155,25 @@ body {
 }
 
 .quotes {
+  display: flex;
+  margin: 40px 10px;
+  margin-bottom: 60px;
 
-display: flex;
-margin: 40px 10px;
-margin-bottom: 60px;
+  @include breakpoint($small-screen-breakpoint) {
+    margin: 40px 50px;
+  }
 
-@include breakpoint($small-screen-breakpoint)  {
-  margin: 40px 50px;
-}
+  @include breakpoint($medium-screen-breakpoint) {
+    margin: 40px 80px;
+  }
 
-@include breakpoint($medium-screen-breakpoint) {
-  margin: 40px 80px;
-}
+  @include breakpoint($large-screen-breakpoint) {
+    margin: 40px 100px;
+  }
 
-@include breakpoint($large-screen-breakpoint) {
-  margin: 40px 100px;
-}
-
-@include breakpoint($max-screen-breakpoint) {
-  margin: 40px 200px;
-}
+  @include breakpoint($max-screen-breakpoint) {
+    margin: 40px 200px;
+  }
 
   &__img {
     width: 75px;
@@ -195,7 +189,7 @@ margin-bottom: 60px;
   &__box2 {
     display: none;
 
-    @include breakpoint($small-screen-breakpoint)  {
+    @include breakpoint($small-screen-breakpoint) {
       display: flex;
       flex-direction: column;
       padding: 0 20px;
@@ -205,11 +199,10 @@ margin-bottom: 60px;
   &__img2 {
     display: none;
 
-    @include breakpoint($small-screen-breakpoint)  {
+    @include breakpoint($small-screen-breakpoint) {
       display: block;
       width: 75px;
       height: 75px;
-      
     }
   }
 
@@ -234,7 +227,6 @@ margin-bottom: 60px;
 }
 
 .rooms {
-
   display: flex;
   justify-content: flex-start;
   padding: 0 40px;
@@ -244,7 +236,7 @@ margin-bottom: 60px;
   &__box {
     width: 290px;
     height: 375px;
-    box-shadow:rgba(99, 99, 99, 0.2) 0px 5px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 5px 8px 0px;
     border-radius: 8px;
     margin: 30px auto;
     flex: none;
@@ -267,9 +259,8 @@ margin-bottom: 60px;
   }
 
   span {
-    color: #E3170A;
+    color: #e3170a;
   }
-
 
   p {
     margin: 5px 10px;
@@ -282,7 +273,7 @@ margin-bottom: 60px;
     width: 145px;
     height: 35px;
     border-radius: 2px;
-    background-color: #E3170A;
+    background-color: #e3170a;
     border: none;
     color: white;
     font-weight: 600;
@@ -297,7 +288,7 @@ margin-bottom: 60px;
   margin-top: 50px;
   margin-bottom: 70px;
   row-gap: 1em;
-  font-family: 'Roboto', sans-serif; 
+  font-family: "Roboto", sans-serif;
 
   @include breakpoint($small-screen-breakpoint) {
     display: flex;
@@ -313,12 +304,10 @@ margin-bottom: 60px;
     @include linkBlue();
 
     @include breakpoint($small-screen-breakpoint) {
-      
       @include buttonRed();
     }
   }
 }
-
 
 .story {
   width: 100%;
@@ -337,7 +326,7 @@ margin-bottom: 60px;
     flex-direction: column;
     align-items: center;
 
-    @include breakpoint($small-screen-breakpoint)  {
+    @include breakpoint($small-screen-breakpoint) {
       padding: 20px 200px;
     }
 
@@ -359,17 +348,32 @@ margin-bottom: 60px;
     background-color: transparent;
     font-weight: 700;
     font-size: 1.1em;
-    color: #8ACFE5;
-    border: 2px solid #8ACFE5;
+    color: #8acfe5;
+    border: 2px solid #8acfe5;
     border-radius: 2px;
   }
 }
 
 .book {
-
   @include breakpoint($small-screen-breakpoint) {
     .book__box {
       padding: 20px 50px;
+    }
+  }
+
+  @include breakpoint($medium-screen-breakpoint) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 50%;
+      height: auto;
+    }
+
+    .book__box {
+      padding: 0 30px;
+      max-width: 50%;
     }
   }
 
@@ -386,9 +390,10 @@ margin-bottom: 60px;
     .book__box {
       padding: 0 100px;
       max-width: 50%;
+    }
   }
-}
-  @include breakpoint($medium-screen-breakpoint) {
+
+  @include breakpoint($max-screen-breakpoint) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -399,10 +404,10 @@ margin-bottom: 60px;
     }
 
     .book__box {
-      padding: 0 30px;
+      padding: 0 150px;
       max-width: 50%;
+    }
   }
-}
 
   img {
     width: 100%;
@@ -419,25 +424,8 @@ margin-bottom: 60px;
 }
 
 .allChallenges {
-
   margin-bottom: 100px;
 
-  @include breakpoint($large-screen-breakpoint) {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-
-    img {
-      max-width: 50%;
-      height: auto;
-    }
-
-    .allChallenges__box {
-      padding: 0 100px;
-      max-width: 50%;
-    }
-  }
   @include breakpoint($medium-screen-breakpoint) {
     display: flex;
     flex-direction: row-reverse;
@@ -455,14 +443,47 @@ margin-bottom: 60px;
     }
   }
 
-   img {
+  @include breakpoint($large-screen-breakpoint) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 50%;
+      height: auto;
+    }
+
+    .allChallenges__box {
+      padding: 0 100px;
+      max-width: 50%;
+    }
+  }
+
+  @include breakpoint($max-screen-breakpoint) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 50%;
+      height: auto;
+    }
+
+    .allChallenges__box {
+      padding: 0 150px;
+      max-width: 50%;
+    }
+  }
+
+  img {
     width: 100%;
     height: auto;
-   }
+  }
 
-   &__box {
+  &__box {
     padding: 20px 20px;
-   }
+  }
 }
 
 .footer {
@@ -474,17 +495,14 @@ margin-bottom: 60px;
   width: 100%;
   padding: 20px 0px;
   margin: auto;
- 
-  
 
   &__box {
     padding: 10px 20px;
 
-    @include breakpoint($small-screen-breakpoint)  {
+    @include breakpoint($small-screen-breakpoint) {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       padding: 50px;
-      
     }
   }
 
@@ -504,8 +522,8 @@ margin-bottom: 60px;
 
   &__title {
     padding: 10px 0;
-    
-    @include breakpoint($small-screen-breakpoint)  {
+
+    @include breakpoint($small-screen-breakpoint) {
       grid-column: 1 / 3;
     }
   }
@@ -515,7 +533,7 @@ margin-bottom: 60px;
     display: flex;
     flex-direction: column;
 
-    @include breakpoint($small-screen-breakpoint)  {
+    @include breakpoint($small-screen-breakpoint) {
       grid-column: 4 / 5;
     }
   }
@@ -525,7 +543,7 @@ margin-bottom: 60px;
     display: flex;
     flex-direction: column;
 
-    @include breakpoint($small-screen-breakpoint)  {
+    @include breakpoint($small-screen-breakpoint) {
       grid-column: 5 / 6;
     }
   }
@@ -535,7 +553,7 @@ margin-bottom: 60px;
     flex-direction: column;
     padding: 10px 0;
 
-    @include breakpoint($small-screen-breakpoint)  {
+    @include breakpoint($small-screen-breakpoint) {
       column-span: 1 / 3;
     }
   }

@@ -74,7 +74,7 @@ body {
 }
 
 .header__nav li:hover {
-  color: #8ACFE5;
+  color: #8acfe5;
   cursor: pointer;
 }
 
@@ -97,7 +97,7 @@ body {
   }
 }
 .buttons__top__btn {
-  background-color: #8ACFE5;
+  background-color: #8acfe5;
   color: #011827;
   border: none;
   border-radius: 2px;
@@ -108,7 +108,7 @@ body {
   font-size: 1.1em;
 }
 .buttons__top__link {
-  color: #36769D;
+  color: #36769d;
   font-weight: 700;
   font-size: 0.8em;
   background: none;
@@ -117,7 +117,7 @@ body {
 }
 @media screen and (min-width: 600px) {
   .buttons__top__link {
-    background-color: #E3170A;
+    background-color: #e3170a;
     color: white;
     border-radius: 2px;
     border: none;
@@ -231,7 +231,7 @@ body {
   font-size: 0.7em;
 }
 .rooms span {
-  color: #E3170A;
+  color: #e3170a;
 }
 .rooms p {
   margin: 5px 10px;
@@ -243,7 +243,7 @@ body {
   width: 145px;
   height: 35px;
   border-radius: 2px;
-  background-color: #E3170A;
+  background-color: #e3170a;
   border: none;
   color: white;
   font-weight: 600;
@@ -267,7 +267,7 @@ body {
   }
 }
 .buttons__bottom__btn {
-  background-color: #8ACFE5;
+  background-color: #8acfe5;
   color: #011827;
   border: none;
   border-radius: 2px;
@@ -278,7 +278,7 @@ body {
   font-size: 1.1em;
 }
 .buttons__bottom__link {
-  color: #36769D;
+  color: #36769d;
   font-weight: 700;
   font-size: 0.8em;
   background: none;
@@ -287,7 +287,7 @@ body {
 }
 @media screen and (min-width: 600px) {
   .buttons__bottom__link {
-    background-color: #E3170A;
+    background-color: #e3170a;
     color: white;
     border-radius: 2px;
     border: none;
@@ -339,29 +339,14 @@ body {
   background-color: transparent;
   font-weight: 700;
   font-size: 1.1em;
-  color: #8ACFE5;
-  border: 2px solid #8ACFE5;
+  color: #8acfe5;
+  border: 2px solid #8acfe5;
   border-radius: 2px;
 }
 
 @media screen and (min-width: 600px) {
   .book .book__box {
     padding: 20px 50px;
-  }
-}
-@media screen and (min-width: 1000px) {
-  .book {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .book img {
-    max-width: 50%;
-    height: auto;
-  }
-  .book .book__box {
-    padding: 0 100px;
-    max-width: 50%;
   }
 }
 @media screen and (min-width: 768px) {
@@ -379,6 +364,36 @@ body {
     max-width: 50%;
   }
 }
+@media screen and (min-width: 1000px) {
+  .book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .book img {
+    max-width: 50%;
+    height: auto;
+  }
+  .book .book__box {
+    padding: 0 100px;
+    max-width: 50%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .book img {
+    max-width: 50%;
+    height: auto;
+  }
+  .book .book__box {
+    padding: 0 150px;
+    max-width: 50%;
+  }
+}
 .book img {
   width: 100%;
   height: auto;
@@ -387,7 +402,7 @@ body {
   padding: 20px 20px;
 }
 .book__btn {
-  background-color: #E3170A;
+  background-color: #e3170a;
   color: white;
   border-radius: 2px;
   border: none;
@@ -402,6 +417,22 @@ body {
 .allChallenges {
   margin-bottom: 100px;
 }
+@media screen and (min-width: 768px) {
+  .allChallenges {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .allChallenges img {
+    max-width: 50%;
+    height: auto;
+  }
+  .allChallenges .allChallenges__box {
+    padding: 0 30px;
+    max-width: 50%;
+  }
+}
 @media screen and (min-width: 1000px) {
   .allChallenges {
     display: flex;
@@ -418,10 +449,9 @@ body {
     max-width: 50%;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1280px) {
   .allChallenges {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
   }
@@ -430,7 +460,7 @@ body {
     height: auto;
   }
   .allChallenges .allChallenges__box {
-    padding: 0 30px;
+    padding: 0 150px;
     max-width: 50%;
   }
 }
