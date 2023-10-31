@@ -67,7 +67,8 @@ body {
     gap: 100px;
   }
 }
-.header__image {
+
+.banner {
   max-width: 100%;
   height: auto;
 }

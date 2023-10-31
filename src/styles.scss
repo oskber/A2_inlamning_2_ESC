@@ -116,11 +116,11 @@ body {
       gap: 100px;
     }
   }
+}
 
-  &__image {
-    max-width: 100%;
-    height: auto;
-  }
+.banner {
+  max-width: 100%;    
+  height: auto;
 }
 
 .header__nav li:hover {
