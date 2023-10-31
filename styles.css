@@ -72,6 +72,34 @@ body {
   max-width: 100%;
   height: auto;
 }
+@media screen and (min-width: 600px) {
+  .banner {
+    max-height: 350px;
+    min-width: 100%;
+    object-fit: cover;
+  }
+}
+@media screen and (min-width: 768px) {
+  .banner {
+    max-height: 400px;
+    min-width: 100%;
+    object-fit: cover;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .banner {
+    max-height: 450px;
+    min-width: 100%;
+    object-fit: cover;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .banner {
+    max-height: 500px;
+    min-width: 100%;
+    object-fit: cover;
+  }
+}
 
 .header__nav li:hover {
   color: #8acfe5;
