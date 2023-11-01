@@ -573,6 +573,14 @@ body {
     @include breakpoint($small-screen-breakpoint) {
       grid-column: 1 / 3;
     }
+
+    @include breakpoint($large-screen-breakpoint) {
+      padding-left: 50px;
+    }
+
+    @include breakpoint($max-screen-breakpoint) {
+      padding-left: 100px;
+    }
   }
 
   &__sitemap {
