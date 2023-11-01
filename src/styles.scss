@@ -1,7 +1,11 @@
+/* VARIABLES */
+
 $small-screen-breakpoint: 600px;
 $medium-screen-breakpoint: 768px;
 $large-screen-breakpoint: 1000px;
 $max-screen-breakpoint: 1280px;
+
+/* MIXINS */
 
 @mixin breakpoint($min-size) {
   @media screen and (min-width: $min-size) {
@@ -34,6 +38,18 @@ $max-screen-breakpoint: 1280px;
   text-decoration: none;
 }
 
+@mixin buttonRed-small {
+  float: right;
+  margin: 15px 10px;
+  width: 145px; 
+  height: 35px;
+  border-radius: 2px;
+  background-color: #e3170a;
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+
 @mixin linkBlue {
   color: #36769d;
   font-weight: 700;
@@ -42,6 +58,20 @@ $max-screen-breakpoint: 1280px;
   border: none;
   text-decoration: underline;
 }
+
+@mixin buttonTransparent {
+  min-width: 160px;
+  min-height: 40px;
+  padding: 10px 40px;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #8acfe5;
+  border: 2px solid #8acfe5;
+  border-radius: 2px;
+}
+
+/* ELEMENTS */
 
 body {
   margin: 0px auto;
@@ -105,7 +135,7 @@ body {
       gap: 70px;
       color: white;
       list-style: none;
-      min-width: 100%;
+      width: 100%;
     }
 
     @include breakpoint($large-screen-breakpoint) {
@@ -261,7 +291,7 @@ body {
   &__box {
     width: 290px;
     height: 375px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 5px 8px 0px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 5px 0px;
     border-radius: 8px;
     margin: 30px auto;
     flex: none;
@@ -293,15 +323,7 @@ body {
   }
 
   button {
-    float: right;
-    margin: 15px 10px;
-    width: 145px;
-    height: 35px;
-    border-radius: 2px;
-    background-color: #e3170a;
-    border: none;
-    color: white;
-    font-weight: 600;
+    @include buttonRed-small()
   }
 }
 
@@ -375,15 +397,7 @@ body {
   }
 
   &__btn {
-    min-width: 160px;
-    min-height: 40px;
-    padding: 10px 40px;
-    background-color: transparent;
-    font-weight: 700;
-    font-size: 1.1em;
-    color: #8acfe5;
-    border: 2px solid #8acfe5;
-    border-radius: 2px;
+    @include buttonTransparent()
   }
 }
 
