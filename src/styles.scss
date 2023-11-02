@@ -17,7 +17,7 @@ $max-screen-breakpoint: 1280px;
   background-color: #8acfe5;
   color: #011827;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 10px 40px;
   min-width: 160px;
   min-height: 40px;
@@ -28,7 +28,7 @@ $max-screen-breakpoint: 1280px;
 @mixin buttonRed {
   background-color: #e3170a;
   color: white;
-  border-radius: 5px;
+  border-radius: 3px;
   border: none;
   padding: 10px 40px;
   min-width: 160px;
@@ -43,7 +43,7 @@ $max-screen-breakpoint: 1280px;
   margin: 15px 10px;
   width: 179px;
   height: 44px;
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: #e3170a;
   border: none;
   color: white;
@@ -68,7 +68,7 @@ $max-screen-breakpoint: 1280px;
   font-size: 1.1em;
   color: #8acfe5;
   border: 2px solid #8acfe5;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 /* ELEMENTS */
