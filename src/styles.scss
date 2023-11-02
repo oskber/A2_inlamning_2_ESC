@@ -17,7 +17,7 @@ $max-screen-breakpoint: 1280px;
   background-color: #8acfe5;
   color: #011827;
   border: none;
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 10px 40px;
   min-width: 160px;
   min-height: 40px;
@@ -28,7 +28,7 @@ $max-screen-breakpoint: 1280px;
 @mixin buttonRed {
   background-color: #e3170a;
   color: white;
-  border-radius: 2px;
+  border-radius: 5px;
   border: none;
   padding: 10px 40px;
   min-width: 160px;
@@ -41,9 +41,9 @@ $max-screen-breakpoint: 1280px;
 @mixin buttonRed-small {
   float: right;
   margin: 15px 10px;
-  width: 145px;
-  height: 35px;
-  border-radius: 2px;
+  width: 179px;
+  height: 44px;
+  border-radius: 5px;
   background-color: #e3170a;
   border: none;
   color: white;
@@ -68,7 +68,7 @@ $max-screen-breakpoint: 1280px;
   font-size: 1.1em;
   color: #8acfe5;
   border: 2px solid #8acfe5;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 /* ELEMENTS */
@@ -287,8 +287,8 @@ body {
   overflow: auto;
 
   &__box {
-    width: 290px;
-    height: 375px;
+    width: 363px;
+    height: 430px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 5px 0px;
     border-radius: 8px;
     margin: 30px auto;
@@ -307,16 +307,25 @@ body {
   }
 
   small {
-    margin-left: 10px;
+    margin-left: 12px;
     font-size: 0.7em;
   }
 
-  span {
+  &__participants {
+    color: black;
+    
+    @include breakpoint($small-screen-breakpoint) {
+      float: right;
+    padding-right: 10px;
+    }
+  }
+
+  &__star {
     color: #e3170a;
   }
 
   p {
-    margin: 5px 10px;
+    margin: 15px 10px 25px 10px;
     font-size: 1em;
   }
 
