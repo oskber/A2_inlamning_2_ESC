@@ -313,6 +313,7 @@ body {
 
   &__participants {
     color: black;
+    padding-left: 10px;
     
     @include breakpoint($small-screen-breakpoint) {
       float: right;
