@@ -235,8 +235,7 @@ body {
   }
 
   &__box {
-    display: flex;
-    flex-direction: column;
+    display: block;
     padding: 0 10px;
   }
 
@@ -244,8 +243,7 @@ body {
     display: none;
 
     @include breakpoint($small-screen-breakpoint) {
-      display: flex;
-      flex-direction: column;
+      display: block;
       padding: 0 20px;
     }
   }
