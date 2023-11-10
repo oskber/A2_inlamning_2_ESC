@@ -359,7 +359,7 @@ body {
 @media screen and (min-width: 600px) {
   .rooms__subtitle {
     justify-content: space-between;
-    padding-right: 25px;
+    padding-right: 10px;
   }
 }
 .rooms__rating {
@@ -369,6 +369,7 @@ body {
 .rooms__participants {
   color: black;
   padding-left: 10px;
+  padding-top: 2px;
 }
 .rooms__star--filled {
   background: url("Images/star-filled.png");

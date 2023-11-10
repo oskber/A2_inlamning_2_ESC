@@ -431,7 +431,7 @@ body {
 
     @include breakpoint($small-screen-breakpoint) {
       justify-content: space-between;
-      padding-right: 25px;
+      padding-right: 10px;
     }
     
   }
@@ -445,6 +445,7 @@ body {
   &__participants {
     color: black;
     padding-left: 10px;
+    padding-top: 2px;
   }
 
   &__star--filled {
