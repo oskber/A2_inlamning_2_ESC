@@ -128,7 +128,7 @@ body {
 .hamburger__nav.active li {
   list-style: none;
   color: white;
-  padding: 30px 0;
+  padding: 40px 20px;
   font-weight: 600;
   font-size: 1em;
   text-align: center;
@@ -149,6 +149,7 @@ body {
   height: 50px;
   background-color: transparent;
   border: none;
+  padding: 5px 5px;
 }
 .hamburger__button--open {
   display: none;
@@ -163,6 +164,7 @@ body {
     right: 15px;
     border: none;
     font-size: 50px;
+    padding: 5px 5px;
   }
 }
 
