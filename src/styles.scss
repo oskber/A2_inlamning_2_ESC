@@ -412,7 +412,7 @@ body {
     flex: none;
   }
 
-  img {
+  &__img  {
     width: 100%;
     height: auto;
     border-radius: 8px 8px 0 0;
@@ -424,8 +424,16 @@ body {
   }
 
   small {
+    display: flex;
     margin-left: 12px;
     font-size: 0.7em;
+    justify-content: flex-start;
+  }
+
+  &__rating {
+    display: flex;
+    gap: 0.5rem;
+
   }
 
   &__participants {
@@ -433,15 +441,20 @@ body {
     padding-left: 10px;
     
     @include breakpoint($small-screen-breakpoint) {
-      float: right;
-    padding-right: 10px;
+    margin-left: 135px;
     }
   }
 
-  &__star {
-    color: #e3170a;
-    padding-right: 5px;
+  &__star--filled {
+    background: url('Images/star-filled.png');
+    width: 15px;
+    height: 15px;
+  }
 
+  &__star--empty {
+    background: url('Images/star-empty.png');
+    width: 15px;
+    height: 15px;
   }
 
   p {
