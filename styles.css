@@ -351,11 +351,16 @@ body {
   margin: 5px 10px 0px 10px;
   font-weight: 500;
 }
-.rooms small {
+.rooms__subtitle {
   display: flex;
   margin-left: 12px;
   font-size: 0.7em;
-  justify-content: flex-start;
+}
+@media screen and (min-width: 600px) {
+  .rooms__subtitle {
+    justify-content: space-between;
+    padding-right: 25px;
+  }
 }
 .rooms__rating {
   display: flex;
@@ -364,11 +369,6 @@ body {
 .rooms__participants {
   color: black;
   padding-left: 10px;
-}
-@media screen and (min-width: 600px) {
-  .rooms__participants {
-    margin-left: 135px;
-  }
 }
 .rooms__star--filled {
   background: url("Images/star-filled.png");

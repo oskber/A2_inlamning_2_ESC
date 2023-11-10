@@ -423,11 +423,17 @@ body {
     font-weight: 500;
   }
 
-  small {
+  &__subtitle {
     display: flex;
     margin-left: 12px;
     font-size: 0.7em;
-    justify-content: flex-start;
+    
+
+    @include breakpoint($small-screen-breakpoint) {
+      justify-content: space-between;
+      padding-right: 25px;
+    }
+    
   }
 
   &__rating {
@@ -439,10 +445,6 @@ body {
   &__participants {
     color: black;
     padding-left: 10px;
-    
-    @include breakpoint($small-screen-breakpoint) {
-    margin-left: 135px;
-    }
   }
 
   &__star--filled {
