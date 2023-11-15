@@ -1,3 +1,5 @@
+/* HAMBURGER MENU ON MOBILE */
+
 const hamburgerOpen = document.querySelector('.hamburger__button--open');
 const hamburgerClose = document.querySelector('.hamburger__button--close');
 const hamburgerNavCont = document.querySelector('.hamburger__container');
