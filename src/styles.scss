@@ -762,6 +762,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 10px 0;
+    list-style: none;
 
     @include breakpoint($small-screen-breakpoint) {
       column-span: 1 / 3;
