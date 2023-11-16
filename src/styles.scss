@@ -148,6 +148,15 @@ body {
   &__nav,
   &__list {
 
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    a:hover {
+      color: #8acfe5;
+    }
+
     @media  screen and (max-width: 600px) {
       display: none;
       font-weight: 700;

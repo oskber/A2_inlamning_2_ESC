@@ -68,6 +68,13 @@ body {
     font-size: 1.5em;
   }
 }
+.header__nav a, .header__list a {
+  text-decoration: none;
+  color: white;
+}
+.header__nav a:hover, .header__list a:hover {
+  color: #8acfe5;
+}
 @media screen and (max-width: 600px) {
   .header__nav, .header__list {
     display: none;
