@@ -140,12 +140,18 @@ body {
   font-weight: 600;
   font-size: 1em;
   text-align: center;
+  cursor: pointer;
+}
+.hamburger__nav.active li a {
+  text-decoration: none;
+  color: white;
 }
 .hamburger__list {
   padding-left: 0;
 }
 .hamburger__button--close {
   display: none;
+  cursor: pointer;
 }
 .hamburger__button--close.active {
   display: block;
@@ -161,6 +167,7 @@ body {
 }
 .hamburger__button--open {
   display: none;
+  cursor: pointer;
 }
 @media screen and (max-width: 600px) {
   .hamburger__button--open {

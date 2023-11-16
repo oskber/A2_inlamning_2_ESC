@@ -225,12 +225,18 @@ body {
 
 
   li {
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
     list-style: none;
     color: white;
     padding: 40px 20px;
     font-weight: 600;
     font-size: 1em;
     text-align: center;
+    cursor: pointer;
   }
 }
 
@@ -240,6 +246,7 @@ body {
 
   &__button--close {
     display: none;
+    cursor: pointer;
   }
 
   &__button--close.active {
@@ -257,6 +264,7 @@ body {
 
   &__button--open {
     display: none;
+    cursor: pointer;
   
     @media screen and (max-width: 600px) {
     display: block;
