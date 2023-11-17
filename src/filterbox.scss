@@ -1,45 +1,53 @@
 /* FILTERBOX-PAGE */
 
-.filter__container {
-  max-width: 1280px;
-  border: 2px solid grey
-}
+.filter {
 
-.filter__header {
-  display: flex;
-  padding: 20px;
-}
+  &__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+    margin: auto;
+    margin-bottom: 40px;
+    justify-content: center;
+    border: 2px solid grey
+  }
 
-button {
-  margin-left: auto;
-}
+  &__header {
+    display: flex;
+    padding: 20px;
+  }
 
-.filter__selection__content {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
+  &__button--close {
+    margin-left: auto;
+  }
 
-.filter__search {
-  padding: 20px;
-  text-align: center;
-}
+  &__selection__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
 
-.filter__selection__bytype-1 {
-  display: flex;
-}
+  &__search {
+    padding: 20px;
+    text-align: center;
+  }
 
-.filter__selection__bytype-2 {
-  display: flex;
-}
+  &__selection__bytype-1 {
+    display: flex;
+  }
 
-.filter__selection__stars {
-  display: flex;
-  flex-wrap: wrap;
-}
+  &__selection__bytype-2 {
+    display: flex;
+  }
 
-.filter__selection__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  &__selection__stars {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__selection__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
