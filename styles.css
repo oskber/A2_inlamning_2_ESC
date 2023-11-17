@@ -755,3 +755,45 @@ main {
   border: 2px solid #8acfe5;
   border-radius: 3px;
 }
+
+/* FILTERBOX-PAGE */
+.filter__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: auto;
+  margin-bottom: 40px;
+  justify-content: center;
+  border: 2px solid grey;
+}
+.filter__header {
+  display: flex;
+  padding: 20px;
+}
+.filter__button--close {
+  margin-left: auto;
+}
+.filter__selection__content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.filter__search {
+  padding: 20px;
+  text-align: center;
+}
+.filter__selection__bytype-1 {
+  display: flex;
+}
+.filter__selection__bytype-2 {
+  display: flex;
+}
+.filter__selection__stars {
+  display: flex;
+  flex-wrap: wrap;
+}
+.filter__selection__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
