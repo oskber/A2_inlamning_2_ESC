@@ -29,8 +29,6 @@ class APIadapter {
   }
 }
 
-const apiFetcher = new APIadapter();
-apiFetcher.fetchChallenges();
 
 class ChallengeCard {
   constructor(data) {
@@ -39,6 +37,7 @@ class ChallengeCard {
 
   render() {
     const element = document.createElement("div");
+    element.className = "challengeCardBox"
     element.innerHTML = `<div class="rooms__box">
       <img class="rooms__img" src="${this.data.image}" alt="Image of room type">
       <h1 class="rooms__heading">${this.data.title}</h1>
@@ -72,7 +71,19 @@ class ViewAll {
   }
 }
 
-class top3View {}
+class top3View {
+  async render(container) {
+    const api = new APIadapter();
+    const challenges = await api.fetchChallenges();
+
+    const sorted = challenges.sort((a, b) => b.data.rating - a.data.rating);
+    for(let i = 0; i < 3; i++) {
+      const challenge = sorted[i];
+      const element = challenge.render();
+      container.append(element);
+    }
+  }
+}
 
 class FilterBox1 {
   constructor() {
@@ -100,3 +111,7 @@ class Booking2 {}
 const allChallengesDiv = document.querySelector(".ourChallenges");
 const view = new ViewAll();
 view.render(allChallengesDiv);
+
+const top3Div = document.querySelector(".rooms");
+const viewTop = new top3View();
+viewTop.render(top3Div);
