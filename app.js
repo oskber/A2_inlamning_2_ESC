@@ -25,25 +25,19 @@ filterOpen.addEventListener("click", function () {
   console.log("Funkar det?");
 });
 
-/* FETCH API */
+
 
 class apiFetch {
 
-  async function fetchApi() {
+  async fetchApi() {
     const url = "https://lernia-sjj-assignments.vercel.app/api/challenges";
-    let data;
-  
-    try {
-      const response = await fetch(url);
-      data = await response.json();
-    } catch (error) {
-      console.log(error);
-      return [];
-    }
-  
-    return data.challenges;
+    const response = await fetch(url);
+    const data = await response.json();
+
+    return data.challenges.map((challengeData) => new challenge(challengeData));
   }
 }
+
 
 class challengeCard {
 
