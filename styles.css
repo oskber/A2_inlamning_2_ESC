@@ -73,22 +73,26 @@ main {
     font-size: 1.5em;
   }
 }
-.header__nav a, .header__list a {
+.header__nav a,
+.header__list a {
   text-decoration: none;
   color: white;
 }
-.header__nav a:hover, .header__list a:hover {
+.header__nav a:hover,
+.header__list a:hover {
   color: #8acfe5;
 }
 @media screen and (max-width: 600px) {
-  .header__nav, .header__list {
+  .header__nav,
+  .header__list {
     display: none;
     font-weight: 700;
     padding: 0;
   }
 }
 @media screen and (min-width: 600px) {
-  .header__nav, .header__list {
+  .header__nav,
+  .header__list {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -100,7 +104,8 @@ main {
   }
 }
 @media screen and (min-width: 1000px) {
-  .header__nav, .header__list {
+  .header__nav,
+  .header__list {
     gap: 100px;
   }
 }
