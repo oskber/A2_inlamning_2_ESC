@@ -5,7 +5,7 @@
   &__container {
     display: flex;
     flex-direction: column;
-    max-width: 1280px;
+    width: 99vw;
     margin: auto;
     margin-bottom: 40px;
     justify-content: center;
@@ -22,12 +22,53 @@
     margin: 0;
   }
 
-  &__button--close {}
+ 
 
-  &__button--close__bar {
-    background-color: black;
-    color: black;
+  &__closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 24px;
+    display: flex;
   }
+  
+  &__closeButton span {
+    display: block;
+    right: 10px; 
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+   
+    transform: translate(-50%, -50%);
+    transform: rotate(45deg);
+    
+  }
+  
+  &__closeButton span::before,
+  &__closeButton span::after {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  &__closeButton span::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  
+  &__closeButton span::after {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+
+
+
 
   &__selection__content {
     display: flex;
