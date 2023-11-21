@@ -25,10 +25,7 @@ filterOpen.addEventListener("click", function () {
   console.log("Funkar det?");
 });
 
-
-
 class apiFetch {
-
   async fetchApi() {
     const url = "https://lernia-sjj-assignments.vercel.app/api/challenges";
     const response = await fetch(url);
@@ -38,13 +35,15 @@ class apiFetch {
   }
 }
 
-
 class challengeCard {
+  constructor(data) {
+    this.data = data;
+  }
 
-  async function getChallenges() {
+  async getChallengeCard() {
     let challenges = await fetchApi();
     let html = "";
-  
+
     challenges.forEach((challenge) => {
       let challengeCard = `<div class="challengeCard">
       <img class="rooms__img" src="${challenge.image}" alt="Image of room type">
@@ -64,37 +63,20 @@ class challengeCard {
       </div>`;
       html += challengeCard;
     });
-  
+
     let container = document.querySelector(".ourChallenges");
     container.innerHTML = html;
   }
-  
-  getChallenges();
 }
 
-class viewAll {
-  
-}
+class viewAll {}
 
-class top3View {
+class top3View {}
 
-}
+class filterBox1 {}
 
+class filterBox2 {}
 
-class filterBox1 {
+class booking1 {}
 
-}
-
-class filterBox2 {
-
-}
-
-
-class booking1 {
-
-}
-
-
-class booking2 {
-
-}
+class booking2 {}
