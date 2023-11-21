@@ -77,19 +77,31 @@ class top3View {}
 class FilterBox1 {
   constructor() {
     this.filterOpen = document.querySelector(".title__filterBtn");
-    this.filterOpen.addEventListener(
-      "click",
-      this.handleFilterClick.bind(this)
+    this.filter__container = document.querySelector(".filter__container");
+
+    this.filterOpen.addEventListener("click", () => {
+      // Open the filtermenu
+      this.filter__container.style.display = "flex";
+      this.filterOpen.style.display = "none";
+    });
+
+    const filter__button__close = document.querySelector(
+      ".filter__button--close"
     );
+
+    filter__button__close.addEventListener("click", () => {
+      this.closeFilterMenu();
+    });
   }
 
-  handleFilterClick() {
-    filter__container.style.display = "flex";
+  closeFilterMenu() {
+    // Close the filtermenu
+    this.filter__container.style.display = "none";
+    this.filterOpen.style.display = "block";
   }
 }
 
 const filterBox1 = new FilterBox1();
-const filter__container = document.querySelector(".filter__container");
 
 class FilterBox2 {}
 
