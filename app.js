@@ -27,13 +27,27 @@ filterOpen.addEventListener("click", function () {
 
 /* FETCH API */
 
+/* class APIAdapter {
+  async getAllChallenges() {
+    const url = 'https://lernia-sjj-assignments.vercel.app/api/challenges';
+    const response = await fetch(url);
+    const payload = await response.json();
+
+    return payload.challenges.map((challengeData) => new Challenge(challengeData));
+  }
+} */
+
 class apiFetch {
 
-  async function fetchApi() {
+  async fetchApi() {
     const url = "https://lernia-sjj-assignments.vercel.app/api/challenges";
-    let data;
-  
-    try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    return data.challenges.map((challengeData) => new challenge(challengeData));
+  }
+}
+   /*  try {
       const response = await fetch(url);
       data = await response.json();
     } catch (error) {
@@ -42,8 +56,8 @@ class apiFetch {
     }
   
     return data.challenges;
-  }
-}
+  } */
+
 
 class challengeCard {
 
