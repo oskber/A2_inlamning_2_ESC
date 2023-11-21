@@ -17,14 +17,6 @@ hamburgerClose.addEventListener("click", () => {
   hamburgerClose.classList.toggle("active");
 });
 
-/* FILTERBOX */
-
-const filterOpen = document.querySelector(".title__filterBtn");
-
-filterOpen.addEventListener("click", function () {
-  console.log("Funkar det?");
-});
-
 class APIadapter {
   async fetchChallenges() {
     const url = "https://lernia-sjj-assignments.vercel.app/api/challenges";
@@ -82,13 +74,28 @@ class ViewAll {
 
 class top3View {}
 
-class filterBox1 {}
+class FilterBox1 {
+  constructor() {
+    this.filterOpen = document.querySelector(".title__filterBtn");
+    this.filterOpen.addEventListener(
+      "click",
+      this.handleFilterClick.bind(this)
+    );
+  }
 
-class filterBox2 {}
+  handleFilterClick() {
+    filter__container.style.display = "flex";
+  }
+}
 
-class booking1 {}
+const filterBox1 = new FilterBox1();
+const filter__container = document.querySelector(".filter__container");
 
-class booking2 {}
+class FilterBox2 {}
+
+class Booking1 {}
+
+class Booking2 {}
 
 const allChallengesDiv = document.querySelector(".ourChallenges");
 const view = new ViewAll();
