@@ -20,10 +20,13 @@ hamburgerClose.addEventListener("click", () => {
 /* FILTERBOX */
 
 const filterOpen = document.querySelector(".title__filterBtn");
+/* const buttonClose = document.querySelector(".filter__button--close"); */
 
 filterOpen.addEventListener("click", function () {
   console.log("Funkar det?");
 });
+
+/* buttonClose.append(document.createElement('span')); */
 
 /* FETCH API */
 

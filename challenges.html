@@ -82,76 +82,80 @@
     </div>
     <div class="filter__container">
       <div class="filter__header">
-        <h1>Filter Challenges</h1>
-        <button class="filter__button--close">Close</button>
-      </div>
-      <div class="filter__selection__content">
-        <div class="filter__selection__bytype">
-          <h2>By type</h2>
-          <div class="filter__selection__bytype-1">
-            <input type="checkbox" id="onlineChallengeCheckbox" />
-            <p>Include online challenges</p>
-          </div>
-          <div class="filter__selection__bytype-2">
-            <input type="checkbox" id="onsiteChallengeCheckbox" />
-            <p>Include on-site challenges</p>
-          </div>
-        </div>
+        <h1 class="filter__header__h1">Filter Challenges</h1>
 
-        <!-- Conny jobbar med filter__selection__byrating -->
-        <div class="filter__selection__byrating">
-          <h2>By rating</h2>
-          <div class="filter__selection__stars">
+        <span class="filter__button--close__bar"></span>
+        <span class="filter__button--close__bar"></span>
 
-            <!-- Stjärnor rad 1 -->
-            <div class="filter__selection__stars__row_1">
-              <input type="radio" name="rating_row_1" id="star5_1" value="5">
-              <label for="star5_1"></label>
-              <input type="radio" name="rating_row_1" id="star4_1" value="4">
-              <label for="star4_1"></label>
-              <input type="radio" name="rating_row_1" id="star3_1" value="3">
-              <label for="star3_1"></label>
-              <input type="radio" name="rating_row_1" id="star2_1" value="2">
-              <label for="star2_1"></label>
-              <input type="radio" name="rating_row_1" id="star1_1" value="1">
-              <label for="star1_1"></label>
+
+
+        <div class="filter__selection__content">
+          <div class="filter__selection__bytype">
+            <h2>By type</h2>
+            <div class="filter__selection__bytype-1">
+              <input type="checkbox" id="onlineChallengeCheckbox" />
+              <p>Include online challenges</p>
             </div>
-
-            <p class="filter__starSpace">to</p>
-
-            <!-- Stjärnor rad 2 -->
-            <div class="filter__selection__stars__row_2">
-              <input type="radio" name="rating_row_2" id="star5_2" value="5">
-              <label for="star5_2"></label>
-              <input type="radio" name="rating_row_2" id="star4_2" value="4">
-              <label for="star4_2"></label>
-              <input type="radio" name="rating_row_2" id="star3_2" value="3">
-              <label for="star3_2"></label>
-              <input type="radio" name="rating_row_2" id="star2_2" value="2">
-              <label for="star2_2"></label>
-              <input type="radio" name="rating_row_2" id="star1_2" value="1">
-              <label for="star1_2"></label>
+            <div class="filter__selection__bytype-2">
+              <input type="checkbox" id="onsiteChallengeCheckbox" />
+              <p>Include on-site challenges</p>
             </div>
           </div>
-        </div>
 
-        <div class="filter__selection__bytags">
-          <h2>By tags</h2>
-          <div class="filter__selection__tags">
-            <span id="webTag">Web</span>
-            <span id="linuxTag">Linux</span>
-            <span id="cryptographyTag">Cryptography</span>
-            <span id="codingTag">Coding</span>
-            <span id="otherTag">Some other tag</span>
-            <span id="finalTag">A final tag</span>
+          <!-- Conny jobbar med filter__selection__byrating -->
+          <div class="filter__selection__byrating">
+            <h2>By rating</h2>
+            <div class="filter__selection__stars">
+
+              <!-- Stjärnor rad 1 -->
+              <div class="filter__selection__stars__row_1">
+                <input type="radio" name="rating_row_1" id="star5_1" value="5">
+                <label for="star5_1"></label>
+                <input type="radio" name="rating_row_1" id="star4_1" value="4">
+                <label for="star4_1"></label>
+                <input type="radio" name="rating_row_1" id="star3_1" value="3">
+                <label for="star3_1"></label>
+                <input type="radio" name="rating_row_1" id="star2_1" value="2">
+                <label for="star2_1"></label>
+                <input type="radio" name="rating_row_1" id="star1_1" value="1">
+                <label for="star1_1"></label>
+              </div>
+
+              <p class="filter__starSpace">to</p>
+
+              <!-- Stjärnor rad 2 -->
+              <div class="filter__selection__stars__row_2">
+                <input type="radio" name="rating_row_2" id="star5_2" value="5">
+                <label for="star5_2"></label>
+                <input type="radio" name="rating_row_2" id="star4_2" value="4">
+                <label for="star4_2"></label>
+                <input type="radio" name="rating_row_2" id="star3_2" value="3">
+                <label for="star3_2"></label>
+                <input type="radio" name="rating_row_2" id="star2_2" value="2">
+                <label for="star2_2"></label>
+                <input type="radio" name="rating_row_2" id="star1_2" value="1">
+                <label for="star1_2"></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter__selection__bytags">
+            <h2>By tags</h2>
+            <div class="filter__selection__tags">
+              <span id="webTag">Web</span>
+              <span id="linuxTag">Linux</span>
+              <span id="cryptographyTag">Cryptography</span>
+              <span id="codingTag">Coding</span>
+              <span id="otherTag">Some other tag</span>
+              <span id="finalTag">A final tag</span>
+            </div>
           </div>
         </div>
+        <div class="filter__search">
+          <h2>Or type to search for keyword</h2>
+          <input type="search" />
+        </div>
       </div>
-      <div class="filter__search">
-        <h2>Or type to search for keyword</h2>
-        <input type="search" />
-      </div>
-    </div>
   </main>
   <footer class="footer">
     <div class="footer__box">

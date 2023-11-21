@@ -770,8 +770,13 @@ main {
   display: flex;
   padding: 20px;
 }
-.filter__button--close {
-  margin-left: auto;
+.filter__header__h1 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+.filter__button--close__bar {
+  background-color: black;
+  color: black;
 }
 .filter__selection__content {
   display: flex;

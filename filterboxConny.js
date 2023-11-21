@@ -32,19 +32,30 @@ function handleRowClick(row, clickedIndex) {
   });
 }
 
-//Går igenom varje stjärna i första raden (forEach) och sparar värdet (this.value) av de stjärnor som ändrades. Sparar positionen (index). Funktionen ratingChange skickar med det valda betyget på rad 1. Funktionen handleRowClick uppdaterar rad 2 med stjärnor baserat på antalet stjärnor klickade på rad 1. 
-ratingsRow1.forEach((rating, index) => {
+
+
+function handleRatingChange(rating, index) {
+  const selectedRating = rating.value;
+  lastClickedIndexRow1 = index;
+  ratingChange(selectedRating, 1, lastClickedIndexRow1);
+  handleRowClick(2, lastClickedIndexRow1);
+}
+
+function handleRatingChangeRow1(rating, index) {
   rating.addEventListener('change', function () {
-    const selectedRating = this.value;
-    lastClickedIndexRow1 = index;
-    ratingChange(selectedRating, 1, lastClickedIndexRow1);
-    handleRowClick(2, lastClickedIndexRow1);
+    handleRatingChange(rating, index);
   });
+}
+
+ratingsRow1.forEach(function (rating, index) {
+  handleRatingChangeRow1(rating, index);
 });
 
 
-//if-satsen kollar om nuvarande stjärnan (index) är till höger om den senaste klickade stjärnan på rad 1 för att uppdatera indexet. ratingChange tar emot betyget (selectedRating) på rad 2 (2) och uppdarerar stjärnan som ändrades (index) och skickar dessa till funktionen ratingChange ovan för att logga betyget.
-ratingsRow2.forEach((rating, index) => {
+
+
+
+ratingsRow2.forEach(function (rating, index) {
   rating.addEventListener('change', function () {
     const selectedRating = this.value;
     if (index > lastClickedIndexRow1) {
@@ -53,3 +64,4 @@ ratingsRow2.forEach((rating, index) => {
     ratingChange(selectedRating, 2, index);
   });
 });
+

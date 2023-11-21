@@ -17,8 +17,16 @@
     padding: 20px;
   }
 
-  &__button--close {
-    margin-left: auto;
+  &__header__h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  &__button--close {}
+
+  &__button--close__bar {
+    background-color: black;
+    color: black;
   }
 
   &__selection__content {
