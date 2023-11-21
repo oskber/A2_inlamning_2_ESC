@@ -766,7 +766,7 @@ main {
 
 /* FILTERBOX-PAGE */
 .filter__container {
-  display: flex;
+  display: none;
   flex-direction: column;
   max-width: 1280px;
   margin: auto;
@@ -839,7 +839,7 @@ main {
 
 /* FILTERBOX-PAGE */
 .filter__container {
-  display: flex;
+  display: none;
   flex-direction: column;
   max-width: 1280px;
   margin: auto;
