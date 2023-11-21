@@ -40,8 +40,11 @@ class apiFetch {
 
 
 class challengeCard {
+  constructor(data) {
+    this.data = data;
+  }
 
-  async function getChallenges() {
+  async getChallengeCard() {
     let challenges = await fetchApi();
     let html = "";
   
@@ -68,8 +71,6 @@ class challengeCard {
     let container = document.querySelector(".ourChallenges");
     container.innerHTML = html;
   }
-  
-  getChallenges();
 }
 
 class viewAll {
