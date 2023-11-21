@@ -756,6 +756,14 @@ main {
   border-radius: 3px;
 }
 
+.ourChallenges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  padding: 0 50px;
+  gap: 5px;
+}
+
 /* FILTERBOX-PAGE */
 .filter__container {
   display: flex;

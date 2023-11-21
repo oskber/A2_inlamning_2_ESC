@@ -1,5 +1,6 @@
 /* CHALLENGES-PAGE */
 
+
 .title {
 
   &__heading {
@@ -17,4 +18,12 @@
   &__filterBtn {
     @include buttonTransparent();
   }
+}
+
+.ourChallenges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  padding: 0 50px;
+  gap: 5px;
 }
