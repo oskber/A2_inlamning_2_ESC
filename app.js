@@ -31,10 +31,14 @@ class APIadapter {
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
-    return data.challenges.map((challengeData) => new ChallengeCard(challengeData)
+    return data.challenges.map(
+      (challengeData) => new ChallengeCard(challengeData)
     );
   }
 }
+
+const apiFetcher = new APIadapter();
+apiFetcher.fetchChallenges();
 
 class ChallengeCard {
   constructor(data) {
@@ -42,12 +46,10 @@ class ChallengeCard {
   }
 
   render() {
-    
-    const element = document.createElement('div');
-    element.innerHTML =
-      `<div class="rooms__box">
+    const element = document.createElement("div");
+    element.innerHTML = `<div class="rooms__box">
       <img class="rooms__img" src="${this.data.image}" alt="Image of room type">
-      <h1>${this.data.title}</h1>
+      <h1 class="rooms__heading">${this.data.title}</h1>
       <div class="rooms__subtitle" aria-label="${this.data.rating}">
         <div class="rooms__rating">
           <span class="rooms__star--filled"></span>
@@ -58,17 +60,13 @@ class ChallengeCard {
           </div>
           <span class="rooms__participants">${this.data.minParticipants} - ${this.data.maxParticipants} participants</span>
         </div>
-        <p>${this.data.description}</p>
+        <p class="rooms__paragraph">${this.data.description}</p>
         <button class="rooms__button">Book this room</button>
       </div>`;
 
-      return element;
-      
-    };
+    return element;
   }
-
-    
-
+}
 
 class ViewAll {
   async render(container) {
@@ -92,10 +90,6 @@ class booking1 {}
 
 class booking2 {}
 
-const apiFetcher = new APIadapter();
-apiFetcher.fetchChallenges();
-
-
-const allChallengesDiv = document.querySelector('.ourChallenges');
+const allChallengesDiv = document.querySelector(".ourChallenges");
 const view = new ViewAll();
 view.render(allChallengesDiv);

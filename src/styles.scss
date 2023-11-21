@@ -430,11 +430,12 @@ main {
 
   &__img {
     width: 100%;
-    height: auto;
+    height: 45%;
+    object-fit: cover;
     border-radius: 8px 8px 0 0;
   }
 
-  h1 {
+  &__heading {
     margin: 5px 10px 0px 10px;
     font-weight: 500;
   }
@@ -473,7 +474,7 @@ main {
     height: 15px;
   }
 
-  p {
+  &__paragraph {
     margin: 15px 10px 25px 10px;
     font-size: 1em;
   }
