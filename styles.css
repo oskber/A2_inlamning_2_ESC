@@ -73,26 +73,22 @@ main {
     font-size: 1.5em;
   }
 }
-.header__nav a,
-.header__list a {
+.header__nav a, .header__list a {
   text-decoration: none;
   color: white;
 }
-.header__nav a:hover,
-.header__list a:hover {
+.header__nav a:hover, .header__list a:hover {
   color: #8acfe5;
 }
 @media screen and (max-width: 600px) {
-  .header__nav,
-  .header__list {
+  .header__nav, .header__list {
     display: none;
     font-weight: 700;
     padding: 0;
   }
 }
 @media screen and (min-width: 600px) {
-  .header__nav,
-  .header__list {
+  .header__nav, .header__list {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -104,8 +100,7 @@ main {
   }
 }
 @media screen and (min-width: 1000px) {
-  .header__nav,
-  .header__list {
+  .header__nav, .header__list {
     gap: 100px;
   }
 }
@@ -736,6 +731,79 @@ main {
   .footer__play {
     column-span: 1/3;
   }
+}
+
+/* CHALLENGES-PAGE */
+.title__heading {
+  font-size: 2rem;
+}
+.title__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
+}
+.title__filterBtn {
+  min-width: 160px;
+  min-height: 40px;
+  padding: 10px 40px;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #8acfe5;
+  border: 2px solid #8acfe5;
+  border-radius: 3px;
+}
+
+.ourChallenges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  padding: 0 50px;
+  gap: 5px;
+}
+
+/* FILTERBOX-PAGE */
+.filter__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: auto;
+  margin-bottom: 40px;
+  justify-content: center;
+  border: 2px solid grey;
+}
+.filter__header {
+  display: flex;
+  padding: 20px;
+}
+.filter__button--close {
+  margin-left: auto;
+}
+.filter__selection__content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.filter__search {
+  padding: 20px;
+  text-align: center;
+}
+.filter__selection__bytype-1 {
+  display: flex;
+}
+.filter__selection__bytype-2 {
+  display: flex;
+}
+.filter__selection__stars {
+  display: flex;
+  flex-wrap: wrap;
+}
+.filter__selection__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 /* CHALLENGES-PAGE */
