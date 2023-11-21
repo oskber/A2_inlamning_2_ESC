@@ -136,6 +136,22 @@
           <input type="search" />
         </div>
       </div>
+      <button class="book">Book this room</button>
+      <div class="modal">
+          <div class="modal__container modal__stepOne">
+              <h3>Book room "Title of room" (step 1)</h3>
+              <p>What date would you like to come?</p>
+              <p>Date</p>
+              <input type="date" class="modal__date">
+          <button class="modal__btn">Search available times</button>
+          </div>
+          <div class="modal__container modal__stepTwo">
+            <button class="modal__btn">Submit booking</button>
+          </div>
+          <div class="modal__container modal__stepThree">
+            <button class="modal__btn">Back to challenges</button>
+          </div>
+        </div>
     </main>
     <footer class="footer">
       <div class="footer__box">
@@ -171,5 +187,6 @@
     </footer>
   </div>
     <script src="app.js"></script>
+    <script src="modal.js"></script>
   </body>
 </html>

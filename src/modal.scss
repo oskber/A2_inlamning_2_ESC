@@ -1,0 +1,32 @@
+@mixin modalStep {
+  display: none;
+  flex-direction: column;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  text-align: left;
+  border: 2px solid grey;
+  width: 50%;
+  margin-top: 100px;
+}
+.modal {
+  display: none;
+  background: rgba(128, 128, 128, 0.459);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  &__stepOne{
+    @include modalStep()
+  }
+  &__stepTwo{
+    @include modalStep()
+  }
+  &__stepThree{
+    @include modalStep()
+  }
+  &--open {
+    display: flex;
+  }
+}
