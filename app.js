@@ -77,7 +77,7 @@ class top3View {
     const challenges = await api.fetchChallenges();
 
     const sorted = challenges.sort((a, b) => b.data.rating - a.data.rating);
-    for(let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
       const challenge = sorted[i];
       const element = challenge.render();
       container.append(element);
