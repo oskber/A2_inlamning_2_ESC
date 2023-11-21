@@ -26,31 +26,29 @@ filterOpen.addEventListener("click", function () {
 });
 
 class APIadapter {
-  async fetchApi() {
+  async fetchChallenges() {
     const url = "https://lernia-sjj-assignments.vercel.app/api/challenges";
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
-    return data.challenges.map(
-      (challengeData) => new challengeCard(challengeData)
+    return data.challenges.map((challengeData) => new ChallengeCard(challengeData)
     );
   }
 }
 
-class challengeCard {
+class ChallengeCard {
   constructor(data) {
     this.data = data;
   }
 
-  async getChallengeCard() {
-    let challenges = await fetchApi();
-    let html = "";
-
-    challenges.forEach((challenge) => {
-      let challengeCard = `<div class="challengeCard">
-      <img class="rooms__img" src="${challenge.image}" alt="Image of room type">
-      <h1>${challenge.title}</h1>
-      <div class="rooms__subtitle" aria-label="4 out of 5 stars">
+  render() {
+    
+    const element = document.createElement('div');
+    element.innerHTML =
+      `<div class="rooms__box">
+      <img class="rooms__img" src="${this.data.image}" alt="Image of room type">
+      <h1>${this.data.title}</h1>
+      <div class="rooms__subtitle" aria-label="${this.data.rating}">
         <div class="rooms__rating">
           <span class="rooms__star--filled"></span>
           <span class="rooms__star--filled"></span>
@@ -58,20 +56,31 @@ class challengeCard {
           <span class="rooms__star--filled"></span>
           <span class="rooms__star--empty"></span>
           </div>
-          <span class="rooms__participants">2-6 participants</span>
+          <span class="rooms__participants">${this.data.minParticipants} - ${this.data.maxParticipants} participants</span>
         </div>
-        <p>${challenge.description}</p>
-        <button>Book this room</button>
+        <p>${this.data.description}</p>
+        <button class="rooms__button">Book this room</button>
       </div>`;
-      html += challengeCard;
-    });
 
-    let container = document.querySelector(".ourChallenges");
-    container.innerHTML = html;
+      return element;
+      
+    };
+  }
+
+    
+
+
+class ViewAll {
+  async render(container) {
+    const api = new APIadapter();
+    const challenges = await api.fetchChallenges();
+    for (let i = 0; i < challenges.length; i++) {
+      const challenge = challenges[i];
+      const element = challenge.render();
+      container.append(element);
+    }
   }
 }
-
-class viewAll {}
 
 class top3View {}
 
@@ -84,4 +93,9 @@ class booking1 {}
 class booking2 {}
 
 const apiFetcher = new APIadapter();
-apiFetcher.fetchApi();
+apiFetcher.fetchChallenges();
+
+
+const allChallengesDiv = document.querySelector('.ourChallenges');
+const view = new ViewAll();
+view.render(allChallengesDiv);

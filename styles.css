@@ -407,7 +407,7 @@ main {
   margin: 15px 10px 25px 10px;
   font-size: 1em;
 }
-.rooms button {
+.rooms__button {
   float: right;
   margin: 15px 10px;
   width: 179px;

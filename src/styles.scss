@@ -478,7 +478,7 @@ main {
     font-size: 1em;
   }
 
-  button {
+  &__button {
     @include buttonRed-small();
   }
 }
