@@ -65,3 +65,14 @@ ratingsRow2.forEach(function (rating, index) {
   });
 });
 
+
+
+/* const filter__closeButton__container = document.querySelector('.filter__closeButton__container');
+const filter__closeButton = document.querySelector('.filter__closeButton');
+
+filter__closeButton__container.addEventListener('click' function () {
+  filter__closeButton.classList.toggle('active');
+}); */
+
+
+

@@ -82,32 +82,37 @@
     </div>
     <div class="filter__container">
       
-      <div class="filter__header">
+     <div class="filter__header">
         <h1 class="filter__header__h1">Filter Challenges</h1>
 
-    <nav class="filter__closeButton">
+       
+          <div class="filter__closeButtonParent">
+      <nav class="filter__closeButton">
         <span></span>
         <span></span>
         <span></span>
-    </nav>
-  </div>
+      </nav>
+    </div>
+   
+     </div>
 
         <div class="filter__selection__content">
           <div class="filter__selection__bytype">
-            <h2>By type</h2>
+            <h2 class="filter__selection_h2">By type</h2>
             <div class="filter__selection__bytype-1">
-              <input type="checkbox" id="onlineChallengeCheckbox" />
-              <p>Include online challenges</p>
+              <input class="filter__selection__checkbox" type="checkbox" id="onlineChallengeCheckbox" />
+              <p class="filter__selection_text">Include online challenges</p>
             </div>
             <div class="filter__selection__bytype-2">
-              <input type="checkbox" id="onsiteChallengeCheckbox" />
-              <p>Include on-site challenges</p>
+              <input class="filter__selection__checkbox" type="checkbox" id="onsiteChallengeCheckbox" />
+              <p class="filter__selection_text">Include on-site challenges</p>
             </div>
           </div>
 
           <!-- Conny jobbar med filter__selection__byrating -->
+          <div>
           <div class="filter__selection__byrating">
-            <h2>By rating</h2>
+            <h2 class="filter__selection_h2">By rating</h2>
             <div class="filter__selection__stars">
 
               <!-- Stjärnor rad 1 -->
@@ -141,22 +146,22 @@
               </div>
             </div>
           </div>
-
-          <div class="filter__selection__bytags">
-            <h2>By tags</h2>
-            <div class="filter__selection__tags">
-              <span id="webTag">Web</span>
-              <span id="linuxTag">Linux</span>
-              <span id="cryptographyTag">Cryptography</span>
-              <span id="codingTag">Coding</span>
-              <span id="otherTag">Some other tag</span>
-              <span id="finalTag">A final tag</span>
-            </div>
+          <div class="filter__search">
+            <h2 class="filter__selection_h2">Or type to search for keyword</h2>
+            <input class="filter__search__input" type="search" placeholder="Start typing to filter" />
           </div>
         </div>
-        <div class="filter__search">
-          <h2>Or type to search for keyword</h2>
-          <input type="search" />
+          <div class="filter__selection__bytags">
+            <h2 class="filter__selection_h2">By tags</h2>
+            <div class="filter__selection__tags">
+              <button class="filter__selection__tags__button" id="webTag">Web</button>
+              <button class="filter__selection__tags__button" id="linuxTag">Linux</button>
+              <button class="filter__selection__tags__button" id="cryptographyTag">Cryptography</button>
+              <button class="filter__selection__tags__button" id="codingTag">Coding</button>
+              <button class="filter__selection__tags__button" id="otherTag">Some other tag</button>
+              <button class="filter__selection__tags__button" id="finalTag">A final tag</button>
+            </div>
+          </div>
         </div>
       </div>
   </main>
