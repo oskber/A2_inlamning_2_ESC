@@ -29,6 +29,8 @@ class APIadapter {
   }
 }
 
+const apiFetcher = new APIadapter();
+apiFetcher.fetchChallenges();
 
 class ChallengeCard {
   constructor(data) {
