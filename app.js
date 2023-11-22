@@ -71,7 +71,7 @@ class ViewAll {
   }
 }
 
-/* class top3View {
+class top3View {
   async render(container) {
     const api = new APIadapter();
     const challenges = await api.fetchChallenges();
@@ -83,7 +83,7 @@ class ViewAll {
       container.append(element);
     }
   }
-} */
+}
 
 class FilterBox1 {
   constructor() {
@@ -124,6 +124,6 @@ const allChallengesDiv = document.querySelector(".ourChallenges");
 const view = new ViewAll();
 view.render(allChallengesDiv);
 
-/* const top3Div = document.querySelector(".rooms");
+const top3Div = document.querySelector(".rooms");
 const viewTop = new top3View();
-viewTop.render(top3Div); */
+viewTop.render(top3Div);
