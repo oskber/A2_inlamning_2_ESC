@@ -72,7 +72,7 @@ class ViewAll {
   }
 }
 
-class top3View {}
+class Top3View {}
 
 class FilterBox1 {
   constructor() {
@@ -108,6 +108,8 @@ class FilterBox2 {}
 class Booking1 {}
 
 class Booking2 {}
+
+/*DOM*/
 
 const allChallengesDiv = document.querySelector(".ourChallenges");
 const view = new ViewAll();

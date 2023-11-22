@@ -4,32 +4,99 @@
   &__container {
     display: none;
     flex-direction: column;
-    max-width: 1280px;
+    width: 99vw;
     margin: auto;
     margin-bottom: 40px;
     justify-content: center;
-    border: 2px solid grey;
+    border: 2px solid rgb(138, 136, 136);
     transform: translateY(-40px);
   }
 
   &__header {
     display: flex;
     padding: 20px;
+    justify-content: space-between;
+  }
+  
+  &__header__h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    padding-bottom: 30px;
   }
 
-  &__button--close {
-    margin-left: auto;
+  
+  &__closeButtonParent {
+    width: 20px;
+    height: 30px;
+    padding: 10px;
+  }
+  
+  
+  &__closeButton {
+    display: flex;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  &__closeButton span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #312e2e;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transform: rotate(45deg);
+    border-radius: 5px;
+  }
+  
+  &__closeButton span::before,
+  &__closeButton span::after {
+    content: '';
+    border-radius: 5px; 
+    width: 30px;
+    height: 3px;
+    background-color: #312e2e;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  &__closeButton span::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  
+  &__closeButton span::after {
+    transform: translate(-50%, -50%) rotate(-90deg);
   }
 
   &__selection__content {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 0 0 5px 20px;
+  }
+
+  &__selection_h2 {
+  font-size: 18px;
   }
 
   &__search {
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    padding: 100px 0 20px 0;
+    flex-direction: column;
+  }
+
+  &__search__input {
+    font-size: 20px;
+    border: solid grey 2px;
+    border-radius: 5px;
+    height: 45px;
+    padding-left: 10px;
   }
 
   &__selection__bytype-1 {
@@ -39,15 +106,85 @@
   &__selection__bytype-2 {
     display: flex;
   }
+  
+  &__selection__checkbox {
+    margin: 0;
+    padding:0;
+  }
+  
+  &__selection_text {
+    margin: 5px;
+   }
 
+   
   &__selection__stars {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  &__selection__stars__row_1 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  &__selection__stars__row_1 input {
+    display: none;
+  }
+
+  &__selection__stars__row_1 label {
+    float: right;
+    cursor: pointer;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    background-image: url('images/star-empty.png');
+  }
+
+  &__selection__stars__row_1 input:checked~label {
+    background-image: url('images/star-filled.png');
+  }
+
+  &__starSpace {
+    margin: auto 0;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  &__selection__stars__row_2 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  &__selection__stars__row_2 input {
+    display: none;
+  }
+
+  &__selection__stars__row_2 label {
+    float: right;
+    cursor: pointer;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    background-image: url('images/star-empty.png');
+  }
+
+  &__selection__stars__row_2 input:checked~label {
+    background-image: url('images/star-filled.png');
   }
 
   &__selection__tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
+  }
+
+  &__selection__tags__button {
+    border-radius: 10px;
+    background-color: transparent;
+    margin-right: 10px;
   }
 }
