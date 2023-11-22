@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ChallengeCard.createCards(
     "https://lernia-sjj-assignments.vercel.app/api/challenges"
   ).then((challengeCards) => {
-    const cardContainer = document.getElementById("ourChallenge");
+    const cardContainer = document.getElementById("ourChallenges");
     if (cardContainer) {
       cardContainer.innerHTML = "";
       challengeCards.forEach((challengeCard) => {
@@ -158,7 +158,7 @@ class ChallengeCard {
   }
 }
 
-class ViewAll {
+/* class ViewAll {
   async render(container) {
     const api = new APIadapter();
     const challenges = await api.fetchChallenges();
@@ -169,7 +169,7 @@ class ViewAll {
     }
   }
 }
-
+ */
 class Top3View {
   async render(container) {
     const api = new APIadapter();

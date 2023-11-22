@@ -766,7 +766,7 @@ body {
   border-radius: 3px;
 }
 
-#ourChallenges {
+.ourChallenges {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
