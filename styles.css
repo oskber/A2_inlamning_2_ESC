@@ -787,6 +787,7 @@ body {
   margin-bottom: 40px;
   justify-content: center;
   border: 2px solid grey;
+  transform: translateY(-40px);
 }
 .filter__header {
   display: flex;
