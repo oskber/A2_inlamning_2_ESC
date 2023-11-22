@@ -1,7 +1,16 @@
 /* CHALLENGES-PAGE */
 
-.title {
+body {
+  margin: 0px auto;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  min-width: 100%;
+  min-height: 100%;
+}
 
+
+.title {
   &__heading {
     font-size: 2rem;
   }
@@ -17,4 +26,16 @@
   &__filterBtn {
     @include buttonTransparent();
   }
+}
+
+.ourChallenges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  padding: 0 50px;
+  gap: 5px;
+}
+
+.challengeCardBox {
+  display: flex;
 }

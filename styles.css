@@ -73,22 +73,26 @@ main {
     font-size: 1.5em;
   }
 }
-.header__nav a, .header__list a {
+.header__nav a,
+.header__list a {
   text-decoration: none;
   color: white;
 }
-.header__nav a:hover, .header__list a:hover {
+.header__nav a:hover,
+.header__list a:hover {
   color: #8acfe5;
 }
 @media screen and (max-width: 600px) {
-  .header__nav, .header__list {
+  .header__nav,
+  .header__list {
     display: none;
     font-weight: 700;
     padding: 0;
   }
 }
 @media screen and (min-width: 600px) {
-  .header__nav, .header__list {
+  .header__nav,
+  .header__list {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -100,7 +104,8 @@ main {
   }
 }
 @media screen and (min-width: 1000px) {
-  .header__nav, .header__list {
+  .header__nav,
+  .header__list {
     gap: 100px;
   }
 }
@@ -366,10 +371,11 @@ main {
 }
 .rooms__img {
   width: 100%;
-  height: auto;
+  height: 45%;
+  object-fit: cover;
   border-radius: 8px 8px 0 0;
 }
-.rooms h1 {
+.rooms__heading {
   margin: 5px 10px 0px 10px;
   font-weight: 500;
 }
@@ -403,11 +409,11 @@ main {
   width: 15px;
   height: 15px;
 }
-.rooms p {
+.rooms__paragraph {
   margin: 15px 10px 25px 10px;
   font-size: 1em;
 }
-.rooms button {
+.rooms__button {
   float: right;
   margin: 15px 10px;
   width: 179px;
@@ -734,6 +740,15 @@ main {
 }
 
 /* CHALLENGES-PAGE */
+body {
+  margin: 0px auto;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .title__heading {
   font-size: 2rem;
 }
@@ -756,15 +771,28 @@ main {
   border-radius: 3px;
 }
 
+.ourChallenges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  padding: 0 50px;
+  gap: 5px;
+}
+
+.challengeCardBox {
+  display: flex;
+}
+
 /* FILTERBOX-PAGE */
 .filter__container {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 99vw;
   margin: auto;
   margin-bottom: 40px;
   justify-content: center;
   border: 2px solid rgb(138, 136, 136);
+  transform: translateY(-40px);
 }
 .filter__header {
   display: flex;
@@ -908,4 +936,49 @@ main {
   border-radius: 10px;
   background-color: transparent;
   margin-right: 10px;
+}
+
+/* MODAL-PAGE */
+.modal {
+  display: none;
+  background: rgba(128, 128, 128, 0.459);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+.modal__stepOne {
+  display: none;
+  flex-direction: column;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  text-align: left;
+  border: 2px solid grey;
+  width: 50%;
+  margin-top: 100px;
+}
+.modal__stepTwo {
+  display: none;
+  flex-direction: column;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  text-align: left;
+  border: 2px solid grey;
+  width: 50%;
+  margin-top: 100px;
+}
+.modal__stepThree {
+  display: none;
+  flex-direction: column;
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  text-align: left;
+  border: 2px solid grey;
+  width: 50%;
+  margin-top: 100px;
+}
+.modal--open {
+  display: flex;
 }

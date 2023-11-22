@@ -1,15 +1,15 @@
 /* FILTERBOX-PAGE */
 
 .filter {
-
   &__container {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 99vw;
     margin: auto;
     margin-bottom: 40px;
     justify-content: center;
     border: 2px solid rgb(138, 136, 136);
+    transform: translateY(-40px);
   }
 
   &__header {
@@ -187,5 +187,4 @@
     background-color: transparent;
     margin-right: 10px;
   }
-
 }
