@@ -158,7 +158,7 @@ class ChallengeCard {
   }
 }
 
-/* class ViewAll {
+class ViewAll {
   async render(container) {
     const api = new APIadapter();
     const challenges = await api.fetchChallenges();
@@ -169,20 +169,8 @@ class ChallengeCard {
     }
   }
 }
- */
-class Top3View {
-  async render(container) {
-    const api = new APIadapter();
-    const challenges = await api.fetchChallenges();
 
-    const sorted = challenges.sort((a, b) => b.data.rating - a.data.rating);
-    for (let i = 0; i < 3; i++) {
-      const challenge = sorted[i];
-      const element = challenge.render();
-      container.append(element);
-    }
-  }
-}
+class Top3View {}
 
 class FilterBox1 {
   constructor() {
@@ -219,10 +207,12 @@ class Booking1 {}
 
 class Booking2 {}
 
-/*DOM*/
+/*DOM
 
 const allChallengesDiv = document.querySelector(".ourChallenges");
 const view = new ViewAll();
+
+*/
 view.render(allChallengesDiv);
 
 
