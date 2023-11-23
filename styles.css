@@ -351,10 +351,17 @@ main {
 
 .rooms {
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   padding: 0 40px;
   gap: 20px;
   overflow: auto;
+}
+@media screen and (min-width: 768px) {
+  .rooms {
+    gap: 50px;
+    justify-content: center;
+  }
 }
 .rooms__box {
   width: 363px;

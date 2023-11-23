@@ -85,7 +85,6 @@ class ChallengeCard {
 
     const card = document.createElement("div");
     card.id = id;
-    card.classList.add("card");
     card.classList.add("rooms__box");
 
     const titleElement = document.createElement("h2");
@@ -158,31 +157,45 @@ class ChallengeCard {
   }
 }
 
-/* class ViewAll {
-  async render(container) {
-    const api = new APIadapter();
-    const challenges = await api.fetchChallenges();
-    for (let i = 0; i < challenges.length; i++) {
-      const challenge = challenges[i];
-      const element = challenge.render();
-      container.append(element);
-    }
-  }
-} */
+async function getTopThree(apiUrl) {
+  try {
+    const challenges = await ChallengeCard.createCards(apiUrl);
+    const sortedChallenges = challenges.sort((a, b) => b.challenge.rating - a.challenge.rating);
+    
+    const topThreeChallenges = sortedChallenges.slice(0, 3);
 
-class Top3View {
-  async render(container) {
-    const api = new ApiHandler();
-    const challenges = await ChallengeCard.fetchData(apiUrl);
-    const sorted = challenges.sort((a, b) => a.data.rating - b.data.rating);
-    for (let i = 0; i < 3; i++) {
-      const challenge = sorted[i];
-      const element = challenge.render();
-      container.append(element);
-    }
+    const topThreeDiv = document.createElement("div");
+    topThreeDiv.classList.add("rooms");
+
+    topThreeChallenges.forEach((challengeCard) => {
+      topThreeDiv.appendChild(challengeCard.getCardElement());
+    });
+
+    return topThreeDiv;
+  } catch (error) {
+    console.error("Error getting top three challenge cards:", error);
+    throw error;
   }
- 
 }
+
+async function renderTopThree() {
+  const apiUrl = "https://lernia-sjj-assignments.vercel.app/api/challenges";
+
+  try {
+    const topThreeDiv = await getTopThree(apiUrl);
+    const container = document.querySelector(".rooms");
+
+    if (container) {
+      container.appendChild(topThreeDiv);
+    }
+  } catch (error) {
+    console.error("Error rendering top three challenges:", error);
+  }
+}
+
+// Call the function to render top three challenges
+renderTopThree();
+
 
 class FilterBox1 {
   constructor() {
@@ -220,11 +233,3 @@ class Booking1 {}
 class Booking2 {}
 
 
-/* const allChallengesDiv = document.querySelector(".ourChallenges");
-const view = new ViewAll();
-view.render(allChallengesDiv); */
-
-
-const top3Div = document.querySelector(".rooms");
-const viewTop = new Top3View();
-viewTop.render(top3Div);
