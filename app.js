@@ -137,7 +137,7 @@ class ChallengeCard {
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
-      console.log(data)
+      console.log(data);
       return data;
     } catch (error) {
       console.error("Kunde inte ladda korten :(", error);
@@ -184,7 +184,7 @@ class FilterBox1 {
     });
 
     const filter__button__close = document.querySelector(
-      ".filter__button--close"
+      ".filter__closeButton"
     );
 
     filter__button__close.addEventListener("click", () => {
@@ -214,4 +214,3 @@ const view = new ViewAll();
 
 */
 view.render(allChallengesDiv);
-
