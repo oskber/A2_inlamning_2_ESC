@@ -828,7 +828,8 @@ body {
   transform: rotate(45deg);
   border-radius: 5px;
 }
-.filter__closeButton span::before, .filter__closeButton span::after {
+.filter__closeButton span::before,
+.filter__closeButton span::after {
   content: "";
   border-radius: 5px;
   width: 30px;
@@ -897,10 +898,10 @@ body {
   background-size: cover;
   width: 20px;
   height: 20px;
-  background-image: url("images/star-empty.png");
+  background-image: url("Images/star-empty.png");
 }
 .filter__selection__stars__row_1 input:checked ~ label {
-  background-image: url("images/star-filled.png");
+  background-image: url("Images/star-filled.png");
 }
 .filter__starSpace {
   margin: auto 0;
@@ -922,10 +923,10 @@ body {
   background-size: cover;
   width: 20px;
   height: 20px;
-  background-image: url("images/star-empty.png");
+  background-image: url("Images/star-empty.png");
 }
 .filter__selection__stars__row_2 input:checked ~ label {
-  background-image: url("images/star-filled.png");
+  background-image: url("Images/star-filled.png");
 }
 .filter__selection__tags {
   display: flex;
