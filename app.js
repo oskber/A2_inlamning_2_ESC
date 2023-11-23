@@ -17,46 +17,122 @@ hamburgerClose.addEventListener("click", () => {
   hamburgerClose.classList.toggle("active");
 });
 
-// FETCH API
+/* ADD TO DOM */
+document.addEventListener("DOMContentLoaded", async () => {
+  const challengesDiv = document.getElementById("ourChallenges");
+  if (challengesDiv != null) {
+    let view = new ViewAll();
+    await view.render(challengesDiv);
+  }
+  const topThreeDiv = document.querySelector(".rooms");
+  if (topThreeDiv != null) {
+    let topThreeView = new ViewTopThree();
+    await topThreeView.render(topThreeDiv);
+  }
+});
 
-class ApiHandler {
-  static async fetchData(apiUrl) {
+class ChallengeCard {
+  constructor(data) {
+    this.data = data;
+  }
+
+  render() {
+    const card = document.createElement("div");
+    card.classList.add("rooms__box");
+
+    const titleElement = document.createElement("h2");
+    titleElement.textContent = this.data.title;
+
+    const descriptionElement = document.createElement("p");
+    descriptionElement.textContent = this.data.description;
+
+    const detailsContainer = document.createElement("div");
+    detailsContainer.classList.add("rooms__rating-container");
+
+    const ratingElement = document.createElement("div");
+    ratingElement.classList.add("rooms__rating");
+
+    const participantsElement = document.createElement("p");
+    participantsElement.classList.add("rooms__participants");
+    participantsElement.textContent = `${this.data.minParticipants} - ${this.data.maxParticipants} Participants`;
+
+    const typeOfRoom = document.createElement("p");
+    typeOfRoom.type = `Type: ${this.data.type}`;
+
+    detailsContainer.appendChild(ratingElement);
+    detailsContainer.appendChild(participantsElement);
+    detailsContainer.appendChild(typeOfRoom);
+
+    const imageElement = document.createElement("img");
+    imageElement.src = this.data.image;
+    imageElement.alt = this.data.title;
+    imageElement.classList.add("rooms__img");
+
+    const bookButton = document.createElement("button");
+    bookButton.textContent = "Book this room";
+    bookButton.classList.add("rooms__button");
+
+    card.appendChild(imageElement);
+    card.appendChild(titleElement);
+    card.appendChild(descriptionElement);
+
+    return card;
+  }
+}
+
+// FETCH API
+class APIadapter {
+  async fetchAllChallenges() {
+    const url = "https://lernia-sjj-assignments.vercel.app/api/challenges";
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log("Fetched Challenges:", data);
+
+    return data.challenges.map(
+      (challengeData) => new ChallengeCard(challengeData)
+    );
+  }
+}
+
+class ViewAll {
+  async render(container) {
     try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      return data;
+      const api = new APIadapter();
+      const challenges = await api.fetchAllChallenges();
+      console.log("All Challenges:", challenges);
+
+      challenges.forEach((challenge) => {
+        const element = challenge.render();
+        container.appendChild(element);
+      });
     } catch (error) {
-      console.error("Kunde inte ladda data :(", error);
-      throw error;
+      console.error("Error rendering all challenges:", error);
     }
   }
 }
 
-// DOM CONTENT LOADER
+class ViewTopThree {
+  async render(container) {
+    try {
+      const api = new APIadapter();
+      const challenges = await api.fetchAllChallenges();
 
-document.addEventListener("DOMContentLoaded", () => {
-  ChallengeCard.createCards(
-    "https://lernia-sjj-assignments.vercel.app/api/challenges"
-  ).then((challengeCards) => {
-    const cardContainer = document.getElementById("ourChallenges");
-    if (cardContainer) {
-      cardContainer.innerHTML = "";
-      challengeCards.forEach((challengeCard) => {
-        cardContainer.appendChild(challengeCard.getCardElement());
+      const sorted = challenges.sort((a, b) => b.data.rating - a.data.rating);
+      const topThree = sorted.slice(0, 3);
+
+      console.log("Top Three Challenges:", topThree);
+
+      topThree.forEach((challengeCard) => {
+        const element = challengeCard.render();
+        container.append(element);
       });
+    } catch (error) {
+      console.error("Error rendering Top 3 challenges:", error);
     }
-  });
-});
-
-// CARDS
-
-class ChallengeCard {
-  constructor(challenge) {
-    this.challenge = challenge;
-    this.cardElement = this.createCard();
   }
+}
 
-  generateStarImages(rating) {
+/*   generateStarImages(rating) {
     const maxStars = 5;
     const roundedRating = Math.round(rating);
     const starContainer = document.createElement("div");
@@ -69,140 +145,8 @@ class ChallengeCard {
     }
 
     return starContainer;
-  }
+  } */
 
-  createCard() {
-    const {
-      id,
-      title,
-      description,
-      rating,
-      minParticipants,
-      maxParticipants,
-      labels,
-      image,
-    } = this.challenge;
-
-    const card = document.createElement("div");
-    card.id = id;
-    card.classList.add("rooms__box");
-
-    const titleElement = document.createElement("h2");
-    titleElement.classList.add("rooms__heading");
-    titleElement.textContent = title;
-
-    const descriptionElement = document.createElement("p");
-    descriptionElement.classList.add("rooms__paragraph");
-    descriptionElement.textContent = description;
-
-    const detailsContainer = document.createElement("div");
-    detailsContainer.classList.add("rooms__rating-container");
-
-    const ratingElement = document.createElement("div");
-    ratingElement.classList.add("rooms__rating");
-    ratingElement.appendChild(this.generateStarImages(rating));
-
-    const participantsElement = document.createElement("p");
-    participantsElement.classList.add("rooms__participants")
-    participantsElement.textContent = `${minParticipants} - ${maxParticipants} Participants`;
-
-    detailsContainer.appendChild(ratingElement);
-    detailsContainer.appendChild(participantsElement);
-
-/*     const labelsElement = document.createElement("div");
-    labelsElement.classList.add("labels");
-    labels.forEach((label) => {
-      const labelElement = document.createElement("span");
-      labelElement.textContent = label;
-      labelsElement.appendChild(labelElement);
-    }); */
-
-    const imageElement = document.createElement("img");
-    imageElement.src = image;
-    imageElement.alt = title;
-    imageElement.classList.add("rooms__img");
-
-    const bookButton = document.createElement("button");
-    bookButton.textContent = "Book this room";
-    bookButton.classList.add("rooms__button");
-
-    
-    card.appendChild(imageElement);
-    card.appendChild(titleElement);
-    card.appendChild(detailsContainer);
-    card.appendChild(descriptionElement);
-    card.appendChild(bookButton);
-
-    return card;
-  }
-
-  getCardElement() {
-    return this.cardElement;
-  }
-
-  static async fetchData(apiUrl) {
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      console.log(data)
-      return data;
-    } catch (error) {
-      console.error("Kunde inte ladda korten :(", error);
-      throw error;
-    }
-  }
-
-  static async createCards(apiUrl) {
-    try {
-      const apiData = await ChallengeCard.fetchData(apiUrl);
-      return apiData.challenges.map(
-        (challenge) => new ChallengeCard(challenge)
-      );
-    } catch (error) {
-      console.error("Kunde inte ladda korten :(", error);
-      throw error;
-    }
-  }
-}
-
-async function getTopThree(apiUrl) {
-  try {
-    const challenges = await ChallengeCard.createCards(apiUrl);
-    const sortedChallenges = challenges.sort((a, b) => b.challenge.rating - a.challenge.rating);
-    
-    const topThreeChallenges = sortedChallenges.slice(0, 3);
-
-    const topThreeDiv = document.createElement("div");
-    topThreeDiv.classList.add("rooms");
-
-    topThreeChallenges.forEach((challengeCard) => {
-      topThreeDiv.appendChild(challengeCard.getCardElement());
-    });
-
-    return topThreeDiv;
-  } catch (error) {
-    console.error("Error getting top three challenge cards:", error);
-    throw error;
-  }
-}
-
-async function renderTopThree() {
-  const apiUrl = "https://lernia-sjj-assignments.vercel.app/api/challenges";
-
-  try {
-    const topThreeDiv = await getTopThree(apiUrl);
-    const container = document.querySelector(".rooms");
-
-    if (container) {
-      container.appendChild(topThreeDiv);
-    }
-  } catch (error) {
-    console.error("Error rendering top three challenges:", error);
-  }
-}
-
-// Call the function to render top three challenges
-renderTopThree();
 
 
 class FilterBox1 {
