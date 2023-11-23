@@ -366,10 +366,11 @@ main {
 }
 .rooms__img {
   width: 100%;
-  height: auto;
+  height: 45%;
+  object-fit: cover;
   border-radius: 8px 8px 0 0;
 }
-.rooms h1 {
+.rooms__heading {
   margin: 5px 10px 0px 10px;
   font-weight: 500;
 }
@@ -403,11 +404,11 @@ main {
   width: 15px;
   height: 15px;
 }
-.rooms p {
+.rooms__paragraph {
   margin: 15px 10px 25px 10px;
   font-size: 1em;
 }
-.rooms button {
+.rooms__button {
   float: right;
   margin: 15px 10px;
   width: 179px;
@@ -734,6 +735,15 @@ main {
 }
 
 /* CHALLENGES-PAGE */
+body {
+  margin: 0px auto;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .title__heading {
   font-size: 2rem;
 }
@@ -756,7 +766,7 @@ main {
   border-radius: 3px;
 }
 
-.ourChallenges {
+#ourChallenges {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
@@ -764,31 +774,92 @@ main {
   gap: 5px;
 }
 
+.challengeCardBox {
+  display: flex;
+}
+
 /* FILTERBOX-PAGE */
 .filter__container {
-  display: flex;
+  display: none;
   flex-direction: column;
-  max-width: 1280px;
+  width: 99vw;
   margin: auto;
   margin-bottom: 40px;
   justify-content: center;
-  border: 2px solid grey;
+  border: 2px solid rgb(138, 136, 136);
+  transform: translateY(-40px);
 }
 .filter__header {
   display: flex;
   padding: 20px;
+  justify-content: space-between;
 }
-.filter__button--close {
-  margin-left: auto;
+.filter__header__h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  padding-bottom: 30px;
+}
+.filter__closeButtonParent {
+  width: 20px;
+  height: 30px;
+  padding: 10px;
+}
+.filter__closeButton {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  width: 100%;
+  height: 100%;
+}
+.filter__closeButton span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #312e2e;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transform: rotate(45deg);
+  border-radius: 5px;
+}
+.filter__closeButton span::before,
+.filter__closeButton span::after {
+  content: "";
+  border-radius: 5px;
+  width: 30px;
+  height: 3px;
+  background-color: #312e2e;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.filter__closeButton span::before {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.filter__closeButton span::after {
+  transform: translate(-50%, -50%) rotate(-90deg);
 }
 .filter__selection__content {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 0 0 5px 20px;
+}
+.filter__selection_h2 {
+  font-size: 18px;
 }
 .filter__search {
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  padding: 100px 0 20px 0;
+  flex-direction: column;
+}
+.filter__search__input {
+  font-size: 20px;
+  border: solid grey 2px;
+  border-radius: 5px;
+  height: 45px;
+  padding-left: 10px;
 }
 .filter__selection__bytype-1 {
   display: flex;
@@ -796,87 +867,71 @@ main {
 .filter__selection__bytype-2 {
   display: flex;
 }
+.filter__selection__checkbox {
+  margin: 0;
+  padding: 0;
+}
+.filter__selection_text {
+  margin: 5px;
+}
 .filter__selection__stars {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+}
+.filter__selection__stars__row_1 {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.filter__selection__stars__row_1 input {
+  display: none;
+}
+.filter__selection__stars__row_1 label {
+  float: right;
+  cursor: pointer;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  background-image: url("Images/star-empty.png");
+}
+.filter__selection__stars__row_1 input:checked ~ label {
+  background-image: url("Images/star-filled.png");
+}
+.filter__starSpace {
+  margin: auto 0;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.filter__selection__stars__row_2 {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.filter__selection__stars__row_2 input {
+  display: none;
+}
+.filter__selection__stars__row_2 label {
+  float: right;
+  cursor: pointer;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  background-image: url("Images/star-empty.png");
+}
+.filter__selection__stars__row_2 input:checked ~ label {
+  background-image: url("Images/star-filled.png");
 }
 .filter__selection__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
 }
-
-/* CHALLENGES-PAGE */
-.title__heading {
-  font-size: 2rem;
-}
-.title__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 40px;
-}
-.title__filterBtn {
-  min-width: 160px;
-  min-height: 40px;
-  padding: 10px 40px;
+.filter__selection__tags__button {
+  border-radius: 10px;
   background-color: transparent;
-  font-weight: 700;
-  font-size: 1.1em;
-  color: #8acfe5;
-  border: 2px solid #8acfe5;
-  border-radius: 3px;
-}
-
-.ourChallenges {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  padding: 0 50px;
-  gap: 5px;
-}
-
-/* FILTERBOX-PAGE */
-.filter__container {
-  display: flex;
-  flex-direction: column;
-  max-width: 1280px;
-  margin: auto;
-  margin-bottom: 40px;
-  justify-content: center;
-  border: 2px solid grey;
-}
-.filter__header {
-  display: flex;
-  padding: 20px;
-}
-.filter__button--close {
-  margin-left: auto;
-}
-.filter__selection__content {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-.filter__search {
-  padding: 20px;
-  text-align: center;
-}
-.filter__selection__bytype-1 {
-  display: flex;
-}
-.filter__selection__bytype-2 {
-  display: flex;
-}
-.filter__selection__stars {
-  display: flex;
-  flex-wrap: wrap;
-}
-.filter__selection__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  margin-right: 10px;
 }
 
 .modal {
