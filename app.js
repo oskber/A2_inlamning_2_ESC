@@ -88,42 +88,50 @@ class ChallengeCard {
     card.classList.add("rooms__box");
 
     const titleElement = document.createElement("h2");
+    titleElement.classList.add("rooms__heading");
     titleElement.textContent = title;
 
     const descriptionElement = document.createElement("p");
+    descriptionElement.classList.add("rooms__paragraph");
     descriptionElement.textContent = description;
 
     const detailsContainer = document.createElement("div");
-    detailsContainer.classList.add("rating-container");
+    detailsContainer.classList.add("rooms__rating-container");
 
     const ratingElement = document.createElement("div");
-    ratingElement.classList.add("rating");
+    ratingElement.classList.add("rooms__rating");
     ratingElement.appendChild(this.generateStarImages(rating));
 
     const participantsElement = document.createElement("p");
-    participantsElement.textContent = `Participants: ${minParticipants} - ${maxParticipants}`;
+    participantsElement.classList.add("rooms__participants")
+    participantsElement.textContent = `${minParticipants} - ${maxParticipants} Participants`;
 
     detailsContainer.appendChild(ratingElement);
     detailsContainer.appendChild(participantsElement);
 
-    const labelsElement = document.createElement("div");
+/*     const labelsElement = document.createElement("div");
     labelsElement.classList.add("labels");
     labels.forEach((label) => {
       const labelElement = document.createElement("span");
       labelElement.textContent = label;
       labelsElement.appendChild(labelElement);
-    });
+    }); */
 
     const imageElement = document.createElement("img");
     imageElement.src = image;
     imageElement.alt = title;
     imageElement.classList.add("rooms__img");
 
+    const bookButton = document.createElement("button");
+    bookButton.textContent = "Book this room";
+    bookButton.classList.add("rooms__button");
+
+    
     card.appendChild(imageElement);
     card.appendChild(titleElement);
     card.appendChild(detailsContainer);
     card.appendChild(descriptionElement);
-    card.appendChild(labelsElement);
+    card.appendChild(bookButton);
 
     return card;
   }
