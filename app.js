@@ -52,6 +52,24 @@ class ChallengeCard {
     const ratingElement = document.createElement("div");
     ratingElement.classList.add("rooms__rating");
 
+    
+/*   generateStarImages(rating) {
+    const maxStars = 5;
+    const roundedRating = Math.round(rating);
+    const starContainer = document.createElement("div");
+
+    for (let i = 1; i <= maxStars; i++) {
+      const starImage = document.createElement("img");
+      starImage.src =
+        i <= roundedRating ? "Images/star-filled.png" : "Images/star-empty.png";
+      starContainer.appendChild(starImage);
+    }
+
+    return starContainer;
+  } */
+
+
+
     const participantsElement = document.createElement("p");
     participantsElement.classList.add("rooms__participants");
     participantsElement.textContent = `${this.data.minParticipants} - ${this.data.maxParticipants} Participants`;
@@ -131,23 +149,6 @@ class ViewTopThree {
     }
   }
 }
-
-/*   generateStarImages(rating) {
-    const maxStars = 5;
-    const roundedRating = Math.round(rating);
-    const starContainer = document.createElement("div");
-
-    for (let i = 1; i <= maxStars; i++) {
-      const starImage = document.createElement("img");
-      starImage.src =
-        i <= roundedRating ? "Images/star-filled.png" : "Images/star-empty.png";
-      starContainer.appendChild(starImage);
-    }
-
-    return starContainer;
-  } */
-
-
 
 class FilterBox1 {
   constructor() {
