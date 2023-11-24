@@ -351,10 +351,17 @@ main {
 
 .rooms {
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   padding: 0 40px;
   gap: 20px;
   overflow: auto;
+}
+@media screen and (min-width: 1280px) {
+  .rooms {
+    gap: 50px;
+    justify-content: center;
+  }
 }
 .rooms__box {
   width: 363px;
@@ -363,6 +370,7 @@ main {
   border-radius: 8px;
   margin: 30px auto;
   flex: none;
+  position: relative;
 }
 .rooms__img {
   width: 100%;
@@ -385,14 +393,19 @@ main {
     padding-right: 10px;
   }
 }
-.rooms__rating {
+.rooms__rating div {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.2rem;
+}
+.rooms__rating-container {
+  display: flex;
+  gap: 10px;
+  padding-left: 10px;
 }
 .rooms__participants {
   color: black;
   padding-left: 10px;
-  padding-top: 2px;
+  margin: 0;
 }
 .rooms__star--filled {
   background: url("Images/star-filled.png");
@@ -409,7 +422,6 @@ main {
   font-size: 1em;
 }
 .rooms__button {
-  float: right;
   margin: 15px 10px;
   width: 179px;
   height: 44px;
@@ -418,6 +430,9 @@ main {
   border: none;
   color: white;
   font-weight: 600;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 .buttons__bottom {
@@ -772,10 +787,6 @@ body {
   grid-template-rows: auto;
   padding: 0 50px;
   gap: 5px;
-}
-
-.challengeCardBox {
-  display: flex;
 }
 
 /* FILTERBOX-PAGE */
