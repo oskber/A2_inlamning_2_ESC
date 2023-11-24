@@ -834,7 +834,8 @@ body {
   transform: rotate(45deg);
   border-radius: 5px;
 }
-.filter__closeButton span::before, .filter__closeButton span::after {
+.filter__closeButton span::before,
+.filter__closeButton span::after {
   content: "";
   border-radius: 5px;
   width: 30px;
@@ -903,10 +904,10 @@ body {
   background-size: cover;
   width: 20px;
   height: 20px;
-  background-image: url("images/star-empty.png");
+  background-image: url("Images/star-empty.png");
 }
 .filter__selection__stars__row_1 input:checked ~ label {
-  background-image: url("images/star-filled.png");
+  background-image: url("Images/star-filled.png");
 }
 .filter__starSpace {
   margin: auto 0;
@@ -928,10 +929,10 @@ body {
   background-size: cover;
   width: 20px;
   height: 20px;
-  background-image: url("images/star-empty.png");
+  background-image: url("Images/star-empty.png");
 }
 .filter__selection__stars__row_2 input:checked ~ label {
-  background-image: url("images/star-filled.png");
+  background-image: url("Images/star-filled.png");
 }
 .filter__selection__tags {
   display: flex;
@@ -959,9 +960,9 @@ body {
   flex-direction: column;
   margin: auto;
   background-color: rgb(255, 255, 255);
-  text-align: left;
   border: 2px solid grey;
-  width: 50%;
+  height: 80vh;
+  width: 75vw;
   margin-top: 100px;
 }
 .modal__stepTwo {
@@ -969,9 +970,9 @@ body {
   flex-direction: column;
   margin: auto;
   background-color: rgb(255, 255, 255);
-  text-align: left;
   border: 2px solid grey;
-  width: 50%;
+  height: 80vh;
+  width: 75vw;
   margin-top: 100px;
 }
 .modal__stepThree {
@@ -979,11 +980,47 @@ body {
   flex-direction: column;
   margin: auto;
   background-color: rgb(255, 255, 255);
-  text-align: left;
   border: 2px solid grey;
-  width: 50%;
+  height: 80vh;
+  width: 75vw;
   margin-top: 100px;
 }
 .modal--open {
   display: flex;
+}
+.modal__searchBtn {
+  float: right;
+  margin: 15px 10px;
+  width: 179px;
+  height: 44px;
+  border-radius: 3px;
+  background-color: #e3170a;
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+.modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+.modal__backBtn {
+  color: #36769d;
+  font-weight: 700;
+  font-size: 0.8em;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  margin-top: 10px;
+  font-size: medium;
+}
+.modal__text {
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+.modal__btn:hover {
+  cursor: pointer;
 }
