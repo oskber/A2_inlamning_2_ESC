@@ -66,9 +66,9 @@ class ChallengeCard {
     const detailsContainer = document.createElement("div");
     detailsContainer.classList.add("rooms__rating-container");
 
-   /*  const ratingElement = document.createElement("div");
+    const ratingElement = document.createElement("div");
     ratingElement.classList.add("rooms__rating");
-    ratingElement.appendChild(this.generateStarImages(this.data.rating)); */
+    //ratingElement.appendChild(this.generateStarImages(this.data.rating));
     
 
     const participantsElement = document.createElement("p");
