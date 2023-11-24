@@ -408,12 +408,12 @@ main {
   margin: 0;
 }
 .rooms__star--filled {
-  background: url("Images/star-filled.png");
+  background: url("Images/star-filled.svg");
   width: 15px;
   height: 15px;
 }
 .rooms__star--empty {
-  background: url("Images/star-empty.png");
+  background: url("Images/star-empty.svg");
   width: 15px;
   height: 15px;
 }
@@ -902,12 +902,12 @@ body {
   float: right;
   cursor: pointer;
   background-size: cover;
-  width: 20px;
+  width: 22px;
   height: 20px;
-  background-image: url("Images/star-empty.png");
+  background-image: url("Images/star-empty.svg");
 }
 .filter__selection__stars__row_1 input:checked ~ label {
-  background-image: url("Images/star-filled.png");
+  background-image: url("Images/star-filled.svg");
 }
 .filter__starSpace {
   margin: auto 0;
@@ -927,12 +927,12 @@ body {
   float: right;
   cursor: pointer;
   background-size: cover;
-  width: 20px;
+  width: 22px;
   height: 20px;
-  background-image: url("Images/star-empty.png");
+  background-image: url("Images/star-empty.svg");
 }
 .filter__selection__stars__row_2 input:checked ~ label {
-  background-image: url("Images/star-filled.png");
+  background-image: url("Images/star-filled.svg");
 }
 .filter__selection__tags {
   display: flex;
@@ -1023,4 +1023,8 @@ body {
 
 .modal__btn:hover {
   cursor: pointer;
+}
+
+.rooms__rating img {
+  width: 7%;
 }
