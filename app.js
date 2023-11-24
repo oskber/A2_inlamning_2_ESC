@@ -36,6 +36,23 @@ class ChallengeCard {
     this.data = data;
   }
 
+  /* generateStarImages(rating) {
+    console.log("Rating:", rating); // Log the rating
+    const maxStars = 5;
+    const roundedRating = Math.round(rating);
+    const starContainer = document.createElement("div");
+    starContainer.classList.add("rooms__rating");
+
+    for (let i = 1; i <= maxStars; i++) {
+      const starImage = document.createElement("img");
+      starImage.src =
+        i <= roundedRating ? "Images/star-filled.png" : "Images/star-empty.png";
+      starContainer.appendChild(starImage);
+    }
+
+    return starContainer;
+  } */
+
   render() {
     const card = document.createElement("div");
     card.classList.add("rooms__box");
@@ -49,26 +66,10 @@ class ChallengeCard {
     const detailsContainer = document.createElement("div");
     detailsContainer.classList.add("rooms__rating-container");
 
-    const ratingElement = document.createElement("div");
+   /*  const ratingElement = document.createElement("div");
     ratingElement.classList.add("rooms__rating");
-
+    ratingElement.appendChild(this.generateStarImages(this.data.rating)); */
     
-/*   generateStarImages(rating) {
-    const maxStars = 5;
-    const roundedRating = Math.round(rating);
-    const starContainer = document.createElement("div");
-
-    for (let i = 1; i <= maxStars; i++) {
-      const starImage = document.createElement("img");
-      starImage.src =
-        i <= roundedRating ? "Images/star-filled.png" : "Images/star-empty.png";
-      starContainer.appendChild(starImage);
-    }
-
-    return starContainer;
-  } */
-
-
 
     const participantsElement = document.createElement("p");
     participantsElement.classList.add("rooms__participants");
@@ -93,6 +94,7 @@ class ChallengeCard {
     card.appendChild(imageElement);
     card.appendChild(titleElement);
     card.appendChild(descriptionElement);
+    card.appendChild(bookButton);
 
     return card;
   }
