@@ -164,7 +164,7 @@ class FilterBox1 {
     });
 
     const filter__button__close = document.querySelector(
-      ".filter__button--close"
+      ".filter__closeButton"
     );
 
     filter__button__close.addEventListener("click", () => {
@@ -186,5 +186,3 @@ class FilterBox2 {}
 class Booking1 {}
 
 class Booking2 {}
-
-

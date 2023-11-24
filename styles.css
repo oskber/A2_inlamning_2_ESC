@@ -903,10 +903,10 @@ body {
   background-size: cover;
   width: 20px;
   height: 20px;
-  background-image: url("images/star-empty.png");
+  background-image: url("Images/star-empty.png");
 }
 .filter__selection__stars__row_1 input:checked ~ label {
-  background-image: url("images/star-filled.png");
+  background-image: url("Images/star-filled.png");
 }
 .filter__starSpace {
   margin: auto 0;
@@ -928,10 +928,10 @@ body {
   background-size: cover;
   width: 20px;
   height: 20px;
-  background-image: url("images/star-empty.png");
+  background-image: url("Images/star-empty.png");
 }
 .filter__selection__stars__row_2 input:checked ~ label {
-  background-image: url("images/star-filled.png");
+  background-image: url("Images/star-filled.png");
 }
 .filter__selection__tags {
   display: flex;
@@ -959,9 +959,9 @@ body {
   flex-direction: column;
   margin: auto;
   background-color: rgb(255, 255, 255);
-  text-align: left;
   border: 2px solid grey;
-  width: 50%;
+  height: 80vh;
+  width: 75vw;
   margin-top: 100px;
 }
 .modal__stepTwo {
@@ -969,9 +969,9 @@ body {
   flex-direction: column;
   margin: auto;
   background-color: rgb(255, 255, 255);
-  text-align: left;
   border: 2px solid grey;
-  width: 50%;
+  height: 80vh;
+  width: 75vw;
   margin-top: 100px;
 }
 .modal__stepThree {
@@ -979,11 +979,140 @@ body {
   flex-direction: column;
   margin: auto;
   background-color: rgb(255, 255, 255);
-  text-align: left;
   border: 2px solid grey;
-  width: 50%;
+  height: 80vh;
+  width: 75vw;
   margin-top: 100px;
 }
 .modal--open {
   display: flex;
+}
+.modal__searchBtn {
+  margin: 15px 10px;
+  width: 179px;
+  height: 44px;
+  border-radius: 3px;
+  background-color: #e3170a;
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+.modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+.modal__backBtn {
+  color: #36769d;
+  font-weight: 700;
+  font-size: 0.8em;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  margin-top: 10px;
+  font-size: medium;
+}
+.modal__text {
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+.modal__btn:hover {
+  cursor: pointer;
+}
+
+.fontstyle {
+  font-family: "roboto";
+}
+
+.bookroom__step2 {
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+input, label {
+  flex-direction: column;
+}
+
+.font__name {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.input__name {
+  margin-top: 13px;
+  margin-left: 15px;
+  width: 200px;
+  height: 25px;
+  border-radius: 4px;
+}
+
+.font__mail {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.input__mail {
+  margin-top: 28px;
+  margin-left: 15px;
+  width: 200px;
+  height: 25px;
+  border-radius: 4px;
+}
+
+.font__whattime {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.input__whattime {
+  margin-top: 28px;
+  margin-left: 15px;
+  width: 200px;
+  height: 25px;
+  border-radius: 4px;
+}
+
+.font__howmany {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.input__howmany {
+  margin-top: 28px;
+  margin-left: 15px;
+  width: 200px;
+  height: 25px;
+  border-radius: 4px;
+}
+
+.modal__btn {
+  margin-top: 60px;
+  margin-left: 280px;
+  margin-bottom: 20px;
+  background-color: red;
+  color: white;
+  width: 160px;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
 }

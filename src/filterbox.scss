@@ -139,11 +139,11 @@
     background-size: cover;
     width: 20px;
     height: 20px;
-    background-image: url('images/star-empty.png');
+    background-image: url("Images/star-empty.png");
   }
 
   &__selection__stars__row_1 input:checked~label {
-    background-image: url('images/star-filled.png');
+    background-image: url("Images/star-filled.png");
   }
 
   &__starSpace {
@@ -169,11 +169,11 @@
     background-size: cover;
     width: 20px;
     height: 20px;
-    background-image: url('images/star-empty.png');
+    background-image: url("Images/star-empty.png");
   }
 
   &__selection__stars__row_2 input:checked~label {
-    background-image: url('images/star-filled.png');
+    background-image: url("Images/star-filled.png");
   }
 
   &__selection__tags {
