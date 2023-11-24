@@ -17,161 +17,139 @@ hamburgerClose.addEventListener("click", () => {
   hamburgerClose.classList.toggle("active");
 });
 
-// FETCH API
-
-class ApiHandler {
-  static async fetchData(apiUrl) {
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Kunde inte ladda data :(", error);
-      throw error;
-    }
+/* ADD TO DOM */
+document.addEventListener("DOMContentLoaded", async () => {
+  const challengesDiv = document.getElementById("ourChallenges");
+  if (challengesDiv != null) {
+    let view = new ViewAll();
+    await view.render(challengesDiv);
   }
-}
-
-// DOM CONTENT LOADER
-
-document.addEventListener("DOMContentLoaded", () => {
-  ChallengeCard.createCards(
-    "https://lernia-sjj-assignments.vercel.app/api/challenges"
-  ).then((challengeCards) => {
-    const cardContainer = document.getElementById("ourChallenge");
-    if (cardContainer) {
-      cardContainer.innerHTML = "";
-      challengeCards.forEach((challengeCard) => {
-        cardContainer.appendChild(challengeCard.getCardElement());
-      });
-    }
-  });
+  const topThreeDiv = document.querySelector(".rooms");
+  if (topThreeDiv != null) {
+    let topThreeView = new ViewTopThree();
+    await topThreeView.render(topThreeDiv);
+  }
 });
 
-// CARDS
-
 class ChallengeCard {
-  constructor(challenge) {
-    this.challenge = challenge;
-    this.cardElement = this.createCard();
+  constructor(data) {
+    this.data = data;
   }
 
   generateStarImages(rating) {
     const maxStars = 5;
     const starContainer = document.createElement("div");
-  
+
     for (let i = 1; i <= maxStars; i++) {
       const starImage = document.createElement("img");
       const isFilled = i <= rating;
       const isHalf = i - 0.5 === rating;
-  
-      starImage.src = isFilled ? "Images/star-filled.svg" : isHalf ? "Images/star-half-filled.svg" : "Images/star-empty.svg";
+
+      starImage.src = isFilled? "Images/star-filled.svg": isHalf? "Images/star-half-filled.svg": "Images/star-empty.svg";
       starContainer.appendChild(starImage);
     }
-  
+
     return starContainer;
   }
 
-  createCard() {
-    const {
-      id,
-      title,
-      description,
-      rating,
-      minParticipants,
-      maxParticipants,
-      labels,
-      image,
-    } = this.challenge;
-
+  render() {
     const card = document.createElement("div");
-    card.id = id;
-    card.classList.add("card");
     card.classList.add("rooms__box");
 
     const titleElement = document.createElement("h2");
-    titleElement.textContent = title;
+    titleElement.textContent = this.data.title;
 
     const descriptionElement = document.createElement("p");
-    descriptionElement.textContent = description;
+    descriptionElement.textContent = this.data.description;
 
     const detailsContainer = document.createElement("div");
-    detailsContainer.classList.add("rating-container");
+    detailsContainer.classList.add("rooms__rating-container");
+    
 
-    const ratingElement = document.createElement("div");
-    ratingElement.classList.add("rating");
-    ratingElement.appendChild(this.generateStarImages(rating));
+    const ratingElement = this.generateStarImages(this.data.rating);
+    ratingElement.classList.add("rooms__rating");
 
     const participantsElement = document.createElement("p");
-    participantsElement.textContent = `Participants: ${minParticipants} - ${maxParticipants}`;
+    participantsElement.classList.add("rooms__participants");
+    participantsElement.textContent = `${this.data.minParticipants} - ${this.data.maxParticipants} Participants`;
+
+    const typeOfRoom = document.createElement("p");
+    typeOfRoom.type = `Type: ${this.data.type}`;
 
     detailsContainer.appendChild(ratingElement);
     detailsContainer.appendChild(participantsElement);
-
-    const labelsElement = document.createElement("div");
-    labelsElement.classList.add("labels");
-    labels.forEach((label) => {
-      const labelElement = document.createElement("span");
-      labelElement.textContent = label;
-      labelsElement.appendChild(labelElement);
-    });
+    detailsContainer.appendChild(typeOfRoom);
 
     const imageElement = document.createElement("img");
-    imageElement.src = image;
-    imageElement.alt = title;
+    imageElement.src = this.data.image;
+    imageElement.alt = this.data.title;
     imageElement.classList.add("rooms__img");
 
+    const bookButton = document.createElement("button");
+    bookButton.textContent = "Book this room";
+    bookButton.classList.add("rooms__button");
+
     card.appendChild(imageElement);
+    
     card.appendChild(titleElement);
-    card.appendChild(detailsContainer);
     card.appendChild(descriptionElement);
-    card.appendChild(labelsElement);
+    card.appendChild(detailsContainer);
 
     return card;
   }
+}
 
-  getCardElement() {
-    return this.cardElement;
-  }
+// FETCH API
+class APIadapter {
+  async fetchAllChallenges() {
+    const url = "https://lernia-sjj-assignments.vercel.app/api/challenges";
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log("Fetched Challenges:", data);
 
-  static async fetchData(apiUrl) {
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      console.log(data)
-      return data;
-    } catch (error) {
-      console.error("Kunde inte ladda korten :(", error);
-      throw error;
-    }
-  }
-
-  static async createCards(apiUrl) {
-    try {
-      const apiData = await ChallengeCard.fetchData(apiUrl);
-      return apiData.challenges.map(
-        (challenge) => new ChallengeCard(challenge)
-      );
-    } catch (error) {
-      console.error("Kunde inte ladda korten :(", error);
-      throw error;
-    }
+    return data.challenges.map(
+      (challengeData) => new ChallengeCard(challengeData)
+    );
   }
 }
 
 class ViewAll {
   async render(container) {
-    const api = new APIadapter();
-    const challenges = await api.fetchChallenges();
-    for (let i = 0; i < challenges.length; i++) {
-      const challenge = challenges[i];
-      const element = challenge.render();
-      container.append(element);
+    try {
+      const api = new APIadapter();
+      const challenges = await api.fetchAllChallenges();
+      console.log("All Challenges:", challenges);
+
+      challenges.forEach((challenge) => {
+        const element = challenge.render();
+        container.appendChild(element);
+      });
+    } catch (error) {
+      console.error("Error rendering all challenges:", error);
     }
   }
 }
 
-class top3View {}
+class ViewTopThree {
+  async render(container) {
+    try {
+      const api = new APIadapter();
+      const challenges = await api.fetchAllChallenges();
+
+      const sorted = challenges.sort((a, b) => b.data.rating - a.data.rating);
+      const topThree = sorted.slice(0, 3);
+
+      console.log("Top Three Challenges:", topThree);
+
+      topThree.forEach((challengeCard) => {
+        const element = challengeCard.render();
+        container.append(element);
+      });
+    } catch (error) {
+      console.error("Error rendering Top 3 challenges:", error);
+    }
+  }
+}
 
 class FilterBox1 {
   constructor() {
@@ -185,7 +163,7 @@ class FilterBox1 {
     });
 
     const filter__button__close = document.querySelector(
-      ".filter__button--close"
+      ".filter__closeButton"
     );
 
     filter__button__close.addEventListener("click", () => {
@@ -207,8 +185,3 @@ class FilterBox2 {}
 class Booking1 {}
 
 class Booking2 {}
-
-const allChallengesDiv = document.querySelector(".ourChallenges");
-const view = new ViewAll();
-view.render(allChallengesDiv);
-
