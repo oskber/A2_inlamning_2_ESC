@@ -58,16 +58,17 @@ class ChallengeCard {
 
   generateStarImages(rating) {
     const maxStars = 5;
-    const roundedRating = Math.round(rating);
     const starContainer = document.createElement("div");
-
+  
     for (let i = 1; i <= maxStars; i++) {
       const starImage = document.createElement("img");
-      starImage.src =
-        i <= roundedRating ? "Images/star-filled.png" : "Images/star-empty.png";
+      const isFilled = i <= rating;
+      const isHalf = i - 0.5 === rating;
+  
+      starImage.src = isFilled ? "Images/star-filled.svg" : isHalf ? "Images/star-half-filled.svg" : "Images/star-empty.svg";
       starContainer.appendChild(starImage);
     }
-
+  
     return starContainer;
   }
 
