@@ -408,12 +408,12 @@ main {
   margin: 0;
 }
 .rooms__star--filled {
-  background: url("Images/star-filled.png");
+  background: url("Images/star-filled.svg");
   width: 15px;
   height: 15px;
 }
 .rooms__star--empty {
-  background: url("Images/star-empty.png");
+  background: url("Images/star-empty.svg");
   width: 15px;
   height: 15px;
 }
