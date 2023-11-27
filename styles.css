@@ -863,6 +863,9 @@ body {
 .filter__selection_h2 {
   font-size: 18px;
 }
+.filter__selection__byrating {
+  margin-left: 40px;
+}
 .filter__search {
   display: flex;
   padding: 100px 0 20px 0;
