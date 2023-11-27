@@ -408,12 +408,12 @@ main {
   margin: 0;
 }
 .rooms__star--filled {
-  background: url("Images/star-filled.svg");
+  background: url("Images/star-filled.png");
   width: 15px;
   height: 15px;
 }
 .rooms__star--empty {
-  background: url("Images/star-empty.svg");
+  background: url("Images/star-empty.png");
   width: 15px;
   height: 15px;
 }
@@ -789,6 +789,10 @@ body {
   gap: 5px;
 }
 
+.rooms__rating img {
+  width: 7%;
+}
+
 /* FILTERBOX-PAGE */
 .filter__container {
   display: none;
@@ -946,10 +950,10 @@ body {
   background-size: cover;
   width: 20px;
   height: 20px;
-  background-image: url("Images/star-empty.svg");
+  background-image: url("Images/star-empty.png");
 }
 .filter__selection__stars__row_2 input:checked ~ label {
-  background-image: url("Images/star-filled.svg");
+  background-image: url("Images/star-filled.png");
 }
 .filter__selection__tags {
   display: flex;
@@ -1032,7 +1036,6 @@ body {
   margin-top: 10px;
   font-size: medium;
 }
-
 .modal__text {
   font-weight: 400;
   font-size: 2.5rem;
@@ -1041,4 +1044,3 @@ body {
 .modal__btn:hover {
   cursor: pointer;
 }
-
