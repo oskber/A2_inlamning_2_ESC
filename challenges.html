@@ -48,8 +48,9 @@
       <ul class="header__list">
         <li><a href="challenges.html">Play online</a></li>
         <li><a href="challenges.html">Play on-site</a></li>
-        <li a href="#story">The Story</li>
-        <li a href="#contact">Contact us</li>
+        <li><a href="#story">The Story</a></li>
+        <li><a href="#contact">Contact us</a></li>
+      </ul>
     </nav>
     <button class="hamburger__button--open">
       <img src="Buttons/open.png" alt="" />
@@ -60,56 +61,43 @@
           <img src="Buttons/close.png" />
         </button>
         <ul class="hamburger__list">
-          <li>
-            <a href="challenges.html">Play online</a>
-          </li>
-          <li>
-            <a href="challenges.html">Play on-site</a>
-          </li>
-          <li a href="#story">The Story</li>
-          <li a href="#contact">Contact us</li>
+          <li><a href="challenges.html">Play online</a></li>
+          <li><a href="challenges.html">Play on-site</a></li>
+          <li><a href="#story">The Story</a></li>
+          <li><a href="#contact">Contact us</a></li>
         </ul>
       </nav>
     </div>
+  </header>
+  <main>
+    <div class="title__container">
+      <h1 class="title__heading">Our challenges</h1>
+      <button class="title__filterBtn">Filter challenges</button>
     </div>
-    </header>
-    <main>
-      <div class="title__container">
-        <h1 class="title__heading">Our challenges</h1>
-        <button class="title__filterBtn">Filter challenges</button>
-      </div>
-      <div class="filter__container">
-        <div class="filter__header">
-          <h1 class="filter__header__h1">Filter Challenges</h1>
-          <div class="filter__closeButtonParent">
-            <nav class="filter__closeButton">
-              <span></span>
-              <span></span>
-              <span></span>
-            </nav>
-          </div>
+    <div class="filter__container">
+      <div class="filter__header">
+        <h1 class="filter__header__h1">Filter Challenges</h1>
+        <div class="filter__closeButtonParent">
+          <nav class="filter__closeButton">
+            <span></span>
+            <span></span>
+            <span></span>
+          </nav>
         </div>
+      </div>
       <div class="filter__selection__content">
         <div class="filter__selection__bytype">
           <h2 class="filter__selection_h2">By type</h2>
           <div class="filter__selection__bytype-1">
-            <input
-              class="filter__selection__checkbox"
-              type="checkbox"
-              id="onlineChallengeCheckbox"
-            />
+            <input class="filter__selection__checkbox" type="checkbox" id="onlineChallengeCheckbox" />
             <p class="filter__selection_text">Include online challenges</p>
           </div>
           <div class="filter__selection__bytype-2">
-            <input
-              class="filter__selection__checkbox"
-              type="checkbox"
-              id="onsiteChallengeCheckbox"
-            />
+            <input class="filter__selection__checkbox" type="checkbox" id="onsiteChallengeCheckbox" />
             <p class="filter__selection_text">Include on-site challenges</p>
           </div>
         </div>
-      
+
         <!-- Conny jobbar med filter__selection__byrating -->
         <div>
           <div class="filter__selection__byrating">
@@ -130,7 +118,7 @@
               </div>
             </div>
             <p class="filter__starSpace">to</p>
-      
+
             <!-- Stjärnor rad 2 -->
             <div class="filter__selection__stars__row_2">
               <input type="radio" name="rating_row_2" id="star5_2" value="5" />
@@ -149,8 +137,12 @@
         <div class="filter__selection__bytags">
           <h2 class="filter__selection_h2">By tags</h2>
           <div class="filter__selection__tags">
-            <button class="filter__selection__tags__button" id="webTag">Web</button>
-            <button class="filter__selection__tags__button" id="linuxTag">Linux</button>
+            <button class="filter__selection__tags__button" id="webTag">
+              Web
+            </button>
+            <button class="filter__selection__tags__button" id="linuxTag">
+              Linux
+            </button>
             <button class="filter__selection__tags__button" id="cryptographyTag">
               Cryptography
             </button>
@@ -168,87 +160,84 @@
       </div>
       <div class="filter__search">
         <h2 class="filter__selection_h2">Or type to search for keyword</h2>
-        <input
-          class="filter__search__input"
-          type="search"
-          placeholder="Start typing to filter"
-        />
-      </div>
+        <input class="filter__search__input" type="search" placeholder="Start typing to filter" />
       </div>
     </div>
-      <div id="ourChallenges">
+    <div id="ourChallenges"></div>
+    <button class="book">Book this room</button>
+    <div class="modal">
+      <div class="modal__container modal__stepOne">
+        <h3>Book room "Title of room" (step 1)</h3>
+        <p>What date would you like to come?</p>
+        <p>Date</p>
+        <input type="date" class="modal__date" />
+        <button class="modal__btn modal__searchBtn">
+          Search available times
+        </button>
       </div>
-      <button class="book">Book this room</button>
-      <div class="modal">
-          <div class="modal__container modal__stepOne">
-              <h3>Book room "Title of room" (step 1)</h3>
-              <p>What date would you like to come?</p>
-              <p>Date</p>
-              <input type="date" class="modal__date">
-          <button class="modal__btn modal__searchBtn">Search available times</button>
+      <div class="modal__container modal__stepTwo">
+        <div class="fontstyle">
+          <h3 class="bookroom__step2">Book room "Title of room" (step 2)</h3>
+          <div>
+            <label class="font__name">Name</label>
+            <input type="name" class="input__name" />
           </div>
-          <div class="modal__container modal__stepTwo">
-            <div class="fontstyle">
-              <h3 class="bookroom__step2">Book room "Title of room" (step 2)</h3>
-          
-             <div>
-              <label class="font__name">Name</label>
-              <input type="name" class="input__name"></input>
-              </div>
-              
-              <div>
-              <label class="font__mail">E-mail</label>
-              <input type="email" class="input__mail"></input>
-              </div>
-              <div>
-              <label class="font__whattime">What time?</label>
-              <input type="menu" class="input__whattime"></input>
-              </div>
-              <div>
-              <label class="font__howmany">How many participants?</label>
-              <input type="participants" class="input__howmany"></input>
-              </div>
-            <button class="modal__btn">Submit booking</button>
+          <div>
+            <label class="font__mail">E-mail</label>
+            <input type="email" class="input__mail" />
           </div>
-          <div class="modal__container modal__stepThree">
-            <div class="modal__wrapper">       
-              <h1 class="modal__text">Thank you!</h1>
-            <button class="modal__btn modal__backBtn">Back to challenges</button>
-            </div>
+          <div>
+            <label class="font__whattime">What time?</label>
+            <input type="menu" class="input__whattime" />
           </div>
-        </div>
-    </main>
-    <footer class="footer">
-      <div class="footer__box">
-        <div class="footer__title">
-          <h3>[Esc] Hacker Escape Rooms</h3>
-          <p>
-            Quodsi haberent magnalia inter potentiam et divitias, et non illam
-            quidem haec eo spectant haec quoque vos omnino desit illud quo solo
-            felicitatis libertatisque perficiuntur.
-          </p>
-        </div>
-        <div class="footer__sitemap">
-          <h3>Site map</h3>
-          <a href="#story">The Story</a>
-          <a href="#contact">Contact Us</a>
-          <a href="#legal">Legal</a>
-          <div class="footer__play">
-            <li><a href="challenges.html">Play online</a></li>
-            <li><a href="challenges.html">Play on-site</a></li>
+          <div>
+            <label class="font__howmany">How many participants?</label>
+            <input type="participants" class="input__howmany" />
           </div>
-        </div>
-        <div class="footer__follow">
-          <h3>Follow us on</h3>
-          <a href="#facebook">Facebook</a>
-          <a href="#instagram">Instagram</a>
-          <a href="#twitter">Twitter</a>
+          <button class="modal__btn">Submit booking</button>
         </div>
       </div>
-    </footer>
-  </div>
-    <script src="app.js"></script>
-    <script src="modal.js"></script>
-    <script src="filterboxConny.js"></script>
-  </body>
+      <div class="modal__container modal__stepThree">
+        <div class="modal__wrapper">
+          <h1 class="modal__text">Thank you!</h1>
+          <button class="modal__btn modal__backBtn">
+            Back to challenges
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__box">
+      <div class="footer__title">
+        <h3>[Esc] Hacker Escape Rooms</h3>
+        <p>
+          Quodsi haberent magnalia inter potentiam et divitias, et non illam
+          quidem haec eo spectant haec quoque vos omnino desit illud quo solo
+          felicitatis libertatisque perficiuntur.
+        </p>
+      </div>
+      <div class="footer__sitemap">
+        <h3>Site map</h3>
+        <a href="#story">The Story</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#legal">Legal</a>
+        <div class="footer__play">
+          <li><a href="challenges.html">Play online</a></li>
+          <li><a href="challenges.html">Play on-site</a></li>
+        </div>
+      </div>
+      <div class="footer__follow">
+        <h3>Follow us on</h3>
+        <a href="#facebook">Facebook</a>
+        <a href="#instagram">Instagram</a>
+        <a href="#twitter">Twitter</a>
+      </div>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+  <script src="modal.js"></script>
+  <script src="filterboxConny.js"></script>
+</body>
+
 </html>
