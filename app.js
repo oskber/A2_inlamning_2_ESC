@@ -36,18 +36,20 @@ class ChallengeCard {
     this.data = data;
   }
 
-  //Williams kod
   generateStarImages(rating) {
-    console.log("Rating:", rating); // Log the rating
     const maxStars = 5;
-    const roundedRating = Math.round(rating);
     const starContainer = document.createElement("div");
-    starContainer.classList.add("rooms__rating");
 
     for (let i = 1; i <= maxStars; i++) {
       const starImage = document.createElement("img");
-      starImage.src =
-        i <= roundedRating ? "Images/star-filled.png" : "Images/star-empty.png";
+      const isFilled = i <= rating;
+      const isHalf = i - 0.5 === rating;
+
+      starImage.src = isFilled
+        ? "Images/star-filled.svg"
+        : isHalf
+        ? "Images/star-half-filled.svg"
+        : "Images/star-empty.svg";
       starContainer.appendChild(starImage);
     }
 
@@ -73,17 +75,17 @@ class ChallengeCard {
     card.classList.add("rooms__box");
 
     const titleElement = document.createElement("h2");
-    titleElement.classList.add("rooms__heading")
+    titleElement.classList.add("rooms__heading");
     titleElement.textContent = this.data.title;
 
     const descriptionElement = document.createElement("p");
-    descriptionElement.classList.add("rooms__description")
+    descriptionElement.classList.add("rooms__description");
     descriptionElement.textContent = this.data.description;
 
     const detailsContainer = document.createElement("div");
     detailsContainer.classList.add("rooms__rating-container");
 
-    const ratingElement = document.createElement("div");
+    const ratingElement = this.generateStarImages(this.data.rating);
     ratingElement.classList.add("rooms__rating");
     ratingElement.appendChild(this.generateStarImages(this.data.rating));    
 
@@ -92,12 +94,8 @@ class ChallengeCard {
     participantsElement.textContent = `${this.data.minParticipants} - ${this.data.maxParticipants} Participants`;
 
     const typeOfRoom = document.createElement("p");
-    typeOfRoom.classList.add("rooms__type")
-    typeOfRoom.textContent = `(${this.data.type})`;
+    typeOfRoom.type = `Type: ${this.data.type}`;
 
-    const typeOfRoomImage = document.createElement("span");
-    typeOfRoomImage.appendChild(this.typeOfRoom(this.data.type));
-    
     detailsContainer.appendChild(ratingElement);
     detailsContainer.appendChild(participantsElement);
     detailsContainer.appendChild(typeOfRoom);
