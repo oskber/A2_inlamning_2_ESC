@@ -1,7 +1,6 @@
 {
   "name": "a2_inlamning_2_esc",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "sass:watch": "sass --no-source-map --watch src/styles.scss styles.css",
@@ -11,5 +10,6 @@
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.69.5"
-  }
+  },
+  "description": ""
 }

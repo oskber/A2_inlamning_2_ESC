@@ -408,12 +408,12 @@ main {
   margin: 0;
 }
 .rooms__star--filled {
-  background: url("Images/star-filled.svg");
+  background: url("Images/star-filled.png");
   width: 15px;
   height: 15px;
 }
 .rooms__star--empty {
-  background: url("Images/star-empty.svg");
+  background: url("Images/star-empty.png");
   width: 15px;
   height: 15px;
 }
@@ -862,6 +862,9 @@ body {
 }
 .filter__selection_h2 {
   font-size: 18px;
+}
+.filter__selection__byrating {
+  margin-left: 40px;
 }
 .filter__search {
   display: flex;
