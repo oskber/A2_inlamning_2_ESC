@@ -36,7 +36,8 @@ class ChallengeCard {
     this.data = data;
   }
 
-  /* generateStarImages(rating) {
+  //Williams kod
+  generateStarImages(rating) {
     console.log("Rating:", rating); // Log the rating
     const maxStars = 5;
     const roundedRating = Math.round(rating);
@@ -51,16 +52,32 @@ class ChallengeCard {
     }
 
     return starContainer;
-  } */
+  }
+
+  typeOfRoom(type) {
+    const typeElement = document.createElement("span");
+  
+    if (this.data.type === "onsite") {
+      typeElement.classList.add("rooms__type--onsite");
+      typeElement.innerHTML = `<i class="fa-solid fa-house"></i>`;
+    } else {
+      typeElement.classList.add("rooms__type--online");
+      typeElement.innerHTML = `<i class="fa-solid fa-laptop-code"></i>`;
+    }
+  
+    return typeElement;
+  }
 
   render() {
     const card = document.createElement("div");
     card.classList.add("rooms__box");
 
     const titleElement = document.createElement("h2");
+    titleElement.classList.add("rooms__heading")
     titleElement.textContent = this.data.title;
 
     const descriptionElement = document.createElement("p");
+    descriptionElement.classList.add("rooms__description")
     descriptionElement.textContent = this.data.description;
 
     const detailsContainer = document.createElement("div");
@@ -68,16 +85,19 @@ class ChallengeCard {
 
     const ratingElement = document.createElement("div");
     ratingElement.classList.add("rooms__rating");
-    //ratingElement.appendChild(this.generateStarImages(this.data.rating));
-    
+    ratingElement.appendChild(this.generateStarImages(this.data.rating));    
 
     const participantsElement = document.createElement("p");
     participantsElement.classList.add("rooms__participants");
     participantsElement.textContent = `${this.data.minParticipants} - ${this.data.maxParticipants} Participants`;
 
     const typeOfRoom = document.createElement("p");
-    typeOfRoom.type = `Type: ${this.data.type}`;
+    typeOfRoom.classList.add("rooms__type")
+    typeOfRoom.textContent = `(${this.data.type})`;
 
+    const typeOfRoomImage = document.createElement("span");
+    typeOfRoomImage.appendChild(this.typeOfRoom(this.data.type));
+    
     detailsContainer.appendChild(ratingElement);
     detailsContainer.appendChild(participantsElement);
     detailsContainer.appendChild(typeOfRoom);
@@ -93,8 +113,10 @@ class ChallengeCard {
 
     card.appendChild(imageElement);
     card.appendChild(titleElement);
+    card.appendChild(detailsContainer);
     card.appendChild(descriptionElement);
     card.appendChild(bookButton);
+    card.appendChild(typeOfRoomImage);
 
     return card;
   }

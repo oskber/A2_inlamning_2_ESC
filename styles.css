@@ -407,6 +407,27 @@ main {
   padding-left: 10px;
   margin: 0;
 }
+.rooms__type {
+  margin: 0;
+  padding-left: 40px;
+  font-weight: bold;
+}
+.rooms__type--onsite i {
+  display: block;
+  font-size: 50px;
+  color: rgba(75, 75, 75, 0.5);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.rooms__type--online {
+  display: block;
+  font-size: 50px;
+  color: rgba(75, 75, 75, 0.5);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 .rooms__star--filled {
   background: url("Images/star-filled.png");
   width: 15px;
@@ -417,7 +438,7 @@ main {
   width: 15px;
   height: 15px;
 }
-.rooms__paragraph {
+.rooms__description {
   margin: 15px 10px 25px 10px;
   font-size: 1em;
 }
@@ -783,10 +804,23 @@ body {
 
 #ourChallenges {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
   padding: 0 50px;
-  gap: 5px;
+  gap: 10px;
+  overflow-x: scroll;
+}
+@media screen and (min-width: 768px) {
+  #ourChallenges {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #ourChallenges {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
 }
 
 /* FILTERBOX-PAGE */

@@ -475,6 +475,29 @@ main {
     margin: 0;
   }
 
+  &__type {
+    margin: 0;
+    padding-left: 40px;
+    font-weight: bold;
+  }
+
+  &__type--onsite i {
+    display: block;
+    font-size: 50px;
+    color: rgb(75, 75, 75, 0.5);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  &__type--online {
+    display: block;
+    font-size: 50px;
+    color: rgb(75, 75, 75, 0.5);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
   &__star--filled {
     background: url("Images/star-filled.png");
     width: 15px;
@@ -487,7 +510,7 @@ main {
     height: 15px;
   }
 
-  &__paragraph {
+  &__description {
     margin: 15px 10px 25px 10px;
     font-size: 1em;
   }
@@ -499,6 +522,8 @@ main {
     right: 10px;
   }
 }
+
+
 
 .buttons__bottom {
   display: flex;
