@@ -85,6 +85,10 @@
   font-size: 18px;
   }
 
+  &__selection__byrating {
+    margin-left: 40px;
+  }
+
   &__search {
     display: flex;
     padding: 100px 0 20px 0;
@@ -159,11 +163,11 @@
     background-size: cover;
     width: 20px;
     height: 20px;
-    background-image: url("Images/star-empty.png");
+    background-image: url("Images/star-empty.svg");
   }
 
   &__selection__stars__row_1 input:checked~label {
-    background-image: url("Images/star-filled.png");
+    background-image: url("Images/star-filled.svg");
   }
 
   &__starSpace {
@@ -189,11 +193,11 @@
     background-size: cover;
     width: 20px;
     height: 20px;
-    background-image: url("Images/star-empty.png");
+    background-image: url("Images/star-empty.svg");
   }
 
   &__selection__stars__row_2 input:checked~label {
-    background-image: url("Images/star-filled.png");
+    background-image: url("Images/star-filled.svg");
   }
 
   &__selection__tags {
