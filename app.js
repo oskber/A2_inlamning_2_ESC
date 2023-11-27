@@ -56,9 +56,9 @@ class ChallengeCard {
     return starContainer;
   }
 
-  typeOfRoom(type) {
+  typeOfRoom() {
     const typeElement = document.createElement("span");
-  
+
     if (this.data.type === "onsite") {
       typeElement.classList.add("rooms__type--onsite");
       typeElement.innerHTML = `<i class="fa-solid fa-house"></i>`;
@@ -66,8 +66,18 @@ class ChallengeCard {
       typeElement.classList.add("rooms__type--online");
       typeElement.innerHTML = `<i class="fa-solid fa-laptop-code"></i>`;
     }
-  
     return typeElement;
+  }
+
+  typeTag() {
+    const typeTag = document.createElement("span");
+
+    if (this.data.type === "onsite") {
+      typeTag.innerHTML = "(on-site)";
+    } else {
+      typeTag.innerHTML = "(networked)";
+    }
+    return typeTag;
   }
 
   render() {
@@ -87,18 +97,17 @@ class ChallengeCard {
 
     const ratingElement = this.generateStarImages(this.data.rating);
     ratingElement.classList.add("rooms__rating");
-    ratingElement.appendChild(this.generateStarImages(this.data.rating));    
 
     const participantsElement = document.createElement("p");
     participantsElement.classList.add("rooms__participants");
     participantsElement.textContent = `${this.data.minParticipants} - ${this.data.maxParticipants} Participants`;
 
-    const typeOfRoom = document.createElement("p");
-    typeOfRoom.type = `Type: ${this.data.type}`;
+    const typeTag = this.typeTag(this.data.type);
+    typeTag.classList.add("rooms__typeTag");
 
     detailsContainer.appendChild(ratingElement);
     detailsContainer.appendChild(participantsElement);
-    detailsContainer.appendChild(typeOfRoom);
+    titleElement.appendChild(typeTag);
 
     const imageElement = document.createElement("img");
     imageElement.src = this.data.image;
@@ -109,12 +118,14 @@ class ChallengeCard {
     bookButton.textContent = "Book this room";
     bookButton.classList.add("rooms__button");
 
+    const typeElement = this.typeOfRoom(this.data.type);
+
     card.appendChild(imageElement);
     card.appendChild(titleElement);
     card.appendChild(detailsContainer);
     card.appendChild(descriptionElement);
     card.appendChild(bookButton);
-    card.appendChild(typeOfRoomImage);
+    card.appendChild(typeElement);
 
     return card;
   }
