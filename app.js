@@ -45,7 +45,11 @@ class ChallengeCard {
       const isFilled = i <= rating;
       const isHalf = i - 0.5 === rating;
 
-      starImage.src = isFilled? "Images/star-filled.svg": isHalf? "Images/star-half-filled.svg": "Images/star-empty.svg";
+      starImage.src = isFilled
+        ? "Images/star-filled.svg"
+        : isHalf
+        ? "Images/star-half-filled.svg"
+        : "Images/star-empty.svg";
       starContainer.appendChild(starImage);
     }
 
@@ -92,7 +96,6 @@ class ChallengeCard {
     card.appendChild(titleElement);
     card.appendChild(detailsContainer);
     card.appendChild(descriptionElement);
-    
 
     return card;
   }
