@@ -1041,3 +1041,7 @@ body {
 .modal__btn:hover {
   cursor: pointer;
 }
+
+.rooms__rating img {
+  width: 7%;
+}
