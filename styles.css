@@ -950,10 +950,10 @@ body {
   background-size: cover;
   width: 20px;
   height: 20px;
-  background-image: url("Images/star-empty.png");
+  background-image: url("Images/star-empty.svg");
 }
 .filter__selection__stars__row_2 input:checked ~ label {
-  background-image: url("Images/star-filled.png");
+  background-image: url("Images/star-filled.svg");
 }
 .filter__selection__tags {
   display: flex;
