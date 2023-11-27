@@ -153,7 +153,7 @@ class ViewTopThree {
   }
 }
 
-class FilterBox1 {
+class FilterBoxOpenAndClose {
   constructor() {
     this.filterOpen = document.querySelector(".title__filterBtn");
     this.filter__container = document.querySelector(".filter__container");
@@ -180,9 +180,58 @@ class FilterBox1 {
   }
 }
 
-const filterBox1 = new FilterBox1();
+const filterBox1 = new FilterBoxOpenAndClose();
 
-class FilterBox2 {}
+class FilterByType {
+  constructor() {
+    this.onlineCheckbox = document.querySelector("#onlineChallengeCheckbox");
+    this.onsiteCheckbox = document.querySelector("#onsiteChallengeCheckbox");
+
+    this.onlineCheckbox.addEventListener("change", () => {
+      this.filterChallengesByType();
+    });
+
+    this.onsiteCheckbox.addEventListener("change", () => {
+      this.filterChallengesByType();
+    });
+  }
+
+  filterChallengesByType() {
+    const onlineChecked = this.onlineCheckbox.checked;
+    const onsiteChecked = this.onsiteCheckbox.checked;
+
+    const challengesContainer = document.querySelector("#ourChallenges");
+    const api = new APIadapter();
+
+    api.fetchAllChallenges().then((challenges) => {
+      let filteredChallenges;
+
+      if (!onlineChecked && !onsiteChecked) {
+        // No checkboxes are checked, show all challenges
+        filteredChallenges = challenges;
+      } else {
+        // Filter challenges
+        filteredChallenges = challenges.filter((challenge) => {
+          return (
+            (onlineChecked && challenge.data.type === "online") ||
+            (onsiteChecked && challenge.data.type === "onsite")
+          );
+        });
+      }
+
+      // Clear challenges
+      challengesContainer.innerHTML = "";
+
+      // Render challenges
+      filteredChallenges.forEach((challenge) => {
+        const element = challenge.render();
+        challengesContainer.appendChild(element);
+      });
+    });
+  }
+}
+
+const filterBox2 = new FilterByType();
 
 class Booking1 {}
 
