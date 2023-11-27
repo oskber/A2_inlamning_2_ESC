@@ -89,14 +89,35 @@
     display: flex;
     padding: 100px 0 20px 0;
     flex-direction: column;
+    margin-left: 40px;
   }
-
+  
   &__search__input {
     font-size: 20px;
     border: solid grey 2px;
     border-radius: 5px;
     height: 45px;
     padding-left: 10px;
+    width: 430px;
+  }
+
+  &__selection__bytags {
+    margin-left: 40px;
+    margin-right: 10px;
+  }
+
+  &__selection__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  &__selection__tags__button {
+    color: grey;
+    border-radius: 30px;
+    background-color: transparent;
+    padding: 8px;
+    font-weight: 700;
   }
 
   &__selection__bytype-1 {
@@ -114,9 +135,8 @@
   
   &__selection_text {
     margin: 5px;
-   }
+  }
 
-   
   &__selection__stars {
     display: flex;
     flex-direction: row;
@@ -139,11 +159,11 @@
     background-size: cover;
     width: 20px;
     height: 20px;
-    background-image: url("Images/star-empty.png");
+    background-image: url("Images/star-empty.svg");
   }
 
   &__selection__stars__row_1 input:checked~label {
-    background-image: url("Images/star-filled.png");
+    background-image: url("Images/star-filled.svg");
   }
 
   &__starSpace {
@@ -169,11 +189,11 @@
     background-size: cover;
     width: 20px;
     height: 20px;
-    background-image: url("Images/star-empty.png");
+    background-image: url("Images/star-empty.svg");
   }
 
   &__selection__stars__row_2 input:checked~label {
-    background-image: url("Images/star-filled.png");
+    background-image: url("Images/star-filled.svg");
   }
 
   &__selection__tags {
@@ -188,3 +208,11 @@
     margin-right: 10px;
   }
 }
+
+
+
+
+
+
+
+
