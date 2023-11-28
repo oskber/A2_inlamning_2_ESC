@@ -1004,6 +1004,10 @@ body {
   background-color: transparent;
   margin-right: 10px;
 }
+.filter__selection__tags__button.selected {
+  background-color: #333;
+  color: #fff;
+}
 
 .modal {
   display: none;

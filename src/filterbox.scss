@@ -211,6 +211,11 @@
     background-color: transparent;
     margin-right: 10px;
   }
+
+  &__selection__tags__button.selected {
+    background-color: #333;
+    color: #fff;
+  }
 }
 
 

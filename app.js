@@ -263,6 +263,120 @@ class FilterByType {
 
 const filterBox2 = new FilterByType();
 
+class FilterByTags {
+  constructor() {
+    this.tagsContainer = document.querySelector(".filter__selection__tags");
+    this.tagsFilter = [];
+
+    this.fetchTags();
+    this.selectedTags = [];
+
+    // Add an event listener for clearing selected tags
+    //const clearTagsButton = document.querySelector(".filter__selection__tags__clear");
+    //clearTagsButton.addEventListener("click", () => {
+      //this.selectedTags = [];
+      //this.updateTagButtons();
+      //this.filterChallengesByTags();
+    //});
+  }
+
+  async fetchTags() {
+    try {
+      const api = new APIadapter();
+      const challenges = await api.fetchAllChallenges();
+
+      challenges.forEach((challenge) => {
+        challenge.data.labels.forEach((label) => {
+          if (!this.tagsFilter.includes(label)) {
+            this.tagsFilter.push(label);
+            this.createTagButton(label);
+          }
+        });
+      });
+    } catch (error) {
+      console.error("Error fetching tags:", error);
+    }
+  }
+
+  createTagButton(label) {
+    const button = document.createElement("button");
+    button.textContent = label;
+    button.classList.add("filter__selection__tags__button");
+
+    button.addEventListener("click", () => {
+      this.toggleTagSelection(label);
+    });
+
+    if (this.selectedTags.includes(label)) {
+      button.classList.add("selected");
+    }
+
+    this.tagsContainer.appendChild(button);
+  }
+
+  toggleTagSelection(label) {
+    // Toggle the selection state of the tag
+    if (this.selectedTags.includes(label)) {
+      this.selectedTags = this.selectedTags.filter((tag) => tag !== label);
+    } else {
+      this.selectedTags.push(label);
+    }
+
+    // Update the appearance of tag buttons
+    this.updateTagButtons();
+
+    // Filter challenges based on the selected tags
+    this.filterChallengesByTags();
+  }
+
+  updateTagButtons() {
+    // Update the appearance of tag buttons based on the selected state
+    const tagButtons = document.querySelectorAll(".filter__selection__tags__button");
+    tagButtons.forEach((button) => {
+      const label = button.textContent;
+      if (this.selectedTags.includes(label)) {
+        button.classList.add("selected");
+      } else {
+        button.classList.remove("selected");
+      }
+    });
+  }
+
+  filterChallengesByTags() {
+    const challengesContainer = document.querySelector("#ourChallenges");
+    const api = new APIadapter();
+
+    api.fetchAllChallenges().then((challenges) => {
+      let filteredChallenges;
+
+      if (this.selectedTags.length === 0) {
+        // No tags are selected, show all challenges
+        filteredChallenges = challenges;
+      } else {
+        // Filter challenges based on selected tags
+        filteredChallenges = challenges.filter((challenge) => {
+          return this.selectedTags.every((tag) =>
+            challenge.data.labels.includes(tag)
+          );
+        });
+      }
+
+      console.log("Number of cards shoooowing:", filteredChallenges.length);
+
+      // Clear challenges
+      challengesContainer.innerHTML = "";
+
+      // Render challenges
+      filteredChallenges.forEach((challenge) => {
+        const element = challenge.render();
+        challengesContainer.appendChild(element);
+      });
+    });
+  }
+}
+
+const filterByTags = new FilterByTags();
+
 class Booking1 {}
 
 class Booking2 {}
