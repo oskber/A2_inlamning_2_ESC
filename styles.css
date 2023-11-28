@@ -393,33 +393,60 @@ main {
     padding-right: 10px;
   }
 }
-.rooms__rating div {
+.rooms__rating {
   display: flex;
-  gap: 0.2rem;
+  gap: 0.3rem;
+  max-width: 120px;
 }
 .rooms__rating-container {
   display: flex;
   gap: 10px;
   padding-left: 10px;
 }
+.rooms__rating img {
+  width: 15px;
+}
 .rooms__participants {
   color: black;
   padding-left: 10px;
   margin: 0;
+  font-size: 0.9rem;
+}
+.rooms__typeTag {
+  margin: 0;
+  padding-left: 10px;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+.rooms__type--onsite i {
+  display: block;
+  font-size: 40px;
+  color: rgba(75, 75, 75, 0.5);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.rooms__type--online i {
+  display: block;
+  font-size: 40px;
+  color: rgba(75, 75, 75, 0.5);
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 .rooms__star--filled {
-  background: url("Images/star-filled.png");
+  background: url("Images/star-filled.svg");
   width: 15px;
   height: 15px;
 }
 .rooms__star--empty {
-  background: url("Images/star-empty.png");
+  background: url("Images/star-empty.svg");
   width: 15px;
   height: 15px;
 }
-.rooms__paragraph {
+.rooms__description {
   margin: 15px 10px 25px 10px;
-  font-size: 1em;
+  font-size: 1.2em;
 }
 .rooms__button {
   margin: 15px 10px;
@@ -783,14 +810,23 @@ body {
 
 #ourChallenges {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
   padding: 0 50px;
-  gap: 5px;
+  gap: 10px;
+  overflow-x: scroll;
 }
-
-.rooms__rating img {
-  width: 7%;
+@media screen and (min-width: 768px) {
+  #ourChallenges {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #ourChallenges {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
 }
 
 /* FILTERBOX-PAGE */

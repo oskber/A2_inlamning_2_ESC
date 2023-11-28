@@ -48,8 +48,8 @@
       <ul class="header__list">
         <li><a href="challenges.html">Play online</a></li>
         <li><a href="challenges.html">Play on-site</a></li>
-        <li><a href="#story">The Story</a></li>
-        <li><a href="#contact">Contact us</a></li>
+        <li a href="#story">The Story</li>
+        <li a href="#contact">Contact us</li>
       </ul>
     </nav>
     <button class="hamburger__button--open">
@@ -146,46 +146,43 @@
         </div>
       </div>
     </div>
-    <div id="ourChallenges"></div>
+    <div id="ourChallenges">
+    </div>
     <button class="book">Book this room</button>
     <div class="modal">
       <div class="modal__container modal__stepOne">
         <h3>Book room "Title of room" (step 1)</h3>
         <p>What date would you like to come?</p>
         <p>Date</p>
-        <input type="date" class="modal__date" />
-        <button class="modal__btn modal__searchBtn">
-          Search available times
-        </button>
+        <input type="date" class="modal__date">
+        <button class="modal__btn modal__searchBtn">Search available times</button>
       </div>
       <div class="modal__container modal__stepTwo">
         <div class="fontstyle">
           <h3 class="bookroom__step2">Book room "Title of room" (step 2)</h3>
           <div>
             <label class="font__name">Name</label>
-            <input type="name" class="input__name" />
+            <input type="name" class="input__name">
           </div>
           <div>
             <label class="font__mail">E-mail</label>
-            <input type="email" class="input__mail" />
+            <input type="email" class="input__mail">
           </div>
           <div>
             <label class="font__whattime">What time?</label>
-            <input type="menu" class="input__whattime" />
+            <input type="menu" class="input__whattime">
           </div>
           <div>
             <label class="font__howmany">How many participants?</label>
-            <input type="participants" class="input__howmany" />
+            <input type="participants" class="input__howmany">
           </div>
           <button class="modal__btn">Submit booking</button>
         </div>
-      </div>
-      <div class="modal__container modal__stepThree">
-        <div class="modal__wrapper">
-          <h1 class="modal__text">Thank you!</h1>
-          <button class="modal__btn modal__backBtn">
-            Back to challenges
-          </button>
+        <div class="modal__container modal__stepThree">
+          <div class="modal__wrapper">
+            <h1 class="modal__text">Thank you!</h1>
+            <button class="modal__btn modal__backBtn">Back to challenges</button>
+          </div>
         </div>
       </div>
     </div>
@@ -219,6 +216,7 @@
       </div>
     </div>
   </footer>
+
   <script src="app.js"></script>
   <script src="modal.js"></script>
   <script src="filterboxConny.js"></script>
