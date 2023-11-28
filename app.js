@@ -56,14 +56,40 @@ class ChallengeCard {
     return starContainer;
   }
 
+  typeOfRoom() {
+    const typeElement = document.createElement("span");
+
+    if (this.data.type === "onsite") {
+      typeElement.classList.add("rooms__type--onsite");
+      typeElement.innerHTML = `<i class="fa-solid fa-house"></i>`;
+    } else {
+      typeElement.classList.add("rooms__type--online");
+      typeElement.innerHTML = `<i class="fa-solid fa-laptop-code"></i>`;
+    }
+    return typeElement;
+  }
+
+  typeTag() {
+    const typeTag = document.createElement("span");
+
+    if (this.data.type === "onsite") {
+      typeTag.innerHTML = "(on-site)";
+    } else {
+      typeTag.innerHTML = "(networked)";
+    }
+    return typeTag;
+  }
+
   render() {
     const card = document.createElement("div");
     card.classList.add("rooms__box");
 
     const titleElement = document.createElement("h2");
+    titleElement.classList.add("rooms__heading");
     titleElement.textContent = this.data.title;
 
     const descriptionElement = document.createElement("p");
+    descriptionElement.classList.add("rooms__description");
     descriptionElement.textContent = this.data.description;
 
     const detailsContainer = document.createElement("div");
@@ -76,12 +102,12 @@ class ChallengeCard {
     participantsElement.classList.add("rooms__participants");
     participantsElement.textContent = `${this.data.minParticipants} - ${this.data.maxParticipants} Participants`;
 
-    const typeOfRoom = document.createElement("p");
-    typeOfRoom.type = `Type: ${this.data.type}`;
+    const typeTag = this.typeTag(this.data.type);
+    typeTag.classList.add("rooms__typeTag");
 
     detailsContainer.appendChild(ratingElement);
     detailsContainer.appendChild(participantsElement);
-    detailsContainer.appendChild(typeOfRoom);
+    titleElement.appendChild(typeTag);
 
     const imageElement = document.createElement("img");
     imageElement.src = this.data.image;
@@ -92,10 +118,14 @@ class ChallengeCard {
     bookButton.textContent = "Book this room";
     bookButton.classList.add("rooms__button");
 
+    const typeElement = this.typeOfRoom(this.data.type);
+
     card.appendChild(imageElement);
     card.appendChild(titleElement);
     card.appendChild(detailsContainer);
     card.appendChild(descriptionElement);
+    card.appendChild(bookButton);
+    card.appendChild(typeElement);
 
     return card;
   }

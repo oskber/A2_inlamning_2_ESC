@@ -30,15 +30,19 @@ body {
 
 #ourChallenges {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-template-rows: auto;
   padding: 0 50px;
-  gap: 5px;
+  gap: 10px;
+  overflow-x: scroll;
+
+  @include breakpoint($medium-screen-breakpoint) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  @include breakpoint($large-screen-breakpoint) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
 }
-
-.rooms__rating img {
-  width: 7%;
-}
-
-
-

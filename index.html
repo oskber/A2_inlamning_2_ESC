@@ -1,199 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/4c51990d8f.js"
-      crossorigin="anonymous"
-    ></script>
 
-    <!-- Primary Meta Tags -->
-    <title>[ESC] — Hacker Escape Rooms</title>
-    <meta name="title" content="[ESC] — Hacker Escape Rooms" />
-    <meta
-      name="description"
-      content="Challenge yourself or your team in our Hacker Escape Rooms, both online and on-site!"
-    />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4c51990d8f.js" crossorigin="anonymous"></script>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://metatags.io/" />
-    <meta property="og:title" content="[ESC] — Hacker Escape Rooms" />
-    <meta
-      property="og:description"
-      content="Challenge yourself or your team in our Hacker Escape Rooms, both online and on-site!"
-    />
-    <meta property="og:image" content="Images/image_hero.png" />
+  <!-- Primary Meta Tags -->
+  <title>[ESC] — Hacker Escape Rooms</title>
+  <meta name="title" content="[ESC] — Hacker Escape Rooms" />
+  <meta name="description"
+    content="Challenge yourself or your team in our Hacker Escape Rooms, both online and on-site!" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://metatags.io/" />
-    <meta property="twitter:title" content="[ESC] — Hacker Escape Rooms" />
-    <meta
-      property="twitter:description"
-      content="Challenge yourself or your team in our Hacker Escape Rooms, both online and on-site!"
-    />
-    <meta
-      property="twitter:image"
-      content="https://metatags.io/images/meta-tags.png"
-    />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://metatags.io/" />
+  <meta property="og:title" content="[ESC] — Hacker Escape Rooms" />
+  <meta property="og:description"
+    content="Challenge yourself or your team in our Hacker Escape Rooms, both online and on-site!" />
+  <meta property="og:image" content="Images/image_hero.png" />
 
-    <!-- Meta Tags Generated with https://metatags.io -->
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://metatags.io/" />
+  <meta property="twitter:title" content="[ESC] — Hacker Escape Rooms" />
+  <meta property="twitter:description"
+    content="Challenge yourself or your team in our Hacker Escape Rooms, both online and on-site!" />
+  <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
 
-    <title>Hacker Escape Rooms</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__logo__container">
-        <a href="index.html"
-          ><img class="header__logo" src="Images/image_logo.png" alt="ESC_logo"
-        /></a>
-        <h1 class="header__title">Hacker Escape Rooms</h1>
-      </div>
-      <nav class="header__nav">
-        <ul class="header__list">
+  <!-- Meta Tags Generated with https://metatags.io -->
+
+
+  <title>Hacker Escape Rooms</title>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header__logo__container">
+      <a href="index.html"><img class="header__logo" src="Images/image_logo.png" alt="ESC_logo"></a>
+      <h1 class="header__title">Hacker Escape Rooms</h1>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__list">
+        <li><a href="challenges.html">Play online</a></li>
+        <li><a href="challenges.html">Play on-site</a></li>
+        <li a href="#story">The Story</li>
+        <li a href="#contact">Contact us</li>
+      </ul>
+    </nav>
+    <button class="hamburger__button--open"><img src="Buttons/open.png" alt=""></button>
+    <div class="hamburger__container">
+
+      <nav class="hamburger__nav">
+        <button class="hamburger__button--close"><img src="Buttons/close.png" /></button>
+        <ul class="hamburger__list">
           <li><a href="challenges.html">Play online</a></li>
           <li><a href="challenges.html">Play on-site</a></li>
           <li a href="#story">The Story</li>
           <li a href="#contact">Contact us</li>
         </ul>
       </nav>
-      <button class="hamburger__button--open">
-        <img src="Buttons/open.png" alt="" />
-      </button>
-      <div class="hamburger__container">
-        <nav class="hamburger__nav">
-          <button class="hamburger__button--close">
-            <img src="Buttons/close.png" />
-          </button>
-          <ul class="hamburger__list">
-            <li><a href="challenges.html">Play online</a></li>
-            <li><a href="challenges.html">Play on-site</a></li>
-            <li a href="#story">The Story</li>
-            <li a href="#contact">Contact us</li>
-          </ul>
-        </nav>
+    </div>
+  </header>
+  <main>
+    <img class="hero" src="Images/image_hero.png" alt="A man with hoodie in front of computer">
+    <div class="buttons__top">
+      <button class="buttons__top__btn">On-site challenges</button>
+      <button class="buttons__top__link">Online challenges</button>
+    </div>
+    <section class="quotes">
+      <img class="quotes__img" src="Images/image 3quote_portrait.png" alt="portrait image">
+      <div class="quotes__box">
+        <p class="quotes__quote">This is a quote about how amazing this place is and how much fun me and my friends had
+          when we tried it
+        </p>
+        <p class="quotes__below">John Doe, visited us in September 2021</p>
       </div>
-    </header>
-    <main>
-      <img
-        class="hero"
-        src="Images/image_hero.png"
-        alt="A man with hoodie in front of computer"
-      />
-      <div class="buttons__top">
-        <button class="buttons__top__btn">On-site challenges</button>
-        <button class="buttons__top__link">Online challenges</button>
+      <img class="quotes__img2" src="Images/image 3quote_portrait.png" alt="portrait image">
+      <div class="quotes__box2">
+        <p class="quotes__quote">This is a quote about how amazing this place is and how much fun me and my friends had
+          when we tried it
+        </p>
+        <p class="quotes__below">John Doe, visited us in September 2021</p>
       </div>
-      <section class="quotes">
-        <img
-          class="quotes__img"
-          src="Images/image 3quote_portrait.png"
-          alt="portrait image"
-        />
-        <div class="quotes__box">
-          <p class="quotes__quote">
-            This is a quote about how amazing this place is and how much fun me
-            and my friends had when we tried it
-          </p>
-          <p class="quotes__below">John Doe, visited us in September 2021</p>
-        </div>
-        <img
-          class="quotes__img2"
-          src="Images/image 3quote_portrait.png"
-          alt="portrait image"
-        />
-        <div class="quotes__box2">
-          <p class="quotes__quote">
-            This is a quote about how amazing this place is and how much fun me
-            and my friends had when we tried it
-          </p>
-          <p class="quotes__below">John Doe, visited us in September 2021</p>
-        </div>
-      </section>
-      <h1 class="popularTitle">Popular challenges right now</h1>
-      <section class="rooms"></section>
-      <div class="buttons__bottom">
-        <button class="buttons__bottom__btn">On-site challenges</button>
-        <button class="buttons__bottom__link">Online challenges</button>
+    </section>
+    <h1 class="popularTitle">Popular challenges right now</h1>
+    <section class="rooms">
+    </section>
+    <div class="buttons__bottom">
+      <button class="buttons__bottom__btn">On-site challenges</button>
+      <button class="buttons__bottom__link">Online challenges</button>
+    </div>
+    <section class="story">
+      <div class="story__box">
+        <p>Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec eo spectant haec quoque vos
+          omnino desit illud quo solo felicitatis libertatisque perficiuntur.</p>
+        <button class="story__btn">Read the full story</button>
       </div>
-      <section class="story">
-        <div class="story__box">
-          <p>
-            Quodsi haberent magnalia inter potentiam et divitias, et non illam
-            quidem haec eo spectant haec quoque vos omnino desit illud quo solo
-            felicitatis libertatisque perficiuntur.
-          </p>
-          <button class="story__btn">Read the full story</button>
+    </section>
+    <section class="book">
+      <img src="Images/nesa-by-makers-IgUR1iX0mqM-unsplash 1.png" alt="Two people looking at code">
+      <div class="book__box">
+        <h1>Play with your friends or build your team stronger at work</h1>
+        <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non
+          inimicos, et</p>
+        <button class="book__btn">Book on-site today</button>
+      </div>
+    </section>
+    <section class="allChallenges">
+      <img src="Images/kelly-sikkema-YK0HPwWDJ1I-unsplash 1.png" alt="A person looking at code">
+      <div class="allChallenges__box">
+        <h1>Play online or visit our venue for one of our 25 escape rooms</h1>
+        <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non
+          inimicos, et</p>
+        <button class="book__btn">See all challenges</button>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer__box">
+        <div class="footer__title">
+          <h3>[Esc] Hacker Escape Rooms</h3>
+          <p>Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec eo spectant haec quoque vos
+            omnino desit illud quo solo felicitatis libertatisque perficiuntur.</p>
         </div>
-      </section>
-      <section class="book">
-        <img
-          src="Images/nesa-by-makers-IgUR1iX0mqM-unsplash 1.png"
-          alt="Two people looking at code"
-        />
-        <div class="book__box">
-          <h1>Play with your friends or build your team stronger at work</h1>
-          <p>
-            Praeterea, ex culpa non invenies unum aut non accusatis unum. Et
-            nihil inuitam. Nemo nocere tibi erit, et non inimicos, et
-          </p>
-          <button class="book__btn">Book on-site today</button>
-        </div>
-      </section>
-      <section class="allChallenges">
-        <img
-          src="Images/kelly-sikkema-YK0HPwWDJ1I-unsplash 1.png"
-          alt="A person looking at code"
-        />
-        <div class="allChallenges__box">
-          <h1>Play online or visit our venue for one of our 25 escape rooms</h1>
-          <p>
-            Praeterea, ex culpa non invenies unum aut non accusatis unum. Et
-            nihil inuitam. Nemo nocere tibi erit, et non inimicos, et
-          </p>
-          <button class="book__btn">See all challenges</button>
-        </div>
-      </section>
-      <footer class="footer">
-        <div class="footer__box">
-          <div class="footer__title">
-            <h3>[Esc] Hacker Escape Rooms</h3>
-            <p>
-              Quodsi haberent magnalia inter potentiam et divitias, et non illam
-              quidem haec eo spectant haec quoque vos omnino desit illud quo
-              solo felicitatis libertatisque perficiuntur.
-            </p>
-          </div>
 
-          <div class="footer__sitemap">
-            <h3>Site map</h3>
-            <a href="#story">The Story</a>
-            <a href="#contact">Contact Us</a>
-            <a href="#legal">Legal</a>
-            <div class="footer__play">
-              <a href="challenges.html">Play online</a>
-              <a href="challenges.html">Play on-site</a>
-            </div>
-          </div>
-          <div class="footer__follow">
-            <h3>Follow us on</h3>
-            <a href="#facebook">Facebook</a>
-            <a href="#instagram">Instagram</a>
-            <a href="#twitter">Twitter</a>
+        <div class="footer__sitemap">
+          <h3>Site map</h3>
+          <a href="#story">The Story</a>
+          <a href="#contact">Contact Us</a>
+          <a href="#legal">Legal</a>
+          <div class="footer__play">
+            <a href="challenges.html">Play online</a>
+            <a href="challenges.html">Play on-site</a>
           </div>
         </div>
-      </footer>
+        <div class="footer__follow">
+          <h3>Follow us on</h3>
+          <a href="#facebook">Facebook</a>
+          <a href="#instagram">Instagram</a>
+          <a href="#twitter">Twitter</a>
+        </div>
+      </div>
+    </footer>
+  </main>
 
-      <script src="app.js"></script>
-    </main>
-  </body>
+
+  <script src="app.js"></script>
+</body>
+
 </html>
