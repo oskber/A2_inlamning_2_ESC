@@ -122,6 +122,43 @@
         <button class="book__btn">See all challenges</button>
       </div>
     </section>
+    <div class="modal">
+      <div class="modal__container modal__stepOne">
+        <h3>Book room "Title of room" (step 1)</h3>
+        <p>What date would you like to come?</p>
+        <p>Date</p>
+        <input type="date" class="modal__date">
+        <button class="modal__btn modal__searchBtn">Search available times</button>
+      </div>
+      <div class="modal__container modal__stepTwo">
+        <div class="fontstyle">
+          <h3 class="bookroom__step2">Book room "Title of room" (step 2)</h3>
+          <div>
+            <label class="font__name">Name</label>
+            <input type="name" class="input__name">
+          </div>
+          <div>
+            <label class="font__mail">E-mail</label>
+            <input type="email" class="input__mail">
+          </div>
+          <div>
+            <label class="font__whattime">What time?</label>
+            <input type="menu" class="input__whattime">
+          </div>
+          <div>
+            <label class="font__howmany">How many participants?</label>
+            <input type="participants" class="input__howmany">
+          </div>
+          <button class="modal__btn">Submit booking</button>
+        </div>
+      </div>
+      <div class="modal__container modal__stepThree">
+        <div class="modal__wrapper">
+          <h1 class="modal__text">Thank you!</h1>
+          <button class="modal__btn modal__backBtn">Back to challenges</button>
+        </div>
+      </div>
+    </div>
     <footer class="footer">
       <div class="footer__box">
         <div class="footer__title">
@@ -151,7 +188,8 @@
   </main>
 
 
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
+  <script type="module" src="modal.js"></script>
 </body>
 
 </html>

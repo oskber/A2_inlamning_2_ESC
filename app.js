@@ -1,5 +1,6 @@
-/* HAMBURGER MENU ON MOBILE */
+import { Modal } from "./modal.js";
 
+/* HAMBURGER MENU ON MOBILE */
 const hamburgerOpen = document.querySelector(".hamburger__button--open");
 const hamburgerClose = document.querySelector(".hamburger__button--close");
 const hamburgerNavCont = document.querySelector(".hamburger__container");
@@ -117,6 +118,12 @@ class ChallengeCard {
     const bookButton = document.createElement("button");
     bookButton.textContent = "Book this room";
     bookButton.classList.add("rooms__button");
+    
+    const modal = new Modal();
+    modal.start();
+    bookButton.addEventListener("click", () => {
+      modal.open();
+    })
 
     const typeElement = this.typeOfRoom(this.data.type);
 

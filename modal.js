@@ -1,39 +1,43 @@
 /* MODAL */
-const book = document.querySelector(".book");
-const modalBackground = document.querySelector(".modal");
-const modalBtnNextPage = document.querySelectorAll(".modal__btn");
-const modalSteps = document.getElementsByClassName("modal__container");
-let currentStep = 0;
-const modalClose = () => {
-  modalBackground.classList.remove("modal--open");
-  modalSteps[currentStep].classList.remove("modal--open");
-  currentStep = 0;
-};
-
-book.addEventListener("click", () => {
-  modalBackground.classList.add("modal--open");
-  modalSteps[0].classList.add("modal--open");
-});
-modalBackground.addEventListener("click", (event) => {
-  if (event.target === modalBackground) {
-    modalClose();
+export class Modal {
+  constructor() {
+    this.modalSteps = document.getElementsByClassName("modal__container");
+    this.modalBackground = document.querySelector(".modal");
   }
-});
-modalBtnNextPage.forEach((modalBtnNextPage) => {
-  modalBtnNextPage.addEventListener("click", () => {
-    if (currentStep === modalSteps.length - 1) {
-      modalClose();
-    } else {
-      modalSteps[currentStep + 1].classList.add("modal--open");
-      modalSteps[currentStep].classList.remove("modal--open");
-      currentStep += 1;
-    }
-  });
-});
+  start() {
+    const modalBtnNextPage = document.querySelectorAll(".modal__btn");
+    let currentStep = 0;
+    const modalClose = () => {
+      this.modalBackground.classList.remove("modal--open");
+      this.modalSteps[currentStep].classList.remove("modal--open");
+      currentStep = 0;
+    };
+    this.modalBackground.addEventListener("click", (event) => {
+      if (event.target === this.modalBackground) {
+        modalClose();
+      }
+    });
+    modalBtnNextPage.forEach((modalBtnNextPage) => {
+      modalBtnNextPage.addEventListener("click", () => {
+        if (currentStep === this.modalSteps.length - 1) {
+          modalClose();
+        } else {
+          this.modalSteps[currentStep + 1].classList.add("modal--open");
+          this.modalSteps[currentStep].classList.remove("modal--open");
+          currentStep += 1;
+        }
+      });
+    });
+  }
+  open() {
+    this.modalBackground.classList.add("modal--open");
+    this.modalSteps[0].classList.add("modal--open");
+  }
+}
 
 /* FETCH API BOOKING 1 */
 const dateField = document.querySelector(".modal__date");
-dateField.setAttribute("min", new Date().toISOString().split('T')[0]);
+dateField.setAttribute("min", new Date().toISOString().split("T")[0]);
 let timeSlots;
 async function getAvailableTimes(date) {
   const res = await fetch(
