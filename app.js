@@ -274,9 +274,9 @@ class FilterByTags {
     // Add an event listener for clearing selected tags
     //const clearTagsButton = document.querySelector(".filter__selection__tags__clear");
     //clearTagsButton.addEventListener("click", () => {
-      //this.selectedTags = [];
-      //this.updateTagButtons();
-      //this.filterChallengesByTags();
+    //this.selectedTags = [];
+    //this.updateTagButtons();
+    //this.filterChallengesByTags();
     //});
   }
 
@@ -331,7 +331,9 @@ class FilterByTags {
 
   updateTagButtons() {
     // Update the appearance of tag buttons based on the selected state
-    const tagButtons = document.querySelectorAll(".filter__selection__tags__button");
+    const tagButtons = document.querySelectorAll(
+      ".filter__selection__tags__button"
+    );
     tagButtons.forEach((button) => {
       const label = button.textContent;
       if (this.selectedTags.includes(label)) {
@@ -380,3 +382,82 @@ const filterByTags = new FilterByTags();
 class Booking1 {}
 
 class Booking2 {}
+
+class FilterByRating {
+  constructor() {
+    this.ratingRadiosRow1 = document.querySelectorAll("[name='rating_row_1']");
+
+    this.ratingRadiosRow2 = document.querySelectorAll("[name='rating_row_2']");
+
+    this.ratingRadiosRow1.forEach((radio) => {
+      radio.addEventListener("change", () => {
+        this.filterChallengesByRating();
+      });
+    });
+
+    this.ratingRadiosRow2.forEach((radio) => {
+      radio.addEventListener("change", () => {
+        this.filterChallengesByRating();
+      });
+    });
+  }
+
+  filterChallengesByRating() {
+    const challengesContainer = document.querySelector("#ourChallenges");
+
+    const api = new APIadapter();
+
+    api.fetchAllChallenges().then((challenges) => {
+      const selectedRatingRow1 = Array.from(this.ratingRadiosRow1).find(
+        (radio) => radio.checked
+      );
+
+      const selectedRatingRow2 = Array.from(this.ratingRadiosRow2).find(
+        (radio) => radio.checked
+      );
+
+      const ratingRow1 = selectedRatingRow1
+        ? parseFloat(selectedRatingRow1.value)
+        : 0;
+
+      const ratingRow2 = selectedRatingRow2
+        ? parseFloat(selectedRatingRow2.value)
+        : 0;
+
+      let filteredChallenges;
+
+      if (ratingRow1 === 0 && ratingRow2 === 0) {
+        // No ratings are selected, show all challenges
+
+        filteredChallenges = challenges;
+      } else {
+        // Filter challenges based on the selected ratings
+
+        filteredChallenges = challenges.filter((challenge) => {
+          const challengeRating = challenge.data.rating;
+
+          return (
+            ratingRow1 === 0 ||
+            (challengeRating >= ratingRow1 && challengeRating <= ratingRow2) ||
+            ratingRow2 === 0 ||
+            (challengeRating >= ratingRow2 && challengeRating <= ratingRow2)
+          );
+        });
+      }
+
+      // Clear challenges
+
+      challengesContainer.innerHTML = "";
+
+      // Render challenges
+
+      filteredChallenges.forEach((challenge) => {
+        const element = challenge.render();
+
+        challengesContainer.appendChild(element);
+      });
+    });
+  }
+}
+
+const filterByRating = new FilterByRating();
