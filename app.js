@@ -137,8 +137,7 @@ class APIadapter {
     const url = "https://lernia-sjj-assignments.vercel.app/api/challenges";
     const response = await fetch(url);
     const data = await response.json();
-    console.log("Fetched Challenges:", data);
-
+    
     return data.challenges.map(
       (challengeData) => new ChallengeCard(challengeData)
     );
@@ -150,7 +149,6 @@ class ViewAll {
     try {
       const api = new APIadapter();
       const challenges = await api.fetchAllChallenges();
-      console.log("All Challenges:", challenges);
 
       challenges.forEach((challenge) => {
         const element = challenge.render();
@@ -170,8 +168,6 @@ class ViewTopThree {
 
       const sorted = challenges.sort((a, b) => b.data.rating - a.data.rating);
       const topThree = sorted.slice(0, 3);
-
-      console.log("Top Three Challenges:", topThree);
 
       topThree.forEach((challengeCard) => {
         const element = challengeCard.render();
@@ -363,8 +359,6 @@ class FilterByTags {
         });
       }
 
-      console.log("Number of cards shoooowing:", filteredChallenges.length);
-
       // Clear challenges
       challengesContainer.innerHTML = "";
 
@@ -379,15 +373,19 @@ class FilterByTags {
 
 const filterByTags = new FilterByTags();
 
-class Booking1 {}
+// class Booking1 {}
 
-class Booking2 {}
+// class Booking2 {}
 
 class FilterByRating {
   constructor() {
-    this.ratingCheckboxRow1 = document.querySelectorAll("[name='rating_row_1']");
+    this.ratingCheckboxRow1 = document.querySelectorAll(
+      "[name='rating_row_1']"
+    );
 
-    this.ratingCheckboxRow2 = document.querySelectorAll("[name='rating_row_2']");
+    this.ratingCheckboxRow2 = document.querySelectorAll(
+      "[name='rating_row_2']"
+    );
 
     this.ratingCheckboxRow1.forEach((checkbox) => {
       checkbox.addEventListener("change", () => {
@@ -451,7 +449,6 @@ class FilterByRating {
 
       filteredChallenges.forEach((challenge) => {
         const element = challenge.render();
-
         challengesContainer.appendChild(element);
       });
     });
@@ -459,3 +456,41 @@ class FilterByRating {
 }
 
 const filterByRating = new FilterByRating();
+
+class FilterByName {
+  constructor() {
+    this.nameInput = document.querySelector("#challengeNameInput");
+    this.nameInput.addEventListener("input", () => {
+      this.filterChallengesByName();
+    });
+  }
+
+  filterChallengesByName() {
+    const challengesContainer = document.querySelector("#ourChallenges");
+    const api = new APIadapter();
+
+    const nameFilter = this.nameInput.value.toLowerCase();
+
+    api.fetchAllChallenges().then((challenges) => {
+      const filteredChallenges = challenges.filter((challenge) => {
+        const challengeTitle = challenge.data.title.toLowerCase();
+        const challengeDescription = challenge.data.description.toLowerCase();
+        return (
+          challengeTitle.includes(nameFilter) ||
+          challengeDescription.includes(nameFilter)
+        );
+      });
+
+      // Clear challenges
+      challengesContainer.innerHTML = "";
+
+      // Render challenges
+      filteredChallenges.forEach((challenge) => {
+        const element = challenge.render();
+        challengesContainer.appendChild(element);
+      });
+    });
+  }
+}
+
+const filterByName = new FilterByName();

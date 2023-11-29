@@ -97,7 +97,6 @@
             <p class="filter__selection_text">Include on-site challenges</p>
           </div>
         </div>
-
         <!-- Conny jobbar med filter__selection__byrating -->
         <div>
           <div class="filter__selection__byrating">
@@ -116,7 +115,6 @@
                 <input type="checkbox" name="rating_row_1" id="star1_1" value="1" />
                 <label for="star1_1"></label>
               </div>
-
               <p class="filter__starSpace">to</p>
               <!-- Stjärnor rad 2 -->
               <div class="filter__selection__stars__row_2">
@@ -133,15 +131,15 @@
               </div>
             </div>
           </div>
-          <div class="filter__search">
+          <div class="filter__search" id="filterInput">
             <h2 class="filter__selection_h2">Or type to search for keyword</h2>
-            <input class="filter__search__input" type="search" placeholder="Start typing to filter" />
+            <input type="text" class="filter__search__input" id="challengeNameInput"
+              placeholder="Start typing to filter" />
           </div>
         </div>
         <div class="filter__selection__bytags">
           <h2 class="filter__selection_h2">By tags</h2>
           <div class="filter__selection__tags" id="">
-
           </div>
         </div>
       </div>
@@ -186,7 +184,6 @@
         </div>
       </div>
     </div>
-
   </main>
   <footer class="footer">
     <div class="footer__box">
@@ -216,7 +213,6 @@
       </div>
     </div>
   </footer>
-
   <script src="app.js"></script>
   <script src="modal.js"></script>
   <script src="filterboxConny.js"></script>
