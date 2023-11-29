@@ -385,18 +385,18 @@ class Booking2 {}
 
 class FilterByRating {
   constructor() {
-    this.ratingRadiosRow1 = document.querySelectorAll("[name='rating_row_1']");
+    this.ratingCheckboxRow1 = document.querySelectorAll("[name='rating_row_1']");
 
-    this.ratingRadiosRow2 = document.querySelectorAll("[name='rating_row_2']");
+    this.ratingCheckboxRow2 = document.querySelectorAll("[name='rating_row_2']");
 
-    this.ratingRadiosRow1.forEach((radio) => {
-      radio.addEventListener("change", () => {
+    this.ratingCheckboxRow1.forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
         this.filterChallengesByRating();
       });
     });
 
-    this.ratingRadiosRow2.forEach((radio) => {
-      radio.addEventListener("change", () => {
+    this.ratingCheckboxRow2.forEach((checkbox) => {
+      checkbox.addEventListener("change", () => {
         this.filterChallengesByRating();
       });
     });
@@ -408,12 +408,12 @@ class FilterByRating {
     const api = new APIadapter();
 
     api.fetchAllChallenges().then((challenges) => {
-      const selectedRatingRow1 = Array.from(this.ratingRadiosRow1).find(
-        (radio) => radio.checked
+      const selectedRatingRow1 = Array.from(this.ratingCheckboxRow1).find(
+        (checkbox) => checkbox.checked
       );
 
-      const selectedRatingRow2 = Array.from(this.ratingRadiosRow2).find(
-        (radio) => radio.checked
+      const selectedRatingRow2 = Array.from(this.ratingCheckboxRow2).find(
+        (checkbox) => checkbox.checked
       );
 
       const ratingRow1 = selectedRatingRow1
@@ -437,10 +437,8 @@ class FilterByRating {
           const challengeRating = challenge.data.rating;
 
           return (
-            ratingRow1 === 0 ||
-            (challengeRating >= ratingRow1 && challengeRating <= ratingRow2) ||
-            ratingRow2 === 0 ||
-            (challengeRating >= ratingRow2 && challengeRating <= ratingRow2)
+            (ratingRow1 === 0 || challengeRating >= ratingRow1) &&
+            (ratingRow2 === 0 || challengeRating <= ratingRow2)
           );
         });
       }
