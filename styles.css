@@ -1087,3 +1087,93 @@ body {
 .modal__btn:hover {
   cursor: pointer;
 }
+
+.fontstyle {
+  font-family: "roboto";
+}
+
+.bookroom__step2 {
+  margin-left: 15px;
+  font-size: 15px;
+}
+
+.font__name {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.input__name {
+  margin-top: 13px;
+  margin-left: 15px;
+  width: 200px;
+  height: 25px;
+  border-radius: 4px;
+}
+
+.font__mail {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.input__mail {
+  margin-top: 28px;
+  margin-left: 15px;
+  width: 200px;
+  height: 25px;
+  border-radius: 4px;
+}
+
+.font__whattime {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+#whatTime {
+  margin-top: 28px;
+  margin-left: 15px;
+  width: 130px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+.font__howmany {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+#participants {
+  margin-top: 28px;
+  margin-left: 15px;
+  width: 130px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+.stepTwo__btn {
+  margin-top: 60px;
+  margin-left: 280px;
+  margin-bottom: 20px;
+  background-color: red;
+  color: white;
+  width: 160px;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+}
