@@ -50,6 +50,7 @@
         <li><a href="challenges.html">Play on-site</a></li>
         <li a href="#story">The Story</li>
         <li a href="#contact">Contact us</li>
+      </ul>
     </nav>
     <button class="hamburger__button--open">
       <img src="Buttons/open.png" alt="" />
@@ -60,17 +61,12 @@
           <img src="Buttons/close.png" />
         </button>
         <ul class="hamburger__list">
-          <li>
-            <a href="challenges.html">Play online</a>
-          </li>
-          <li>
-            <a href="challenges.html">Play on-site</a>
-          </li>
-          <li a href="#story">The Story</li>
-          <li a href="#contact">Contact us</li>
+          <li><a href="challenges.html">Play online</a></li>
+          <li><a href="challenges.html">Play on-site</a></li>
+          <li><a href="#story">The Story</a></li>
+          <li><a href="#contact">Contact us</a></li>
         </ul>
       </nav>
-    </div>
     </div>
   </header>
   <main>
@@ -109,58 +105,45 @@
             <div class="filter__selection__stars">
               <!-- Stjärnor rad 1 -->
               <div class="filter__selection__stars__row_1">
-                <input type="radio" name="rating_row_1" id="star5_1" value="5" />
+                <input type="checkbox" name="rating_row_1" id="star5_1" value="5" />
                 <label for="star5_1"></label>
-                <input type="radio" name="rating_row_1" id="star4_1" value="4" />
+                <input type="checkbox" name="rating_row_1" id="star4_1" value="4" />
                 <label for="star4_1"></label>
-                <input type="radio" name="rating_row_1" id="star3_1" value="3" />
+                <input type="checkbox" name="rating_row_1" id="star3_1" value="3" />
                 <label for="star3_1"></label>
-                <input type="radio" name="rating_row_1" id="star2_1" value="2" />
+                <input type="checkbox" name="rating_row_1" id="star2_1" value="2" />
                 <label for="star2_1"></label>
-                <input type="radio" name="rating_row_1" id="star1_1" value="1" />
+                <input type="checkbox" name="rating_row_1" id="star1_1" value="1" />
                 <label for="star1_1"></label>
               </div>
-            </div>
-            <p class="filter__starSpace">to</p>
 
-            <!-- Stjärnor rad 2 -->
-            <div class="filter__selection__stars__row_2">
-              <input type="radio" name="rating_row_2" id="star5_2" value="5" />
-              <label for="star5_2"></label>
-              <input type="radio" name="rating_row_2" id="star4_2" value="4" />
-              <label for="star4_2"></label>
-              <input type="radio" name="rating_row_2" id="star3_2" value="3" />
-              <label for="star3_2"></label>
-              <input type="radio" name="rating_row_2" id="star2_2" value="2" />
-              <label for="star2_2"></label>
-              <input type="radio" name="rating_row_2" id="star1_2" value="1" />
-              <label for="star1_2"></label>
+              <p class="filter__starSpace">to</p>
+              <!-- Stjärnor rad 2 -->
+              <div class="filter__selection__stars__row_2">
+                <input type="checkbox" name="rating_row_2" id="star5_2" value="5" />
+                <label for="star5_2"></label>
+                <input type="checkbox" name="rating_row_2" id="star4_2" value="4" />
+                <label for="star4_2"></label>
+                <input type="checkbox" name="rating_row_2" id="star3_2" value="3" />
+                <label for="star3_2"></label>
+                <input type="checkbox" name="rating_row_2" id="star2_2" value="2" />
+                <label for="star2_2"></label>
+                <input type="checkbox" name="rating_row_2" id="star1_2" value="1" />
+                <label for="star1_2"></label>
+              </div>
             </div>
+          </div>
+          <div class="filter__search">
+            <h2 class="filter__selection_h2">Or type to search for keyword</h2>
+            <input class="filter__search__input" type="search" placeholder="Start typing to filter" />
           </div>
         </div>
         <div class="filter__selection__bytags">
           <h2 class="filter__selection_h2">By tags</h2>
-          <div class="filter__selection__tags">
-            <button class="filter__selection__tags__button" id="webTag">Web</button>
-            <button class="filter__selection__tags__button" id="linuxTag">Linux</button>
-            <button class="filter__selection__tags__button" id="cryptographyTag">
-              Cryptography
-            </button>
-            <button class="filter__selection__tags__button" id="codingTag">
-              Coding
-            </button>
-            <button class="filter__selection__tags__button" id="otherTag">
-              Some other tag
-            </button>
-            <button class="filter__selection__tags__button" id="finalTag">
-              A final tag
-            </button>
+          <div class="filter__selection__tags" id="">
+
           </div>
         </div>
-      </div>
-      <div class="filter__search">
-        <h2 class="filter__selection_h2">Or type to search for keyword</h2>
-        <input class="filter__search__input" type="search" placeholder="Start typing to filter" />
       </div>
     </div>
     <div id="ourChallenges">
@@ -177,17 +160,13 @@
       <div class="modal__container modal__stepTwo">
         <div class="fontstyle">
           <h3 class="bookroom__step2">Book room "Title of room" (step 2)</h3>
-
           <div>
             <label class="font__name">Name</label>
-            <input type="name" class="input__name"></input>
+            <input type="name" class="input__name">
           </div>
-
           <div>
-
             <label class="font__mail">E-mail</label>
-            <input type="email" class="input__mail"></input>
-
+            <input type="email" class="input__mail">
           </div>
           <div>
             <form action="#">
@@ -197,19 +176,21 @@
           </div>
           <div>
             <form action="#">
-              <label for="participants" class="font__howmany">How many participants?</label>
-              <select id="participants" class="input__howmany"></id>
+              <label for="howmany" class="font__howmany">How many participants?</label>
+              <select id="howmany" class="input__howmany"></select>
             </form>
           </div>
           <button class="modal__btn">Submit booking</button>
         </div>
-        <div class="modal__container modal__stepThree">
-          <div class="modal__wrapper">
-            <h1 class="modal__text">Thank you!</h1>
-            <button class="modal__btn modal__backBtn">Back to challenges</button>
-          </div>
+      </div>
+      <div class="modal__container modal__stepThree">
+        <div class="modal__wrapper">
+          <h1 class="modal__text">Thank you!</h1>
+          <button class="modal__btn modal__backBtn">Back to challenges</button>
         </div>
       </div>
+    </div>
+
   </main>
   <footer class="footer">
     <div class="footer__box">
@@ -239,7 +220,7 @@
       </div>
     </div>
   </footer>
-  </div>
+
   <script src="app.js"></script>
   <script src="modal.js"></script>
   <script src="filterboxConny.js"></script>
