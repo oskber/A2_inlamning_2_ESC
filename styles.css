@@ -1101,8 +1101,8 @@ body {
   margin: auto;
   background-color: rgb(255, 255, 255);
   border: 2px solid grey;
-  height: 80vh;
-  width: 75vw;
+  height: 70vh;
+  width: 55vw;
   margin-top: 100px;
 }
 .modal__stepTwo {
@@ -1111,8 +1111,8 @@ body {
   margin: auto;
   background-color: rgb(255, 255, 255);
   border: 2px solid grey;
-  height: 80vh;
-  width: 75vw;
+  height: 70vh;
+  width: 55vw;
   margin-top: 100px;
 }
 .modal__stepThree {
@@ -1121,8 +1121,8 @@ body {
   margin: auto;
   background-color: rgb(255, 255, 255);
   border: 2px solid grey;
-  height: 80vh;
-  width: 75vw;
+  height: 70vh;
+  width: 55vw;
   margin-top: 100px;
 }
 .modal--open {

@@ -4,7 +4,13 @@ export class Modal {
     this.modalSteps = document.getElementsByClassName("modal__container");
     this.modalBackground = document.querySelector(".modal");
   }
-  start() {
+  renderTitle(title) {
+    const modalOneTitle = document.querySelector("#modal__stepOneTitle");
+    const modalTwoTitle = document.querySelector("#modal__stepTwoTitle");
+    modalOneTitle.textContent = `Book room ${title} (step 1)`;
+    modalTwoTitle.textContent = `Book room ${title} (step 2)`;
+  }
+  create() {
     const modalBtnNextPage = document.querySelectorAll(".modal__btn");
     let currentStep = 0;
     const modalClose = () => {
@@ -29,7 +35,8 @@ export class Modal {
       });
     });
   }
-  open() {
+  open(title) {
+    this.renderTitle(title);
     this.modalBackground.classList.add("modal--open");
     this.modalSteps[0].classList.add("modal--open");
   }

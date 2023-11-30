@@ -120,9 +120,9 @@ class ChallengeCard {
     bookButton.classList.add("rooms__button");
     
     const modal = new Modal();
-    modal.start();
+    modal.create();
     bookButton.addEventListener("click", () => {
-      modal.open();
+      modal.open(this.data.title);
     })
 
     const typeElement = this.typeOfRoom(this.data.type);
