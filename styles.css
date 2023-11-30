@@ -816,6 +816,11 @@ body {
   gap: 10px;
   overflow-x: scroll;
 }
+@media screen and (min-width: 370px) {
+  #ourChallenges {
+    padding: 0;
+  }
+}
 @media screen and (min-width: 768px) {
   #ourChallenges {
     grid-template-columns: repeat(2, 1fr);
@@ -896,11 +901,41 @@ body {
   justify-content: space-between;
   padding: 0 0 5px 20px;
 }
+@media screen and (min-width: 370px) {
+  .filter__selection__content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 600px) {
+  .filter__selection__content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 768px) {
+  .filter__selection__content {
+    display: flex;
+    flex-direction: row;
+  }
+}
 .filter__selection_h2 {
   font-size: 18px;
 }
 .filter__selection__byrating {
   margin-left: 40px;
+}
+@media screen and (min-width: 370px) {
+  .filter__selection__byrating {
+    padding: 10px 0 10px 0;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .filter__selection__byrating {
+    padding: 0 0 10px 40px;
+    margin: 0;
+  }
 }
 .filter__search {
   display: flex;
@@ -908,17 +943,57 @@ body {
   flex-direction: column;
   margin-left: 40px;
 }
+@media screen and (min-width: 370px) {
+  .filter__search {
+    width: auto;
+    padding: 10px 10px 10px 0;
+    margin: 0;
+    margin-right: 10%;
+  }
+}
+@media screen and (min-width: 600px) {
+  .filter__search {
+    width: auto;
+    padding: 20px 10px 20px 0;
+    margin: 0;
+    margin-right: 20%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .filter__search {
+    width: auto;
+    padding: 30px 0 30px 40px;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .filter__search {
+    width: 430px;
+    padding: 30px 0 30px 40px;
+    margin: 0;
+  }
+}
 .filter__search__input {
   font-size: 20px;
   border: solid grey 2px;
   border-radius: 5px;
   height: 45px;
   padding-left: 10px;
-  width: 430px;
 }
-.filter__selection__bytags {
-  margin-left: 40px;
-  margin-right: 10px;
+@media screen and (min-width: 370px) {
+  .filter__selection__bytags {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 600px) {
+  .filter__selection__bytags {
+    padding-left: 0px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .filter__selection__bytags {
+    padding: 0 0 0 40px;
+  }
 }
 .filter__selection__tags {
   display: flex;
@@ -931,6 +1006,7 @@ body {
   background-color: transparent;
   padding: 8px;
   font-weight: 700;
+  margin-top: 0;
 }
 .filter__selection__bytype-1 {
   display: flex;
@@ -1000,7 +1076,7 @@ body {
   gap: 5px;
 }
 .filter__selection__tags__button {
-  border-radius: 10px;
+  border-radius: 15px;
   background-color: transparent;
   margin-right: 10px;
 }
