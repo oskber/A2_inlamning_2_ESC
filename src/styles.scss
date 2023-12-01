@@ -23,6 +23,7 @@ $max-screen-breakpoint: 1280px;
   min-height: 40px;
   font-weight: 700;
   font-size: 1.1em;
+  cursor: pointer;
 }
 
 @mixin buttonRed {
@@ -36,6 +37,7 @@ $max-screen-breakpoint: 1280px;
   font-weight: 700;
   font-size: 1.1em;
   text-decoration: none;
+  cursor: pointer;
 }
 
 @mixin buttonRed-small {
@@ -47,6 +49,7 @@ $max-screen-breakpoint: 1280px;
   border: none;
   color: white;
   font-weight: 600;
+  cursor: pointer;
 }
 
 @mixin linkBlue {
@@ -56,6 +59,7 @@ $max-screen-breakpoint: 1280px;
   background: none;
   border: none;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 @mixin buttonTransparent {
@@ -68,6 +72,7 @@ $max-screen-breakpoint: 1280px;
   color: #8acfe5;
   border: 2px solid #8acfe5;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 /* ANIMATIONS */
