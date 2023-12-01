@@ -552,3 +552,23 @@ window.addEventListener("load", () => {
     }, 50);
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const challengesDiv = document.getElementById("ourChallenges");
+  const noMatchingChallengesMsg = document.getElementById("no-matching-challenges-msg");
+
+  checkChallengesVisibility();
+
+  const observer = new MutationObserver(() => {
+    checkChallengesVisibility();
+  });
+
+  // Configure and start the observer
+  const config = { childList: true, subtree: true };
+  observer.observe(challengesDiv, config);
+
+  function checkChallengesVisibility() {
+    // Toggle the visibility of the <p> tag based on whether there are challenges
+    noMatchingChallengesMsg.style.display = challengesDiv && challengesDiv.children.length === 0 ? "block" : "none";
+  }
+});

@@ -834,6 +834,12 @@ body {
   }
 }
 
+#no-matching-challenges-msg {
+  display: block;
+  text-align: center;
+  font-size: 48px;
+}
+
 /* FILTERBOX-PAGE */
 .filter__container {
   display: none;
