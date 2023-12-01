@@ -35,12 +35,10 @@
 
   <!-- Meta Tags Generated with https://metatags.io -->
 
-
   <title>Hacker Escape Rooms</title>
 </head>
 
 <body>
-
   <header class="header">
     <div class="header__logo__container">
       <a href="index.html"><img class="header__logo" src="Images/image_logo.png" alt="ESC_logo"></a>
@@ -48,22 +46,21 @@
     </div>
     <nav class="header__nav">
       <ul class="header__list">
-        <li><a href="challenges.html">Play online</a></li>
-        <li><a href="challenges.html">Play on-site</a></li>
-        <li a href="#story">The Story</li>
-        <li a href="#contact">Contact us</li>
+        <li><a href="challenges.html?activateOnlineCheckbox=true" class="onlineButton">Play online</a></li>
+        <li><a href="challenges.html?activateOnsiteCheckbox=true" class="onsiteButton">Play on-site</a></li>
+        <li><a href="#story">The Story</a></li>
+        <li><a href="#contact">Contact us</a></li>
       </ul>
     </nav>
     <button class="hamburger__button--open"><img src="Buttons/open.png" alt=""></button>
     <div class="hamburger__container">
-
       <nav class="hamburger__nav">
         <button class="hamburger__button--close"><img src="Buttons/close.png" /></button>
         <ul class="hamburger__list">
-          <li><a href="challenges.html">Play online</a></li>
-          <li><a href="challenges.html">Play on-site</a></li>
-          <li a href="#story">The Story</li>
-          <li a href="#contact">Contact us</li>
+          <li><a href="challenges.html?activateOnlineCheckbox=true" class="onlineButton">Play online</a></li>
+          <li><a href="challenges.html?activateOnsiteCheckbox=true" class="onsiteButton">Play on-site</a></li>
+          <li><a href="#story">The Story</a></li>
+          <li><a href="#contact">Contact us</a></li>
         </ul>
       </nav>
     </div>
@@ -71,8 +68,10 @@
   <main>
     <img class="hero" src="Images/image_hero.png" alt="A man with hoodie in front of computer">
     <div class="buttons__top">
-      <button class="buttons__top__btn">On-site challenges</button>
-      <button class="buttons__top__link">Online challenges</button>
+      <button class="buttons__top__btn" onclick="location.href='challenges.html?activateOnsiteCheckbox=true'">On-site
+        challenges</button>
+      <button class="buttons__top__link" onclick="location.href='challenges.html?activateOnlineCheckbox=true'">Online
+        challenges</button>
     </div>
     <section class="quotes">
       <img class="quotes__img" src="Images/image 3quote_portrait.png" alt="portrait image">
@@ -94,8 +93,10 @@
     <section class="rooms">
     </section>
     <div class="buttons__bottom">
-      <button class="buttons__bottom__btn">On-site challenges</button>
-      <button class="buttons__bottom__link">Online challenges</button>
+      <button class="buttons__top__btn" onclick="location.href='challenges.html?activateOnsiteCheckbox=true'">On-site
+        challenges</button>
+      <button class="buttons__top__link" onclick="location.href='challenges.html?activateOnlineCheckbox=true'">Online
+        challenges</button>
     </div>
     <section class="story">
       <div class="story__box">
@@ -110,7 +111,8 @@
         <h1>Play with your friends or build your team stronger at work</h1>
         <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non
           inimicos, et</p>
-        <button class="book__btn">Book on-site today</button>
+        <button class="book__btn" onclick="location.href='challenges.html?activateOnsiteCheckbox=true'">Book on-site
+          today</button>
       </div>
     </section>
     <section class="allChallenges">
@@ -119,7 +121,7 @@
         <h1>Play online or visit our venue for one of our 25 escape rooms</h1>
         <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non
           inimicos, et</p>
-        <button class="book__btn">See all challenges</button>
+        <button class="book__btn" onclick="location.href='challenges.html'">See all challenges</button>
       </div>
     </section>
     <div class="modal">
@@ -170,15 +172,14 @@
           <p>Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec eo spectant haec quoque vos
             omnino desit illud quo solo felicitatis libertatisque perficiuntur.</p>
         </div>
-
         <div class="footer__sitemap">
           <h3>Site map</h3>
           <a href="#story">The Story</a>
           <a href="#contact">Contact Us</a>
           <a href="#legal">Legal</a>
           <div class="footer__play">
-            <a href="challenges.html">Play online</a>
-            <a href="challenges.html">Play on-site</a>
+            <li><a href="challenges.html?activateOnlineCheckbox=true" class="onlineButton">Play online</a></li>
+            <li><a href="challenges.html?activateOnsiteCheckbox=true" class="onsiteButton">Play on-site</a></li>
           </div>
         </div>
         <div class="footer__follow">
@@ -190,8 +191,6 @@
       </div>
     </footer>
   </main>
-
-
   <script type="module" src="app.js"></script>
   <script type="module" src="modal.js"></script>
 </body>

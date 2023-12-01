@@ -212,7 +212,7 @@ class FilterBoxOpenAndClose {
   }
 }
 
-const filterBox1 = new FilterBoxOpenAndClose();
+const filterBoxOpenAndClose = new FilterBoxOpenAndClose();
 
 class FilterByType {
   constructor() {
@@ -263,7 +263,7 @@ class FilterByType {
   }
 }
 
-const filterBox2 = new FilterByType();
+const filterByType = new FilterByType();
 
 class FilterByTags {
   constructor() {
@@ -272,14 +272,6 @@ class FilterByTags {
 
     this.fetchTags();
     this.selectedTags = [];
-
-    // Add an event listener for clearing selected tags
-    //const clearTagsButton = document.querySelector(".filter__selection__tags__clear");
-    //clearTagsButton.addEventListener("click", () => {
-    //this.selectedTags = [];
-    //this.updateTagButtons();
-    //this.filterChallengesByTags();
-    //});
   }
 
   async fetchTags() {
@@ -378,10 +370,6 @@ class FilterByTags {
 }
 
 const filterByTags = new FilterByTags();
-
-// class Booking1 {}
-
-// class Booking2 {}
 
 class FilterByRating {
   constructor() {
@@ -500,3 +488,87 @@ class FilterByName {
 }
 
 const filterByName = new FilterByName();
+
+class ButtonsPlayOnline {
+  constructor() {
+    this.onlineButton = document.querySelector(".onlineButton");
+
+    if (this.onlineButton) {
+      this.onlineButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        localStorage.setItem('shouldActivateCheckbox', 'true');
+        window.location.href = this.onlineButton.href;
+      });  
+    }
+  }
+}
+
+const buttonsPlayOnline = new ButtonsPlayOnline();
+
+window.addEventListener("load", () => {
+  const onlineChallengeCheckbox = document.querySelector("#onlineChallengeCheckbox");
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const activateCheckbox = urlParams.get('activateOnlineCheckbox');
+
+  if (onlineChallengeCheckbox && activateCheckbox === 'true') {
+    setTimeout(() => {
+      onlineChallengeCheckbox.checked = true;
+
+      const changeEvent = new Event('change', { bubbles: true });
+      onlineChallengeCheckbox.dispatchEvent(changeEvent);
+    }, 50);
+  }
+});
+
+class ButtonsPlayOnsite {
+  constructor() {
+    this.onsiteButton = document.querySelector(".onsiteButton");
+
+    if (this.onsiteButton) {
+      this.onsiteButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        localStorage.setItem('shouldActivateCheckbox', 'true');
+        window.location.href = this.onsiteButton.href;
+      });
+    }
+  }
+}
+
+const buttonsPlayOnsite = new ButtonsPlayOnsite();
+
+window.addEventListener("load", () => {
+  const onsiteChallengeCheckbox = document.querySelector("#onsiteChallengeCheckbox");
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const activateCheckbox = urlParams.get('activateOnsiteCheckbox');
+
+  if (onsiteChallengeCheckbox && activateCheckbox === 'true') {
+    setTimeout(() => {
+      onsiteChallengeCheckbox.checked = true;
+
+      const changeEvent = new Event('change', { bubbles: true });
+      onsiteChallengeCheckbox.dispatchEvent(changeEvent);
+    }, 50);
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const challengesDiv = document.getElementById("ourChallenges");
+  const noMatchingChallengesMsg = document.getElementById("no-matching-challenges-msg");
+
+  checkChallengesVisibility();
+
+  const observer = new MutationObserver(() => {
+    checkChallengesVisibility();
+  });
+
+  // Configure and start the observer
+  const config = { childList: true, subtree: true };
+  observer.observe(challengesDiv, config);
+
+  function checkChallengesVisibility() {
+    // Toggle the visibility of the <p> tag based on whether there are challenges
+    noMatchingChallengesMsg.style.display = challengesDiv && challengesDiv.children.length === 0 ? "block" : "none";
+  }
+});

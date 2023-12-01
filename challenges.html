@@ -46,10 +46,10 @@
     </div>
     <nav class="header__nav">
       <ul class="header__list">
-        <li><a href="challenges.html">Play online</a></li>
-        <li><a href="challenges.html">Play on-site</a></li>
-        <li a href="#story">The Story</li>
-        <li a href="#contact">Contact us</li>
+        <li><a href="challenges.html?activateOnlineCheckbox=true" class="onlineButton">Play online</a></li>
+        <li><a href="challenges.html?activateOnsiteCheckbox=true" class="onsiteButton">Play on-site</a></li>
+        <li><a href="#story">The Story</a></li>
+        <li><a href="#contact">Contact us</a></li>
       </ul>
     </nav>
     <button class="hamburger__button--open">
@@ -61,8 +61,8 @@
           <img src="Buttons/close.png" />
         </button>
         <ul class="hamburger__list">
-          <li><a href="challenges.html">Play online</a></li>
-          <li><a href="challenges.html">Play on-site</a></li>
+          <li><a href="challenges.html?activateOnlineCheckbox=true" class="onlineButton">Play online</a></li>
+          <li><a href="challenges.html?activateOnsiteCheckbox=true" class="onsiteButton">Play on-site</a></li>
           <li><a href="#story">The Story</a></li>
           <li><a href="#contact">Contact us</a></li>
         </ul>
@@ -97,12 +97,10 @@
             <p class="filter__selection_text">Include on-site challenges</p>
           </div>
         </div>
-        <!-- Conny jobbar med filter__selection__byrating -->
         <div>
           <div class="filter__selection__byrating">
             <h2 class="filter__selection_h2">By rating</h2>
             <div class="filter__selection__stars">
-              <!-- Stjärnor rad 1 -->
               <div class="filter__selection__stars__row_1">
                 <input type="checkbox" name="rating_row_1" id="star5_1" value="5" />
                 <label for="star5_1"></label>
@@ -116,7 +114,6 @@
                 <label for="star1_1"></label>
               </div>
               <p class="filter__starSpace">to</p>
-              <!-- Stjärnor rad 2 -->
               <div class="filter__selection__stars__row_2">
                 <input type="checkbox" name="rating_row_2" id="star5_2" value="5" />
                 <label for="star5_2"></label>
@@ -146,6 +143,7 @@
     </div>
     <div id="ourChallenges">
     </div>
+    <p id="no-matching-challenges-msg">No matching challenges</p>
     <div class="modal">
       <div class="modal__container modal__stepOne">
         <h3 id="modal__stepOneTitle"></h3>
@@ -204,8 +202,8 @@
         <a href="#contact">Contact Us</a>
         <a href="#legal">Legal</a>
         <div class="footer__play">
-          <li><a href="challenges.html">Play online</a></li>
-          <li><a href="challenges.html">Play on-site</a></li>
+          <li><a href="challenges.html?activateOnlineCheckbox=true" class="onlineButton">Play online</a></li>
+          <li><a href="challenges.html?activateOnsiteCheckbox=true" class="onsiteButton">Play on-site</a></li>
         </div>
       </div>
       <div class="footer__follow">
@@ -218,7 +216,6 @@
   </footer>
   <script type="module" src="app.js"></script>
   <script type="module" src="modal.js"></script>
-  <script src="filterboxConny.js"></script>
 </body>
 
 </html>

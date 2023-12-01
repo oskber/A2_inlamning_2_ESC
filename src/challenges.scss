@@ -50,3 +50,9 @@ body {
     grid-template-rows: auto;
   }
 }
+
+#no-matching-challenges-msg {
+  display: block;
+  text-align: center;
+  font-size: 48px;
+}
