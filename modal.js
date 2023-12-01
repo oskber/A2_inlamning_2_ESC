@@ -1,10 +1,21 @@
+/* Variables */
+let challengeId;
+let timeSlots;
+
 /* MODAL */
 export class Modal {
   constructor() {
     this.modalSteps = document.getElementsByClassName("modal__container");
     this.modalBackground = document.querySelector(".modal");
   }
-  start() {
+  renderTitle(title) {
+    const modalOneTitle = document.querySelector("#modal__stepOneTitle");
+    const modalTwoTitle = document.querySelector("#modal__stepTwoTitle");
+    modalOneTitle.textContent = `Book room ${title} (step 1)`;
+    modalTwoTitle.textContent = `Book room ${title} (step 2)`;
+  }
+  open(title, id) {
+    challengeId = id;
     const modalBtnNextPage = document.querySelectorAll(".modal__btn");
     let currentStep = 0;
     const modalClose = () => {
@@ -28,8 +39,7 @@ export class Modal {
         }
       });
     });
-  }
-  open() {
+    this.renderTitle(title);
     this.modalBackground.classList.add("modal--open");
     this.modalSteps[0].classList.add("modal--open");
   }
@@ -37,15 +47,16 @@ export class Modal {
 
 /* FETCH API BOOKING 1 */
 const dateField = document.querySelector(".modal__date");
+const searchBtn = document.querySelector(".modal__searchBtn");
+
 dateField.setAttribute("min", new Date().toISOString().split("T")[0]);
-let timeSlots;
-async function getAvailableTimes(date) {
+async function getAvailableTimes() {
+  const date = dateField.value;
   const res = await fetch(
-    `https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=${date}&challenge=3`
-    // Todo: Ändra "challenge=3" efter att bokningsknappen lagts till på korten
+    `https://lernia-sjj-assignments.vercel.app/api/booking/available-times?date=${date}&challenge=${challengeId}`
   );
   const data = await res.json();
-  return data.slots;
+  timeSlots = data.slots;
 }
 dateField.addEventListener("change", (event) => {
   if (event.target.value === "") {
@@ -54,9 +65,7 @@ dateField.addEventListener("change", (event) => {
     searchBtn.disabled = false;
   }
 });
-const searchBtn = document.querySelector(".modal__searchBtn");
 searchBtn.disabled = true; // Knappen är disabled för att man inte ska kunna gå vidare till nästa steg utan att välja ett datum
 searchBtn.addEventListener("click", () => {
-  const date = dateField.value;
-  timeSlots = getAvailableTimes(date);
+  getAvailableTimes();
 });
