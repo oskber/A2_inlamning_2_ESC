@@ -1,3 +1,5 @@
+//Inaktiv
+
 /* const ratingsRow1 = document.querySelectorAll('.filter__selection__stars__row_1 input');
 const ratingsRow2 = document.querySelectorAll('.filter__selection__stars__row_2 input');
 
