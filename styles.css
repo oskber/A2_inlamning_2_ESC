@@ -1170,7 +1170,7 @@ body {
 
 .bookroom__step2 {
   margin-left: 15px;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .font__name {
@@ -1187,6 +1187,7 @@ body {
   width: 200px;
   height: 25px;
   border-radius: 4px;
+  border-width: thin;
 }
 
 .font__mail {
@@ -1204,6 +1205,7 @@ body {
   width: 200px;
   height: 25px;
   border-radius: 4px;
+  border-width: thin;
 }
 
 .font__whattime {
@@ -1241,15 +1243,12 @@ body {
 }
 
 .stepTwo__btn {
-  margin-top: 60px;
-  margin-left: 280px;
-  margin-bottom: 20px;
-  background-color: red;
-  color: white;
-  width: 160px;
-  height: 40px;
-  border-radius: 4px;
+  margin: 15px 10px;
+  width: 179px;
+  height: 44px;
+  border-radius: 3px;
+  background-color: #e3170a;
   border: none;
-  font-size: 16px;
-  font-weight: bold;
+  color: white;
+  font-weight: 600;
 }
