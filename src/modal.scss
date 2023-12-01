@@ -3,9 +3,9 @@
   flex-direction: column;
   margin: auto;
   background-color: rgb(255, 255, 255);
-  border: 2px solid grey;
+  border: 2px solid rgb(159, 159, 159);
   height: 70vh;
-  width: 55vw;
+  width: 45vw;
   margin-top: 100px;
 }
 
@@ -14,10 +14,11 @@
   background: rgba(128, 128, 128, 0.459);
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
   position: fixed;
   z-index: 1;
+  height: 100vh;
+  overflow-y: hidden;
 
   &__stepOne {
     @include modalStep();
@@ -34,12 +35,46 @@
   &--open {
     display: flex;
   }
-
-  &__searchBtn {
+  &__textContent{
+    margin-left: 15px;
+    margin-bottom: 5px;
+  }
+  &__searchBtn,
+  &__stepTwoBtn {
     @include buttonRed-small();
+    margin-right: 10px;
+  }
+  &__contentWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 15px;
+  }
+  &__btnWrapper {
+    display: flex;
+    justify-content: end;
+  }
+  &__dateWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__labelDate {
+    font-size: 12px;
+    font-weight: bold;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+  &__date {
+    margin-left: 15px;
+    width: 10vw;
+    height: 25px;
+    border-radius: 4px;
+    border-width: thin;
+    margin-top: 1px;
   }
 
-  &__wrapper {
+  &__stepThreeWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,9 +88,9 @@
     font-size: medium;
   }
 
-  &__text {
+  &__stepThreeText {
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -65,11 +100,16 @@
 
 .fontstyle {
   font-family: "roboto";
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
-.bookroom__step2 {
+.bookroom__step2,
+#modal__stepOneTitle {
   margin-left: 15px;
   font-size: 20px;
+  padding-top: 15px;
 }
 
 .font__name {
@@ -87,7 +127,6 @@
   height: 25px;
   border-radius: 4px;
   border-width: thin;
-
 }
 
 .font__mail {
@@ -112,7 +151,7 @@
   font-size: 10px;
   font-weight: bold;
   position: absolute;
-  flex-direction: column;
+
   margin-top: 15px;
   margin-left: 15px;
 }
@@ -129,7 +168,6 @@
   font-size: 10px;
   font-weight: bold;
   position: absolute;
-  flex-direction: column;
   margin-top: 15px;
   margin-left: 15px;
 }
@@ -140,16 +178,4 @@
   width: 130px;
   height: 30px;
   border-radius: 4px;
-}
-
-.stepTwo__btn {
-  margin: 15px 10px;
-  width: 179px;
-  height: 44px;
-  border-radius: 3px;
-  background-color: #e3170a;
-  border: none;
-  color: white;
-  font-weight: 600;
-
 }
