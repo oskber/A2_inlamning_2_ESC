@@ -1,3 +1,4 @@
+
 /* FILTERBOX-PAGE */
 
 .filter {
@@ -79,6 +80,21 @@
     display: flex;
     justify-content: space-between;
     padding: 0 0 5px 20px;
+
+    @include breakpoint($min-screen-breakpoint) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include breakpoint($small-screen-breakpoint) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include breakpoint($medium-screen-breakpoint) {
+      display: flex;
+      flex-direction: row;
+    }
   }
 
   &__selection_h2 {
@@ -87,6 +103,16 @@
 
   &__selection__byrating {
     margin-left: 40px;
+
+    @include breakpoint($min-screen-breakpoint) {
+      padding:10px 0 10px 0;
+      margin: 0;
+    } 
+
+    @include breakpoint($medium-screen-breakpoint) {
+      padding:0 0 10px 40px;
+      margin: 0;
+    }
   }
 
   &__search {
@@ -94,6 +120,31 @@
     padding: 100px 0 20px 0;
     flex-direction: column;
     margin-left: 40px;
+    @include breakpoint($min-screen-breakpoint) {
+      width: auto;
+      padding: 10px 10px 10px 0;
+      margin: 0;
+      margin-right: 10%;
+    }
+
+    @include breakpoint($small-screen-breakpoint) {
+      width: auto;
+      padding: 20px 10px 20px 0;
+      margin: 0;
+      margin-right: 20%;
+    }
+
+    @include breakpoint($medium-screen-breakpoint) {
+      width: auto;
+      padding: 30px 0 30px 40px;
+      margin: 0;
+    }
+
+    @include breakpoint($large-screen-breakpoint) {
+      width: 430px;
+      padding: 30px 0 30px 40px;
+      margin: 0;
+    }
   }
   
   &__search__input {
@@ -102,12 +153,18 @@
     border-radius: 5px;
     height: 45px;
     padding-left: 10px;
-    width: 430px;
   }
 
   &__selection__bytags {
-    margin-left: 40px;
-    margin-right: 10px;
+    @include breakpoint($min-screen-breakpoint) {
+      padding: 0;
+    }
+    @include breakpoint($small-screen-breakpoint) {
+      padding-left: 0px;
+    }
+    @include breakpoint($medium-screen-breakpoint) {
+      padding: 0 0 0 40px;
+    }
   }
 
   &__selection__tags {
@@ -122,6 +179,7 @@
     background-color: transparent;
     padding: 8px;
     font-weight: 700;
+    margin-top: 0;
   }
 
   &__selection__bytype-1 {
@@ -139,6 +197,7 @@
   
   &__selection_text {
     margin: 5px;
+    
   }
 
   &__selection__stars {
@@ -207,7 +266,7 @@
   }
 
   &__selection__tags__button {
-    border-radius: 10px;
+    border-radius: 15px;
     background-color: transparent;
     margin-right: 10px;
   }
@@ -217,6 +276,9 @@
     color: #fff;
   }
 }
+
+
+
 
 
 
