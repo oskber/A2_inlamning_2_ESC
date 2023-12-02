@@ -49,6 +49,35 @@ export class Modal {
 const dateField = document.querySelector(".modal__date");
 const searchBtn = document.querySelector(".modal__searchBtn");
 
+const dateInput = document.querySelector(".modal__date");
+const timeSelect = document.querySelector("#whatTime");
+
+function clearOptions() {
+  // Remove all child nodes from the time select element
+  while (timeSelect.firstChild) {
+    timeSelect.removeChild(timeSelect.firstChild);
+  }
+}
+
+function createOption(timeSlot) {
+  const option = document.createElement("option");
+  option.textContent = timeSlot;
+  timeSelect.appendChild(option);
+}
+
+// Event listener for date input change
+dateInput.addEventListener("change", () => {
+  // Clear existing options before adding new ones
+  clearOptions();
+
+// Get the selected date and fetch corresponding time slots
+const selectedDate = dateInput.value;
+const timeSlots = fetchTimeSlots(selectedDate); // Replace with your logic to fetch time slots
+
+// Use forEach to create options for each time slot
+timeSlots.forEach((timeSlot) => createOption(timeSlot));
+});
+
 dateField.setAttribute("min", new Date().toISOString().split("T")[0]);
 async function getAvailableTimes() {
   const date = dateField.value;
@@ -57,6 +86,8 @@ async function getAvailableTimes() {
   );
   const data = await res.json();
   timeSlots = data.slots;
+  timeSlots.forEach((timeSlot) => createOption(timeSlot));   // Use forEach to create options for each time slot
+
 }
 dateField.addEventListener("change", (event) => {
   if (event.target.value === "") {
