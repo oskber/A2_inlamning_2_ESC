@@ -146,41 +146,51 @@
     <p id="no-matching-challenges-msg">No matching challenges</p>
     <div class="modal">
       <div class="modal__container modal__stepOne">
-        <h3 id="modal__stepOneTitle"></h3>
-        <p>What date would you like to come?</p>
-        <p>Date</p>
-        <input type="date" class="modal__date">
-        <button class="modal__btn modal__searchBtn">Search available times</button>
+        <div class="modal__contentWrapper">
+          <h3 id="modal__stepOneTitle"></h3>
+          <p class="modal__textContent">What date would you like to come?</p>
+          <div class="modal__dateWrapper">
+            <label class="modal__labelDate">Date</label>
+            <input type="date" class="modal__date">
+          </div>
+        </div>
+        <div class="modal__btnWrapper">
+          <button class="modal__btn modal__searchBtn">Search available times</button>
+        </div>
       </div>
       <div class="modal__container modal__stepTwo">
         <div class="fontstyle">
-          <h3 class="bookroom__step2" id="modal__stepTwoTitle"></h3>
-          <div>
-            <label class="font__name">Name</label>
-            <input type="name" class="input__name">
+          <div class="modal__contentWrapper">
+            <h3 class="bookroom__step2" id="modal__stepTwoTitle"></h3>
+            <div>
+              <label class="font__name">Name</label>
+              <input type="name" class="input__name">
+            </div>
+            <div>
+              <label class="font__mail">E-mail</label>
+              <input type="email" class="input__mail">
+            </div>
+            <div>
+              <form action="#">
+                <label for="whatTime" class="font__whattime">What time?</label>
+                <select id="whatTime" class="input__whattime"></select>
+              </form>
+            </div>
+            <div>
+              <form action="#">
+                <label for="participants" class="font__howmany">How many participants?</label>
+                <select id="participants" class="input__howmany"></select>
+              </form>
+            </div>
           </div>
-          <div>
-            <label class="font__mail">E-mail</label>
-            <input type="email" class="input__mail">
+          <div class="modal__btnWrapper">
+            <button class="modal__btn modal__stepTwoBtn">Submit booking</button>
           </div>
-          <div>
-            <form action="#">
-              <label for="whatTime" class="font__whattime">What time?</label>
-              <select id="whatTime" class="input__whattime"></select>
-            </form>
-          </div>
-          <div>
-            <form action="#">
-              <label for="participants" class="font__howmany">How many participants?</label>
-              <select id="participants" class="input__howmany"></select>
-            </form>
-          </div>
-          <button class="modal__btn stepTwo__btn">Submit booking</button>
         </div>
       </div>
       <div class="modal__container modal__stepThree">
-        <div class="modal__wrapper">
-          <h1 class="modal__text">Thank you!</h1>
+        <div class="modal__stepThreeWrapper">
+          <h1 class="modal__stepThreeText">Thank you!</h1>
           <button class="modal__btn modal__backBtn">Back to challenges</button>
         </div>
       </div>
