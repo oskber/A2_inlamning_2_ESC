@@ -131,7 +131,7 @@
           <p class="modal__textContent">What date would you like to come?</p>
           <div class="modal__dateWrapper">
             <label class="modal__labelDate">Date</label>
-            <input type="date" class="modal__date">
+            <input type="date" class="modal__date" id="date">
           </div>
         </div>
         <div class="modal__btnWrapper">
@@ -143,22 +143,22 @@
           <div class="modal__contentWrapper">
             <h3 class="bookroom__step2" id="modal__stepTwoTitle"></h3>
             <div>
-              <label class="font__name customerName">Name</label>
+              <label class="font__name" id="customerName">Name</label>
               <input type="name" class="input__name">
             </div>
             <div>
-              <label class="font__mail customerMail">E-mail</label>
+              <label class="font__mail" id="customerMail">E-mail</label>
               <input type="email" class="input__mail">
             </div>
             <div>
               <form action="#">
-                <label for="whatTime" class="font__whattime">What time?</label>
+                <label for="whatTime" class="font__whattime" id="timeSlot">What time?</label>
                 <select id="whatTime" class="input__whattime"></select>
               </form>
             </div>
             <div>
               <form action="#">
-                <label for="participants" class="font__howmany howMany">How many participants?</label>
+                <label for="participants" class="font__howmany" id="minMaxParticipants">How many participants?</label>
                 <select id="participants" class="input__howmany howManyParticipants"></select>
               </form>
             </div>

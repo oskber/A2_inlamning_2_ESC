@@ -599,3 +599,48 @@ async function updateParticipantsDisplay(id) {
     select.appendChild(option)
   }
 }
+
+//Send POST through HTTP to the API.//
+
+function createElement(elementType, className) {
+  const element = document.createElement(elementType);
+  element.className = className;
+  return element;
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const customerNameInput = document.getElementById("customerName");
+  const customerMailInput = document.getElementById("customerMail");
+  const dateInput = document.getElementById("dateInput");
+  const challengeInput = document.getElementById("challengeInput");
+  const timeSlotInput = document.getElementById("timeSlot");
+  const minMaxParticipantsInput = document.getElementById("minMaxParticipants");
+
+
+  if (customerNameInput && customerMailInput && dateInput && timeSlotInput && challengeInput) {
+    const customerName = customerNameInput.value;
+    const customerMail = customerMailInput.value;
+    const date = dateInput.value;
+    const timeSlot = timeSlotInput.value;
+    const challengeInput = challengeInput.value;
+ 
+
+    const res = await fetch("https://lernia-sjj-assignments.vercel.app/api/booking/reservations", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        challenge: parseInt(challengeInput.value),
+        name: customerName,
+        email: customerMail,
+        date: date,
+        time: timeSlot,
+        participants: parseInt(minMaxParticipantsInput.value),
+      }),
+    });
+
+   const data = await res.json();
+    console.log(data);
+  }
+  });
