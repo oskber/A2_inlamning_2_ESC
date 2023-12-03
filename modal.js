@@ -45,7 +45,7 @@ export class Modal {
   }
 }
 
-/* FETCH API BOOKING 1 */
+/* FETCH API BOOKING 1 and 2 */
 const dateField = document.querySelector(".modal__date");
 const searchBtn = document.querySelector(".modal__searchBtn");
 
@@ -69,13 +69,6 @@ function createOption(timeSlot) {
 dateInput.addEventListener("change", () => {
   // Clear existing options before adding new ones
   clearOptions();
-
-// Get the selected date and fetch corresponding time slots
-const selectedDate = dateInput.value;
-const timeSlots = fetchTimeSlots(selectedDate); // Replace with your logic to fetch time slots
-
-// Use forEach to create options for each time slot
-timeSlots.forEach((timeSlot) => createOption(timeSlot));
 });
 
 dateField.setAttribute("min", new Date().toISOString().split("T")[0]);
