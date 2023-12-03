@@ -122,6 +122,7 @@ class ChallengeCard {
     const modal = new Modal();
     bookButton.addEventListener("click", () => {
       modal.open(this.data.title, this.data.id);
+      updateParticipantsDisplay(this.data.id); //Shows the amount of participants in the select tag. 
     })
 
     const typeElement = this.typeOfRoom(this.data.type);
@@ -143,7 +144,6 @@ class APIadapter {
     const url = "https://lernia-sjj-assignments.vercel.app/api/challenges";
     const response = await fetch(url);
     const data = await response.json();
-    
     return data.challenges.map(
       (challengeData) => new ChallengeCard(challengeData)
     );
@@ -572,3 +572,30 @@ document.addEventListener("DOMContentLoaded", () => {
     noMatchingChallengesMsg.style.display = challengesDiv && challengesDiv.children.length === 0 ? "block" : "none";
   }
 });
+
+//API booking part two
+
+
+
+async function updateParticipantsDisplay(id) {
+  const api = new APIadapter();
+  const challengeCard = await api.fetchAllChallenges();
+
+  const card = challengeCard.find(item => item.data.id === id);
+
+  const minParticipants = card.data.minParticipants;
+  const maxParticipants = card.data.maxParticipants;
+  const minMaxParticipantsSpan = document.getElementById("minMaxParticipants");
+  if(minMaxParticipantsSpan) {
+    minMaxParticipantsSpan.textContent = `Min: ${minParticipants}, Max: ${maxParticipants}`;
+  }
+  const select = document.getElementById("participants");
+  select.innerHTML = "";
+
+  for(let i = minParticipants; i <= maxParticipants; i++) {
+    const option = document.createElement("option");
+    option.value = i;
+    option.text = i;
+    select.appendChild(option)
+  }
+}
