@@ -843,6 +843,12 @@ body {
     grid-template-rows: auto;
   }
 }
+@media screen and (min-width: 1280px) {
+  #ourChallenges {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+  }
+}
 
 #no-matching-challenges-msg {
   display: block;
@@ -1158,8 +1164,8 @@ body {
   border: none;
   color: white;
   font-weight: 600;
-  margin-right: 10px;
   cursor: pointer;
+  margin-right: 10px;
 }
 .modal__contentWrapper {
   display: flex;
