@@ -35,29 +35,35 @@
   &--open {
     display: flex;
   }
-  &__textContent{
+
+  &__textContent {
     margin-left: 15px;
     margin-bottom: 5px;
   }
+
   &__searchBtn,
   &__stepTwoBtn {
     @include buttonRed-small();
     margin-right: 10px;
   }
+
   &__contentWrapper {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     margin-left: 15px;
   }
+
   &__btnWrapper {
     display: flex;
     justify-content: end;
   }
+
   &__dateWrapper {
     display: flex;
     flex-direction: column;
   }
+
   &__labelDate {
     font-size: 12px;
     font-weight: bold;
@@ -65,6 +71,7 @@
     margin-top: 15px;
     margin-left: 15px;
   }
+
   &__date {
     margin-left: 15px;
     width: 10vw;
@@ -139,6 +146,24 @@
 }
 
 .input__mail {
+  margin-top: 28px;
+  margin-left: 15px;
+  width: 200px;
+  height: 25px;
+  border-radius: 4px;
+  border-width: thin;
+}
+
+.font__phone {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.input__phone {
   margin-top: 28px;
   margin-left: 15px;
   width: 200px;
