@@ -49,6 +49,11 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
   }
+
+  @include breakpoint($max-screen-breakpoint) {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+  }
 }
 
 #no-matching-challenges-msg {
