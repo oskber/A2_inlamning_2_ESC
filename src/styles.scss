@@ -15,7 +15,7 @@ $max-screen-breakpoint: 1280px;
 
 @mixin buttonBlue {
   background-color: #8acfe5;
-  color: #011827;
+  color: #021928;
   border: none;
   border-radius: 3px;
   padding: 10px 40px;
@@ -118,7 +118,7 @@ main {
   display: flex;
   height: 144px;
   min-width: 100%;
-  background-color: #011827;
+  background-color: #021928;
 
   @include breakpoint($small-screen-breakpoint) {
     height: 216px;
@@ -214,7 +214,7 @@ main {
     justify-content: center;
     align-items: center;
     font-size: 2em;
-    background-color: #011827;
+    background-color: #021928;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     height: calc(100% - 40px);
     width: 100%;
@@ -574,7 +574,7 @@ main {
   height: 500px;
   margin: 0;
   padding-bottom: 30px;
-  background-color: #011827;
+  background-color: #021928;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -749,7 +749,7 @@ main {
 .footer {
   display: flex;
   flex-direction: column;
-  background-color: #011827;
+  background-color: #021928;
   color: white;
   max-height: 550px;
   width: 100%;
