@@ -374,6 +374,7 @@ main {
   margin: 30px auto;
   flex: none;
   position: relative;
+  animation: 0.8s 1 fadeIn;
 }
 .rooms__img {
   width: 100%;
