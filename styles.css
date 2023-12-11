@@ -1272,6 +1272,24 @@ body {
   border-width: thin;
 }
 
+.font__phone {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.input__phone {
+  margin-top: 28px;
+  margin-left: 15px;
+  width: 200px;
+  height: 25px;
+  border-radius: 4px;
+  border-width: thin;
+}
+
 .font__whattime {
   font-size: 10px;
   font-weight: bold;
