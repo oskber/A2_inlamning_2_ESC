@@ -16,6 +16,8 @@ export class Modal {
   }
   open(title, id) {
     challengeId = id;
+    const modalStepOne = document.querySelector(".modal__stepOne");
+    modalStepOne.classList.add("modal__animation");
     const modalBtnNextPage = document.querySelectorAll(".modal__btn");
     let currentStep = 0;
     const modalClose = () => {
