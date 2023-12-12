@@ -119,12 +119,12 @@ class ChallengeCard {
     const bookButton = document.createElement("button");
     bookButton.textContent = "Book this room";
     bookButton.classList.add("rooms__button");
-    
+
     const modal = new Modal();
     bookButton.addEventListener("click", () => {
       modal.open(this.data.title, this.data.id);
-      updateParticipantsDisplay(this.data.id); //Shows the amount of participants in the select tag. 
-    })
+      updateParticipantsDisplay(this.data.id); //Shows the amount of participants in the select tag.
+    });
 
     const typeElement = this.typeOfRoom(this.data.type);
 
@@ -401,31 +401,36 @@ class FilterByRating {
     const api = new APIadapter();
 
     api.fetchAllChallenges().then((challenges) => {
-      const selectedRatingRow1 = Array.from(this.ratingCheckboxRow1).find(
+      const selectedRatingRow1 = Array.from(this.ratingCheckboxRow1).filter(
         (checkbox) => checkbox.checked
       );
 
-      const selectedRatingRow2 = Array.from(this.ratingCheckboxRow2).find(
+      const selectedRatingRow2 = Array.from(this.ratingCheckboxRow2).filter(
         (checkbox) => checkbox.checked
       );
 
-      const ratingRow1 = selectedRatingRow1
-        ? parseFloat(selectedRatingRow1.value)
-        : 0;
+      // Kontrollera antalet markerade stjärnor
+      if (selectedRatingRow1.length > selectedRatingRow2.length) {
+        // Om det finns fler markerade stjärnor i ratingRow1 än i ratingRow2, avmarkera den sista
+        selectedRatingRow1[selectedRatingRow1.length - 1].checked = false;
+      }
 
-      const ratingRow2 = selectedRatingRow2
-        ? parseFloat(selectedRatingRow2.value)
-        : 0;
+      const ratingRow1 =
+        selectedRatingRow1.length > 0
+          ? parseFloat(selectedRatingRow1[0].value)
+          : 0;
+      const ratingRow2 =
+        selectedRatingRow2.length > 0
+          ? parseFloat(selectedRatingRow2[0].value)
+          : 0;
 
       let filteredChallenges;
 
       if (ratingRow1 === 0 && ratingRow2 === 0) {
-        // No ratings are selected, show all challenges
-
+        // Ingen betyg är valt, visa alla utmaningar
         filteredChallenges = challenges;
       } else {
-        // Filter challenges based on the selected ratings
-
+        // Filtrera utmaningar baserat på valda betyg
         filteredChallenges = challenges.filter((challenge) => {
           const challengeRating = challenge.data.rating;
 
@@ -436,12 +441,10 @@ class FilterByRating {
         });
       }
 
-      // Clear challenges
-
+      // Rensa utmaningar
       challengesContainer.innerHTML = "";
 
-      // Render challenges
-
+      // Rendera utmaningar
       filteredChallenges.forEach((challenge) => {
         const element = challenge.render();
         challengesContainer.appendChild(element);
@@ -497,9 +500,9 @@ class ButtonsPlayOnline {
     if (this.onlineButton) {
       this.onlineButton.addEventListener("click", (event) => {
         event.preventDefault();
-        localStorage.setItem('shouldActivateCheckbox', 'true');
+        localStorage.setItem("shouldActivateCheckbox", "true");
         window.location.href = this.onlineButton.href;
-      });  
+      });
     }
   }
 }
@@ -507,16 +510,18 @@ class ButtonsPlayOnline {
 const buttonsPlayOnline = new ButtonsPlayOnline();
 
 window.addEventListener("load", () => {
-  const onlineChallengeCheckbox = document.querySelector("#onlineChallengeCheckbox");
+  const onlineChallengeCheckbox = document.querySelector(
+    "#onlineChallengeCheckbox"
+  );
 
   const urlParams = new URLSearchParams(window.location.search);
-  const activateCheckbox = urlParams.get('activateOnlineCheckbox');
+  const activateCheckbox = urlParams.get("activateOnlineCheckbox");
 
-  if (onlineChallengeCheckbox && activateCheckbox === 'true') {
+  if (onlineChallengeCheckbox && activateCheckbox === "true") {
     setTimeout(() => {
       onlineChallengeCheckbox.checked = true;
 
-      const changeEvent = new Event('change', { bubbles: true });
+      const changeEvent = new Event("change", { bubbles: true });
       onlineChallengeCheckbox.dispatchEvent(changeEvent);
     }, 50);
   }
@@ -529,7 +534,7 @@ class ButtonsPlayOnsite {
     if (this.onsiteButton) {
       this.onsiteButton.addEventListener("click", (event) => {
         event.preventDefault();
-        localStorage.setItem('shouldActivateCheckbox', 'true');
+        localStorage.setItem("shouldActivateCheckbox", "true");
         window.location.href = this.onsiteButton.href;
       });
     }
@@ -539,16 +544,18 @@ class ButtonsPlayOnsite {
 const buttonsPlayOnsite = new ButtonsPlayOnsite();
 
 window.addEventListener("load", () => {
-  const onsiteChallengeCheckbox = document.querySelector("#onsiteChallengeCheckbox");
+  const onsiteChallengeCheckbox = document.querySelector(
+    "#onsiteChallengeCheckbox"
+  );
 
   const urlParams = new URLSearchParams(window.location.search);
-  const activateCheckbox = urlParams.get('activateOnsiteCheckbox');
+  const activateCheckbox = urlParams.get("activateOnsiteCheckbox");
 
-  if (onsiteChallengeCheckbox && activateCheckbox === 'true') {
+  if (onsiteChallengeCheckbox && activateCheckbox === "true") {
     setTimeout(() => {
       onsiteChallengeCheckbox.checked = true;
 
-      const changeEvent = new Event('change', { bubbles: true });
+      const changeEvent = new Event("change", { bubbles: true });
       onsiteChallengeCheckbox.dispatchEvent(changeEvent);
     }, 50);
   }
@@ -556,7 +563,9 @@ window.addEventListener("load", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const challengesDiv = document.getElementById("ourChallenges");
-  const noMatchingChallengesMsg = document.getElementById("no-matching-challenges-msg");
+  const noMatchingChallengesMsg = document.getElementById(
+    "no-matching-challenges-msg"
+  );
 
   checkChallengesVisibility();
 
@@ -570,34 +579,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function checkChallengesVisibility() {
     // Toggle the visibility of the <p> tag based on whether there are challenges
-    noMatchingChallengesMsg.style.display = challengesDiv && challengesDiv.children.length === 0 ? "block" : "none";
+    noMatchingChallengesMsg.style.display =
+      challengesDiv && challengesDiv.children.length === 0 ? "block" : "none";
   }
 });
 
 //API booking part two
 
-
-
 async function updateParticipantsDisplay(id) {
   const api = new APIadapter();
   const challengeCard = await api.fetchAllChallenges();
 
-  const card = challengeCard.find(item => item.data.id === id);
+  const card = challengeCard.find((item) => item.data.id === id);
 
   const minParticipants = card.data.minParticipants;
   const maxParticipants = card.data.maxParticipants;
   const minMaxParticipantsSpan = document.getElementById("minMaxParticipants");
-  if(minMaxParticipantsSpan) {
+  if (minMaxParticipantsSpan) {
     minMaxParticipantsSpan.textContent = `Min: ${minParticipants}, Max: ${maxParticipants}`;
   }
   const select = document.getElementById("participants");
   select.innerHTML = "";
 
-  for(let i = minParticipants; i <= maxParticipants; i++) {
+  for (let i = minParticipants; i <= maxParticipants; i++) {
     const option = document.createElement("option");
     option.value = i;
     option.text = i;
-    select.appendChild(option)
+    select.appendChild(option);
   }
 }
 
@@ -617,31 +625,38 @@ document.addEventListener("DOMContentLoaded", async () => {
   const timeSlotInput = document.getElementById("timeSlot");
   const minMaxParticipantsInput = document.getElementById("minMaxParticipants");
 
-
-  if (customerNameInput && customerMailInput && dateInput && timeSlotInput && challengeInput) {
+  if (
+    customerNameInput &&
+    customerMailInput &&
+    dateInput &&
+    timeSlotInput &&
+    challengeInput
+  ) {
     const customerName = customerNameInput.value;
     const customerMail = customerMailInput.value;
     const date = dateInput.value;
     const timeSlot = timeSlotInput.value;
     const challengeInput = challengeInput.value;
- 
 
-    const res = await fetch("https://lernia-sjj-assignments.vercel.app/api/booking/reservations", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        challenge: parseInt(challengeInput.value),
-        name: customerName,
-        email: customerMail,
-        date: date,
-        time: timeSlot,
-        participants: parseInt(minMaxParticipantsInput.value),
-      }),
-    });
+    const res = await fetch(
+      "https://lernia-sjj-assignments.vercel.app/api/booking/reservations",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          challenge: parseInt(challengeInput.value),
+          name: customerName,
+          email: customerMail,
+          date: date,
+          time: timeSlot,
+          participants: parseInt(minMaxParticipantsInput.value),
+        }),
+      }
+    );
 
-   const data = await res.json();
+    const data = await res.json();
     console.log(data);
   }
-  });
+});
