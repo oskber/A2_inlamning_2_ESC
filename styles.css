@@ -383,6 +383,11 @@ main {
   margin: 30px auto;
   flex: none;
   position: relative;
+  animation: 0.8s 1 fadeIn;
+}
+.rooms__box:hover {
+  box-shadow: 0px 5px 15px rgb(73, 73, 73);
+  transition: box-shadow 0.3s ease-in-out;
 }
 .rooms__img {
   width: 100%;
@@ -1199,6 +1204,9 @@ body {
   cursor: pointer;
   transition: 0.1s ease-in;
   margin-right: 10px;
+}
+.modal__searchBtn:hover, .modal__stepTwoBtn:hover {
+  scale: 1.02;
 }
 .modal__contentWrapper {
   display: flex;
