@@ -25,6 +25,10 @@ body {
 
   &__filterBtn {
     @include buttonTransparent();
+
+    &:hover {
+      @include hoverButton()
+    }
   }
 }
 

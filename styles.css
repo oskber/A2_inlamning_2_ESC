@@ -37,7 +37,7 @@ main {
   display: flex;
   height: 144px;
   min-width: 100%;
-  background-color: #021928;
+  background-color: #011827;
 }
 @media screen and (min-width: 600px) {
   .header {
@@ -126,7 +126,7 @@ main {
   justify-content: center;
   align-items: center;
   font-size: 2em;
-  background-color: #021928;
+  background-color: #011827;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   height: calc(100% - 40px);
   width: 100%;
@@ -246,7 +246,7 @@ main {
 }
 .buttons__top__btn {
   background-color: #8acfe5;
-  color: #021928;
+  color: #011827;
   border: none;
   border-radius: 3px;
   padding: 10px 40px;
@@ -255,6 +255,10 @@ main {
   font-weight: 700;
   font-size: 1.1em;
   cursor: pointer;
+  transition: 0.1s ease-in;
+}
+.buttons__top__btn:hover {
+  scale: 1.02;
 }
 .buttons__top__link {
   color: #36769d;
@@ -264,6 +268,7 @@ main {
   border: none;
   text-decoration: underline;
   cursor: pointer;
+  transition: 0.1s ease-in;
 }
 @media screen and (min-width: 600px) {
   .buttons__top__link {
@@ -278,7 +283,11 @@ main {
     font-size: 1.1em;
     text-decoration: none;
     cursor: pointer;
+    transition: 0.1s ease-in;
   }
+}
+.buttons__top__link:hover {
+  scale: 1.02;
 }
 
 .quotes {
@@ -374,7 +383,6 @@ main {
   margin: 30px auto;
   flex: none;
   position: relative;
-  animation: 0.8s 1 fadeIn;
 }
 .rooms__img {
   width: 100%;
@@ -462,9 +470,14 @@ main {
   color: white;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.1s ease-in;
   position: absolute;
   bottom: 10px;
   right: 10px;
+  transition: 0.1s ease-in;
+}
+.rooms__button:hover {
+  scale: 1.02;
 }
 
 .buttons__bottom {
@@ -486,7 +499,7 @@ main {
 }
 .buttons__bottom__btn {
   background-color: #8acfe5;
-  color: #021928;
+  color: #011827;
   border: none;
   border-radius: 3px;
   padding: 10px 40px;
@@ -495,6 +508,7 @@ main {
   font-weight: 700;
   font-size: 1.1em;
   cursor: pointer;
+  transition: 0.1s ease-in;
 }
 .buttons__bottom__link {
   color: #36769d;
@@ -504,6 +518,7 @@ main {
   border: none;
   text-decoration: underline;
   cursor: pointer;
+  transition: 0.1s ease-in;
 }
 @media screen and (min-width: 600px) {
   .buttons__bottom__link {
@@ -518,6 +533,7 @@ main {
     font-size: 1.1em;
     text-decoration: none;
     cursor: pointer;
+    transition: 0.1s ease-in;
   }
 }
 
@@ -526,7 +542,7 @@ main {
   height: 500px;
   margin: 0;
   padding-bottom: 30px;
-  background-color: #021928;
+  background-color: #011827;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -574,6 +590,10 @@ main {
   border: 2px solid #8acfe5;
   border-radius: 3px;
   cursor: pointer;
+  transition: 0.1s ease-in;
+}
+.story__btn:hover {
+  scale: 1.02;
 }
 
 @media screen and (min-width: 600px) {
@@ -645,6 +665,10 @@ main {
   font-size: 1.1em;
   text-decoration: none;
   cursor: pointer;
+  transition: 0.1s ease-in;
+}
+.book__btn:hover {
+  scale: 1.02;
 }
 
 .allChallenges {
@@ -708,7 +732,7 @@ main {
 .footer {
   display: flex;
   flex-direction: column;
-  background-color: #021928;
+  background-color: #011827;
   color: white;
   max-height: 550px;
   width: 100%;
@@ -735,6 +759,9 @@ main {
 .footer a {
   text-decoration: none;
   color: white;
+}
+.footer a:hover {
+  color: #8acfe5;
 }
 .footer__title {
   padding: 10px 0;
@@ -817,6 +844,10 @@ body {
   border: 2px solid #8acfe5;
   border-radius: 3px;
   cursor: pointer;
+  transition: 0.1s ease-in;
+}
+.title__filterBtn:hover {
+  scale: 1.02;
 }
 
 #ourChallenges {
@@ -1166,6 +1197,7 @@ body {
   color: white;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.1s ease-in;
   margin-right: 10px;
 }
 .modal__contentWrapper {
@@ -1212,6 +1244,7 @@ body {
   border: none;
   text-decoration: underline;
   cursor: pointer;
+  transition: 0.1s ease-in;
   margin-top: 10px;
   font-size: medium;
 }
@@ -1321,9 +1354,4 @@ body {
   width: 130px;
   height: 30px;
   border-radius: 4px;
-}
-
-.rooms__box:hover {
-  box-shadow: 0px 5px 15px rgb(73, 73, 73);
-  transition: box-shadow 0.3s ease-in-out;
 }

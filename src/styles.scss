@@ -24,6 +24,7 @@ $max-screen-breakpoint: 1280px;
   font-weight: 700;
   font-size: 1.1em;
   cursor: pointer;
+  transition: 0.1s ease-in;
 }
 
 @mixin buttonRed {
@@ -38,6 +39,7 @@ $max-screen-breakpoint: 1280px;
   font-size: 1.1em;
   text-decoration: none;
   cursor: pointer;
+  transition: 0.1s ease-in;
 }
 
 @mixin buttonRed-small {
@@ -50,6 +52,7 @@ $max-screen-breakpoint: 1280px;
   color: white;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.1s ease-in;
 }
 
 @mixin linkBlue {
@@ -60,6 +63,7 @@ $max-screen-breakpoint: 1280px;
   border: none;
   text-decoration: underline;
   cursor: pointer;
+  transition: 0.1s ease-in;
 }
 
 @mixin buttonTransparent {
@@ -73,6 +77,12 @@ $max-screen-breakpoint: 1280px;
   border: 2px solid #8acfe5;
   border-radius: 3px;
   cursor: pointer;
+  transition: 0.1s ease-in;
+}
+
+@mixin hoverButton {
+  scale: 1.02;
+  
 }
 
 /* ANIMATIONS */
@@ -336,13 +346,25 @@ main {
 
   &__btn {
     @include buttonBlue();
+    
+
+    &:hover {
+      @include hoverButton()
+    }
   }
+
+  
 
   &__link {
     @include linkBlue();
+    
 
     @include breakpoint($small-screen-breakpoint) {
       @include buttonRed();
+    }
+
+    &:hover {
+      @include hoverButton()
     }
   }
 }
@@ -535,6 +557,11 @@ main {
     position: absolute;
     bottom: 10px;
     right: 10px;
+    transition: 0.1s ease-in;
+
+    &:hover {
+      @include hoverButton()
+    }
   }
 }
 
@@ -611,6 +638,10 @@ main {
 
   &__btn {
     @include buttonTransparent();
+
+    &:hover {
+      @include hoverButton()
+    }
   }
 }
 
@@ -680,6 +711,10 @@ main {
 
   &__btn {
     @include buttonRed();
+
+    &:hover {
+      @include hoverButton()
+    }
   }
 }
 
@@ -778,6 +813,10 @@ main {
   a {
     text-decoration: none;
     color: white;
+  }
+
+  a:hover {
+    color: #8acfe5;
   }
 
   &__title {
