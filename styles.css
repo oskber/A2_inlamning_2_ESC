@@ -1076,6 +1076,7 @@ body {
 .filter__selection__checkbox {
   margin: 0;
   padding: 0;
+  cursor: pointer;
 }
 .filter__selection_text {
   margin: 5px;
@@ -1138,6 +1139,10 @@ body {
   border-radius: 15px;
   background-color: transparent;
   margin-right: 10px;
+  cursor: pointer;
+}
+.filter__selection__tags__button:hover {
+  scale: 1.02;
 }
 .filter__selection__tags__button.selected {
   background-color: #333;
