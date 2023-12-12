@@ -9,7 +9,6 @@ body {
   min-height: 100%;
 }
 
-
 .title {
   &__heading {
     font-size: 2rem;
@@ -27,7 +26,7 @@ body {
     @include buttonTransparent();
 
     &:hover {
-      @include hoverButton()
+      @include hoverButton();
     }
   }
 }
@@ -41,7 +40,7 @@ body {
   overflow-x: scroll;
 
   @include breakpoint($min-screen-breakpoint) {
-    padding:0;
+    padding: 0;
   }
 
   @include breakpoint($medium-screen-breakpoint) {
