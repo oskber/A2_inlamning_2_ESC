@@ -465,6 +465,21 @@ class FilterByName {
 
     const nameFilter = this.nameInput.value.toLowerCase();
 
+    if (!nameFilter || nameFilter.length < 3) {
+      // Load all challenges when the input is empty or less than three letters
+      api.fetchAllChallenges().then((challenges) => {
+        // Clear challenges
+        challengesContainer.innerHTML = "";
+    
+        // Render challenges
+        challenges.forEach((challenge) => {
+          const element = challenge.render();
+          challengesContainer.appendChild(element);
+        });
+      });
+      return;
+    }
+
     api.fetchAllChallenges().then((challenges) => {
       const filteredChallenges = challenges.filter((challenge) => {
         const challengeTitle = challenge.data.title.toLowerCase();
