@@ -37,7 +37,7 @@ main {
   display: flex;
   height: 144px;
   min-width: 100%;
-  background-color: #021928;
+  background-color: #011827;
 }
 @media screen and (min-width: 600px) {
   .header {
@@ -126,7 +126,7 @@ main {
   justify-content: center;
   align-items: center;
   font-size: 2em;
-  background-color: #021928;
+  background-color: #011827;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   height: calc(100% - 40px);
   width: 100%;
@@ -246,7 +246,7 @@ main {
 }
 .buttons__top__btn {
   background-color: #8acfe5;
-  color: #021928;
+  color: #011827;
   border: none;
   border-radius: 3px;
   padding: 10px 40px;
@@ -374,7 +374,6 @@ main {
   margin: 30px auto;
   flex: none;
   position: relative;
-  animation: 0.8s 1 fadeIn;
 }
 .rooms__img {
   width: 100%;
@@ -486,7 +485,7 @@ main {
 }
 .buttons__bottom__btn {
   background-color: #8acfe5;
-  color: #021928;
+  color: #011827;
   border: none;
   border-radius: 3px;
   padding: 10px 40px;
@@ -526,7 +525,7 @@ main {
   height: 500px;
   margin: 0;
   padding-bottom: 30px;
-  background-color: #021928;
+  background-color: #011827;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -708,7 +707,7 @@ main {
 .footer {
   display: flex;
   flex-direction: column;
-  background-color: #021928;
+  background-color: #011827;
   color: white;
   max-height: 550px;
   width: 100%;
@@ -1318,12 +1317,8 @@ body {
 #participants {
   margin-top: 28px;
   margin-left: 15px;
-  width: 130px;
+  width: 125px;
   height: 30px;
   border-radius: 4px;
-}
-
-.rooms__box:hover {
-  box-shadow: 0px 5px 15px rgb(73, 73, 73);
-  transition: box-shadow 0.3s ease-in-out;
+  border-width: thin;
 }

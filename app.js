@@ -610,17 +610,24 @@ async function updateParticipantsDisplay(id) {
   const minParticipants = card.data.minParticipants;
   const maxParticipants = card.data.maxParticipants;
   const minMaxParticipantsSpan = document.getElementById("minMaxParticipants");
+  const numberInput = document.getElementById("participants");
+
   if (minMaxParticipantsSpan) {
-    minMaxParticipantsSpan.textContent = `Min: ${minParticipants}, Max: ${maxParticipants}`;
+    minMaxParticipantsSpan.textContent = minMaxParticipantsSpan.textContent || `How many participants?`;
   }
-  const select = document.getElementById("participants");
-  select.innerHTML = "";
+  
+  if (numberInput) {
+    numberInput.min = minParticipants;
+    numberInput.max = maxParticipants;
+    numberInput.value = minParticipants;
+  }
+  numberInput.innerHTML =" ";
 
   for (let i = minParticipants; i <= maxParticipants; i++) {
     const option = document.createElement("option");
     option.value = i;
     option.text = i;
-    select.appendChild(option);
+    numberInput.appendChild(option);
   }
 }
 
