@@ -84,6 +84,7 @@ class ChallengeCard {
   render() {
     const card = document.createElement("div");
     card.classList.add("rooms__box");
+    card.id = this.data.id;
 
     const titleElement = document.createElement("h2");
     titleElement.classList.add("rooms__heading");
