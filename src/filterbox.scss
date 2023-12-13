@@ -193,6 +193,7 @@
   &__selection__checkbox {
     margin: 0;
     padding:0;
+    cursor: pointer;
   }
   
   &__selection_text {
@@ -269,6 +270,11 @@
     border-radius: 15px;
     background-color: transparent;
     margin-right: 10px;
+    cursor: pointer;
+
+    &:hover {
+      @include hoverButton();
+    }
   }
 
   &__selection__tags__button.selected {

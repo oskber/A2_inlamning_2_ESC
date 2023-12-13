@@ -45,6 +45,10 @@
   &__stepTwoBtn {
     @include buttonRed-small();
     margin-right: 10px;
+
+    &:hover {
+      @include hoverButton();
+    }
   }
 
   &__contentWrapper {
