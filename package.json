@@ -4,12 +4,17 @@
   "main": "index.js",
   "scripts": {
     "sass:watch": "sass --no-source-map --watch src/styles.scss styles.css",
-    "sass:compile": "sass --no-source-map src/styles.scss styles.css"
+    "sass:compile": "sass --no-source-map src/styles.scss styles.css",
+    "open-cypress": "cypress open",
+    "test": "cypress run"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.69.5"
   },
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "cypress": "^13.6.1"
+  }
 }
