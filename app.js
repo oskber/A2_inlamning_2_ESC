@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
+let challengeId = null;
+
 class ChallengeCard {
   constructor(data) {
     this.data = data;
@@ -122,6 +124,7 @@ class ChallengeCard {
 
     const modal = new Modal();
     bookButton.addEventListener("click", () => {
+      challengeId = this.data.id;
       modal.open(this.data.title, this.data.id);
       updateParticipantsDisplay(this.data.id); //Shows the amount of participants in the select tag.
     });
@@ -633,52 +636,81 @@ async function updateParticipantsDisplay(id) {
 
 //Send POST through HTTP to the API.//
 
-function createElement(elementType, className) {
-  const element = document.createElement(elementType);
-  element.className = className;
-  return element;
+const form = document.querySelector(`form[name="booking"]`);
+const errorMessageDiv = document.getElementById("errorMessages");
+
+
+//Function to handle the form submission
+async function onSubmit(event) {
+  event.preventDefault();
+
+  if (form.checkValidity()){
+
+//Gather the form data
+
+  const nameInput = document.getElementById("customerName");
+  const selectedName = nameInput.value;
+  const mailInput = document.getElementById("customerMail");
+  const selectedMail = mailInput.value;
+  const phoneInput = document.getElementById("customerPhone");
+  const selectedPhone = phoneInput.value;
+  const whatDateInput = document.getElementById("dateInput");
+  const selectedDate = whatDateInput.value;
+  const timeInput = document.getElementById("whatTime");
+  const selectedTime = timeInput.value; 
+  const participantsInput = document.getElementById("participants");
+  const selectedParticipants = parseInt (participantsInput.value);  
+
+//Form submission
+  const body = { 
+    challenge: challengeId,
+    name: selectedName,
+    email: selectedMail,
+    phoneNumber: selectedPhone,
+    date: selectedDate,
+    time: selectedTime,
+    participants: selectedParticipants,
+};
+
+try {
+const response = await fetch(
+  'https://lernia-sjj-assignments.vercel.app/api/booking/reservations',
+{
+  method: 'POST',
+  headers: {
+    "Content-Type": "application/json",
+  },
+
+  body: JSON.stringify(body),
+}
+);
+
+if (!response.ok) {
+  throw new Error (`HTTP error" Status: ${response.status}`);
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  const customerNameInput = document.getElementById("customerName");
-  const customerMailInput = document.getElementById("customerMail");
-  const dateInput = document.getElementById("dateInput");
-  const challengeInput = document.getElementById("challengeInput");
-  const timeSlotInput = document.getElementById("timeSlot");
-  const minMaxParticipantsInput = document.getElementById("minMaxParticipants");
+const responseData = await response.json();
+console.log(`[onSubmit] response`, responseData);
+} catch (error) {
+  console.error("Error during form submission:", error);
+}
+} else {
+  console.log ("Form is invalid");
+}};
 
-  if (
-    customerNameInput &&
-    customerMailInput &&
-    dateInput &&
-    timeSlotInput &&
-    challengeInput
-  ) {
-    const customerName = customerNameInput.value;
-    const customerMail = customerMailInput.value;
-    const date = dateInput.value;
-    const timeSlot = timeSlotInput.value;
-    const challengeInput = challengeInput.value;
+form.addEventListener('submit', onSubmit);
 
-    const res = await fetch(
-      "https://lernia-sjj-assignments.vercel.app/api/booking/reservations",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          challenge: parseInt(challengeInput.value),
-          name: customerName,
-          email: customerMail,
-          date: date,
-          time: timeSlot,
-          participants: parseInt(minMaxParticipantsInput.value),
-        }),
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  errorMessageDiv.innerHTML =" ";
+  const requiredFields = form.querySelectorAll("[required]");
+  requiredFields.forEach((field) => {
+    if (field.value.trim() === "") {
+      const fieldName = field.getAttribute ("name");
+      const errorMessage = document.createElement("p");
+      errorMessage.textContent = `${fieldName} is required.`;
+      errorMessageDiv.appendChild(errorMessage);
+
       }
-    );
-
-    const data = await res.json();
-    console.log(data);
-  }
-});
+    });
+  });

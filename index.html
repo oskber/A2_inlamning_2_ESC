@@ -142,38 +142,39 @@
           <button class="modal__btn modal__searchBtn">Search available times</button>
         </div>
       </div>
-      <div class="modal__container modal__stepTwo">
-        <div class="fontstyle">
-          <div class="modal__contentWrapper">
-            <h3 class="bookroom__step2" id="modal__stepTwoTitle"></h3>
-            <div>
-              <label class="font__name" id="customerName">Name</label>
-              <input type="name" class="input__name">
-            </div>
-            <div>
-              <label class="font__mail" id="customerMail">E-mail</label>
-              <input type="email" class="input__mail">
-            </div>
-            <div>
-              <label class="font__phone" id="customerPhone">Phonenumber</label>
-              <input type="tel" class="input__phone">
-            </div>
-            <div>
-              <form action="#">
+      <form action="#" id="booking" name="booking" method="post">
+        <div class="modal__container modal__stepTwo">
+          <div class="fontstyle">
+            <div class="modal__contentWrapper">
+              <h3 class="bookroom__step2" id="modal__stepTwoTitle"></h3>
+              <div>
+                <label class="font__name" for="customerName">Name</label>
+                <input type="text" id="customerName" class="input__name" name="customerName">
+              </div>
+              <div>
+                <label class="font__mail" for="customerMail">E-mail</label>
+                <input type="email" id="customerMail" class="input__mail" name="customerMail">
+              </div>
+              <div>
+                <label class="font__phone" for="customerPhone">Phonenumber</label>
+                <input type="tel" id="customerPhone" class="input__phone" name="customerPhone">
+              </div>
+              <div>
                 <label for="whatTime" class="font__whattime" id="timeSlot">What time?</label>
                 <select id="whatTime" class="input__whattime"></select>
-              </form>
+              </div>
+              <div>
+                <label for="participants" class="font__howmany" id="minMaxParticipants">How many participants?</label>
+                <input type="number" id="participants" class="input__howmany howManyParticipants">
+              </div>
             </div>
-            <div>
-              <label for="participants" class="font__howmany" id="minMaxParticipants">How many participants?</label>
-              <input type="number" id="participants" class="input__howmany howManyParticipants">
+            <div class="modal__btnWrapper">
+              <button type="submit" id="submit_button" class="modal__btn modal__stepTwoBtn">Submit booking</button>
             </div>
-          </div>
-          <div class="modal__btnWrapper">
-            <button class="modal__btn modal__stepTwoBtn">Submit booking</button>
           </div>
         </div>
-      </div>
+      </form>
+      <div id="errorMessages"></div>
       <div class="modal__container modal__stepThree">
         <div class="modal__stepThreeWrapper">
           <h1 class="modal__stepThreeText">Thank you!</h1>
